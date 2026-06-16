@@ -1,0 +1,459 @@
+{
+  "opdateret": "16. June 2026",
+  "totalKampe": 90,
+  "spillere": [
+    {
+      "Navn": "Søren V (SVE)",
+      "Initialer": "SVE",
+      "Point": "99",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Oskar (OMA)",
+      "Initialer": "OMA",
+      "Point": "5",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Jonas A (JAB)",
+      "Initialer": "JAB",
+      "Point": "5",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Brian C (BCO)\nSnazzyFlex",
+      "Initialer": "BCO",
+      "Point": "7",
+      "Gratis": "True"
+    },
+    {
+      "Navn": "Kamal (KAP)",
+      "Initialer": "KAP",
+      "Point": "5",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Brian VL (BVL)",
+      "Initialer": "BVL",
+      "Point": "5",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Ramazan (RAK)",
+      "Initialer": "RAK",
+      "Point": "9",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Martin WK (MWK)",
+      "Initialer": "MWK",
+      "Point": "5",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Tobias Holck (THO)",
+      "Initialer": "THO",
+      "Point": "6",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Sam VJ (SVJ)",
+      "Initialer": "SVJ",
+      "Point": "5",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Florant (FSP)",
+      "Initialer": "FSP",
+      "Point": "6",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Abda (aka)",
+      "Initialer": "AKA",
+      "Point": "5",
+      "Gratis": "True"
+    },
+    {
+      "Navn": "Savannah (SVP)",
+      "Initialer": "SVP",
+      "Point": "8",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Patrick (SVP)",
+      "Initialer": "SVP",
+      "Point": "4",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Daniel A (DAA)",
+      "Initialer": "DAA",
+      "Point": "6",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Rasmus S (RST)",
+      "Initialer": "RST",
+      "Point": "8",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Marta (MKG)",
+      "Initialer": "MKG",
+      "Point": "2",
+      "Gratis": "True"
+    },
+    {
+      "Navn": "Christian M (CHM)",
+      "Initialer": "CHM",
+      "Point": "6",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Mathias F (MFR)",
+      "Initialer": "MFR",
+      "Point": "7",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Kåre (KLH)",
+      "Initialer": "KLH",
+      "Point": "7",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Henrik S (HSK",
+      "Initialer": "HSK",
+      "Point": "6",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "Niels B (NBU",
+      "Initialer": "NBU",
+      "Point": "6",
+      "Gratis": "False"
+    },
+    {
+      "Navn": "A.I.D.S (DS)",
+      "Initialer": "DS",
+      "Point": "7",
+      "Gratis": "False"
+    }
+  ],
+  "kampe": [
+    {
+      "Kamp": "Mexico – Sydafrika",
+      "Resultat": "2-0"
+    },
+    {
+      "Kamp": "Sydkorea -Tjekkiet",
+      "Resultat": "2-1"
+    },
+    {
+      "Kamp": "Canada – Bosnien-Hercegovina",
+      "Resultat": "1-1"
+    },
+    {
+      "Kamp": "USA – Paraguay",
+      "Resultat": "4-1"
+    },
+    {
+      "Kamp": "Qatar – Schweiz",
+      "Resultat": "1-1"
+    },
+    {
+      "Kamp": "Brasilien – Marokko",
+      "Resultat": "1-1"
+    },
+    {
+      "Kamp": "Haiti – Skotland",
+      "Resultat": "0-1"
+    },
+    {
+      "Kamp": "Australien – Tyrkiet",
+      "Resultat": "2-0"
+    },
+    {
+      "Kamp": "Tyskland – Curacao",
+      "Resultat": "7-1"
+    },
+    {
+      "Kamp": "Holland – Japan",
+      "Resultat": "2-2"
+    },
+    {
+      "Kamp": "Elfenbenskysten – Ecuador",
+      "Resultat": "1-0"
+    },
+    {
+      "Kamp": "Sverige – Tunesien",
+      "Resultat": "5-1"
+    },
+    {
+      "Kamp": "Spanien – Kap Verde",
+      "Resultat": "0-0"
+    },
+    {
+      "Kamp": "Belgien – Egypten",
+      "Resultat": "1-1"
+    },
+    {
+      "Kamp": "Saudi-Arabien – Uruguay",
+      "Resultat": "1-1"
+    },
+    {
+      "Kamp": "Iran – New Zealand",
+      "Resultat": "2-2"
+    },
+    {
+      "Kamp": "Frankrig – Senegal",
+      "Resultat": ""
+    },
+    {
+      "Kamp": "Irak – Norge",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Argentina – Algeriet",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Østrig – Jordan",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Portugal – DR Congo",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "England – Kroatien",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Ghana – Panama",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Usbekistan – Colombia",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Tjekkiet – Sydafrika",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Schweiz – Bosnien-Hercegovina",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Canada – Qatar",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Mexico – Sydkorea",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "USA – Australien",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Skotland – Marokko",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Brasilien – Haiti",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Tyrkiet – Paraguay",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Holland – Sverige",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Tyskland – Elfenbenskysten",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Ecuador – Curacao",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Tunesien – Japan",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Spanien – Saudi-Arabien",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Belgien – Iran",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Uruguay – Kap Verde",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "New Zealand – Egypten",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Argentina – Østrig",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Frankrig – Irak",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Norge – Senegal",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Jordan – Algeriet",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Portugal – Usbekistan",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "England – Ghana",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Panama – Kroatien",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Colombia – DR Congo",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Schweiz – Canada",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Bosnien-Hercegovina – Qatar",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Skotland – Brasilien",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Marokko – Haiti",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Tjekkiet – Mexico",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Sydafrika – Sydkorea",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Curacao – Elfenbenskysten",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Ecuador – Tyskland",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Japan – Sverige",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Tunesien – Holland",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Tyrkiet – USA",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Paraguay – Australien",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Norge – Frankrig",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Senegal – Irak",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Kap Verde – Saudi-Arabien",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Uruguay – Spanien",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Egypten – Iran",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "New Zealand – Belgien",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Panama – England",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Kroatien – Ghana",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Colombia – Portugal",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "DR Congo – Usbekistan",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Algeriet – Østrig",
+      "Resultat": "AFVENTER"
+    },
+    {
+      "Kamp": "Jordan – Argentina",
+      "Resultat": "AFVENTER"
+    }
+  ],
+  "vmVindere": [
+    "Frankrig",
+    "Spanien",
+    "Frankrig",
+    "Portugal",
+    "Spanien",
+    "Spanien",
+    "Spanien",
+    "Frankrig",
+    "Brasilien",
+    "Spanien",
+    "Brasilien",
+    "Frankrig",
+    "Spanien",
+    "Frankrig",
+    "Frankrig",
+    "Spanien",
+    "Skotland",
+    "Spanien",
+    "England",
+    "Frankrig",
+    "Spanien",
+    "England",
+    "Marokko"
+  ]
+}
