@@ -166,7 +166,7 @@ function renderDashboard(app, data) {
       </div>
     </div>
 
-    <div class="metrics">
+    <div class="metrics" style="grid-template-columns: repeat(6, 1fr);">
       <div class="metric">
         <div class="metric-label">Topscorer</div>
         <div class="metric-value">${topscorer.point ?? '–'}</div>
@@ -186,6 +186,16 @@ function renderDashboard(app, data) {
         <div class="metric-label">Resterende kampe</div>
         <div class="metric-value">${resterende}</div>
         <div class="metric-sub">i indledende runde</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Samlede mål</div>
+        <div class="metric-value">${data.totalMaal ?? 0}</div>
+        <div class="metric-sub">${spelteKampe.length > 0 ? (data.totalMaal / spelteKampe.length).toFixed(1) + ' mål/kamp' : '–'}</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Røde kort</div>
+        <div class="metric-value">${data.roedeKort ?? 0}</div>
+        <div class="metric-sub">i turneringen</div>
       </div>
     </div>
 
