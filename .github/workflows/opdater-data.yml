@@ -21,6 +21,7 @@ jobs:
           import email
           import json
           import os
+          import re
 
           client = imapclient.IMAPClient('imap.gmail.com', ssl=True)
           client.login(os.environ['GMAIL_ADDRESS'], os.environ['GMAIL_APP_PASSWORD'])
@@ -28,7 +29,7 @@ jobs:
 
           messages = client.search(['SUBJECT', 'VM2026 data'])
           if not messages:
-              print("Ingen emails fundet - skriver ikke fil")
+              print("Ingen emails fundet")
               exit(0)
 
           latest = messages[-1]
@@ -43,18 +44,31 @@ jobs:
           if not body:
               body = msg.get_payload(decode=True).decode('utf-8', errors='ignore')
 
-          body = body.strip()
-          print("Email body:", body[:200])
-
-          try:
-              json.loads(body)
-              with open('data.json', 'w', encoding='utf-8') as f:
-                  f.write(body)
-              print("data.json skrevet!")
-          except json.JSONDecodeError as e:
-              print("Ugyldig JSON:", e)
-              print("Fuld body:", body)
+          # Udtræk kun JSON-delen (fra { til sidste })
+          match = re.search(r'(\{.*\})', body, re.DOTALL)
+          if not match:
+              print("Ingen JSON fundet i email")
               exit(1)
+
+          data = json.loads(match.group(1))
+
+          # Rens @odata felter fra spillere, kampe og vmVindere
+          for key in ['spillere', 'kampe', 'vmVindere']:
+              if key in data:
+                  cleaned = []
+                  for item in data[key]:
+                      cleaned.append({k: v for k, v in item.items() 
+                                      if not k.startswith('@') and k != 'ItemInternalId'})
+                  data[key] = cleaned
+
+          # Tilpas vmVindere til at bruge 'land' i stedet for 'Lande'
+          if 'vmVindere' in data:
+              data['vmVindere'] = [item.get('Lande', item.get('land', '')) 
+                                   for item in data['vmVindere']]
+
+          with open('data.json', 'w', encoding='utf-8') as f:
+              json.dump(data, f, ensure_ascii=False, indent=2)
+          print("data.json skrevet!")
           EOF
         env:
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
