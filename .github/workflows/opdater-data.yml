@@ -2,7 +2,7 @@ name: Opdater data.json
 
 on:
   schedule:
-    - cron: '0 7 * * *'  # Kører hver dag kl. 07:00
+    - cron: '*/30 * * * *' 
   workflow_dispatch:
 
 jobs:
