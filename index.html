@@ -9,9 +9,7 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f6f8; color: #1a1a1a; font-size: 14px; }
   a { color: inherit; text-decoration: none; }
-
   .dash { max-width: 1100px; margin: 0 auto; padding: 24px 20px 48px; }
-
   .header { background: linear-gradient(135deg, #1a7f5a 0%, #0e5c3f 100%); border-radius: 14px; padding: 28px 32px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; }
   .header-title { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
   .header-sub { font-size: 14px; color: rgba(255,255,255,0.72); }
@@ -20,19 +18,14 @@
   .header-progress-bar { width: 180px; height: 6px; background: rgba(255,255,255,0.25); border-radius: 3px; margin-bottom: 6px; }
   .header-progress-fill { height: 100%; background: #5DCAA5; border-radius: 3px; }
   .header-progress-num { font-size: 22px; font-weight: 700; color: #fff; }
-
   .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
   .metric { background: #fff; border-radius: 10px; padding: 16px 18px; border: 1px solid #eaeaea; }
   .metric-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
   .metric-value { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1; }
   .metric-sub { font-size: 12px; color: #888; margin-top: 5px; }
-
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-  .three-col { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-
   .card { background: #fff; border-radius: 12px; border: 1px solid #eaeaea; padding: 20px 22px; }
   .card-title { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 16px; }
-
   .podium { display: flex; align-items: flex-end; justify-content: center; gap: 10px; margin-bottom: 4px; }
   .pod { text-align: center; flex: 1; }
   .pod-bar { border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: #fff; }
@@ -42,7 +35,6 @@
   .pod-medal { font-size: 22px; margin-bottom: 6px; }
   .pod-name { font-size: 13px; font-weight: 600; color: #1a1a1a; margin-top: 8px; }
   .pod-pts { font-size: 12px; color: #888; }
-
   .rank-table { width: 100%; border-collapse: collapse; }
   .rank-table th { font-size: 11px; color: #999; font-weight: 600; text-align: left; padding: 6px 8px; border-bottom: 1px solid #f0f0f0; }
   .rank-table td { padding: 9px 8px; border-bottom: 1px solid #f5f5f5; vertical-align: middle; }
@@ -54,11 +46,9 @@
   .rank-pts-cell { text-align: right; font-size: 14px; font-weight: 700; color: #1a7f5a; }
   .bar-bg { height: 6px; background: #f0f0f0; border-radius: 3px; width: 80px; }
   .bar-fg { height: 100%; background: #1a7f5a; border-radius: 3px; }
-
   .badge { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 20px; font-weight: 600; }
   .badge-free { background: #e8f8f2; color: #1a7f5a; }
   .badge-pay { background: #f0f0f0; color: #666; }
-
   .match-list { list-style: none; }
   .match-item { display: flex; align-items: center; padding: 8px 0; border-bottom: 1px solid #f5f5f5; gap: 10px; }
   .match-item:last-child { border-bottom: none; }
@@ -68,34 +58,26 @@
   .match-name { font-size: 13px; color: #1a1a1a; flex: 1; }
   .match-result { font-size: 12px; font-weight: 700; background: #f0faf5; color: #1a7f5a; padding: 3px 9px; border-radius: 20px; min-width: 46px; text-align: center; }
   .match-result.pending { background: #f5f5f5; color: #aaa; }
-
   .bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .bonus-card { background: #f8f9fb; border-radius: 9px; padding: 13px 14px; }
   .bonus-q { font-size: 11px; color: #888; margin-bottom: 5px; line-height: 1.4; }
   .bonus-facit { font-size: 15px; font-weight: 700; color: #1a7f5a; }
   .bonus-pts { font-size: 11px; color: #aaa; margin-top: 3px; }
-
   .chart-wrap { position: relative; width: 100%; height: 260px; }
-
   .winner-row { display: flex; align-items: center; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid #f5f5f5; }
   .winner-row:last-child { border-bottom: none; }
   .winner-country { font-size: 13px; font-weight: 600; }
   .winner-bar-wrap { flex: 1; height: 8px; background: #f0f0f0; border-radius: 4px; margin: 0 12px; }
   .winner-bar-fill { height: 100%; background: #1a7f5a; border-radius: 4px; }
   .winner-count { font-size: 12px; color: #888; min-width: 50px; text-align: right; }
-
-  /* Loading state */
   .loading { text-align: center; padding: 60px 20px; color: #888; font-size: 15px; }
   .loading-spinner { width: 32px; height: 32px; border: 3px solid #eee; border-top-color: #1a7f5a; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
   @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* Error state */
   .error-box { background: #fff5f5; border: 1px solid #fcc; border-radius: 10px; padding: 20px 24px; color: #c00; font-size: 13px; margin: 20px 0; }
   .error-box strong { display: block; margin-bottom: 6px; }
-
   @media (max-width: 700px) {
     .metrics { grid-template-columns: 1fr 1fr; }
-    .two-col, .three-col { grid-template-columns: 1fr; }
+    .two-col { grid-template-columns: 1fr; }
     .header { flex-direction: column; gap: 16px; }
     .header-progress { text-align: left; }
     .bar-bg { display: none; }
@@ -109,40 +91,39 @@
     Henter data…
   </div>
 </div>
-
 <script>
-// ============================================================
-//  KUN DENNE LINJE SKAL OPDATERES:
-//  Indsæt den direkte URL til din data.json fil i SharePoint
-// ============================================================
 const DATA_URL = 'https://AIDigitaltsamarbejde.github.io/VM-TipsKupon-2026/data.json';
-// ============================================================
 
 async function loadData() {
   const app = document.getElementById('app');
-
   try {
-    const res = await fetch(DATA_URL);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const res = await fetch(DATA_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
     const data = await res.json();
     renderDashboard(app, data);
   } catch (err) {
-    app.innerHTML = `
-      <div class="error-box">
-        <strong>Kunne ikke hente data</strong>
-        Tjek at data.json ligger på SharePoint og at URL'en er korrekt.<br>
-        <small style="color:#999;margin-top:6px;display:block">Fejl: ${err.message}</small>
-      </div>`;
+    app.innerHTML = '<div class="error-box"><strong>Kunne ikke hente data</strong>Tjek at data.json ligger korrekt på GitHub.<br><small style="color:#999;margin-top:6px;display:block">Fejl: ' + err.message + '</small></div>';
   }
 }
 
 function renderDashboard(app, data) {
-  // Sorter spillere efter point
-  const spillere = [...data.spillere].sort((a, b) => b.point - a.point);
+  // Normaliser feltnavne (SharePoint bruger stort begyndelsesbogstav)
+  const norm = p => ({
+    navn:      p.navn      ?? p.Navn      ?? '',
+    initialer: p.initialer ?? p.Initialer ?? '',
+    point:     Number(p.point ?? p.Point  ?? 0),
+    gratis:    (p.gratis ?? p.Gratis) === true || String(p.gratis ?? p.Gratis).toLowerCase() === 'true',
+  });
+  const normKamp = k => ({
+    kamp:     k.kamp     ?? k.Kamp     ?? '',
+    resultat: k.resultat ?? k.Resultat ?? '',
+  });
+
+  const spillere = [...data.spillere].map(norm).sort((a, b) => b.point - a.point);
   const maxPts = spillere[0]?.point || 1;
 
-  const kampe = data.kampe || [];
-  const spelteKampe = kampe.filter(k => k.resultat && k.resultat.trim() !== '');
+  const kampe = (data.kampe || []).map(normKamp);
+  const spelteKampe = kampe.filter(k => k.resultat && k.resultat.trim() !== '' && k.resultat.trim() !== 'AFVENTER');
   const totalKampe = data.totalKampe || 90;
   const progressPct = Math.round((spelteKampe.length / totalKampe) * 100);
 
@@ -154,24 +135,21 @@ function renderDashboard(app, data) {
   const topscorer = spillere[0] || {};
   const resterende = totalKampe - spelteKampe.length;
 
-  // VM-vinder tæl
-  const vmTæller = {};
+  const vmTaeller = {};
   (data.vmVindere || []).forEach(v => {
-    vmTæller[v] = (vmTæller[v] || 0) + 1;
+    if (v) vmTaeller[v] = (vmTaeller[v] || 0) + 1;
   });
-  const vmSorted = Object.entries(vmTæller)
+  const vmSorted = Object.entries(vmTaeller)
     .map(([land, antal]) => ({ land, antal }))
     .sort((a, b) => b.antal - a.antal);
   const maxVm = vmSorted[0]?.antal || 1;
 
-  // Top 3 podium-rækkefølge: 2. – 1. – 3.
   const top3 = spillere.slice(0, 3);
-  const podOrder  = [top3[1], top3[0], top3[2]].filter(Boolean);
+  const podOrder   = [top3[1], top3[0], top3[2]].filter(Boolean);
   const podMedals  = ['🥈', '🥇', '🥉'];
   const podClasses = ['pod-2', 'pod-1', 'pod-3'];
 
   app.innerHTML = `
-    <!-- Header -->
     <div class="header">
       <div>
         <div class="header-title">🏆 VM 2026 Tipsklub</div>
@@ -188,7 +166,6 @@ function renderDashboard(app, data) {
       </div>
     </div>
 
-    <!-- Metrics -->
     <div class="metrics">
       <div class="metric">
         <div class="metric-label">Topscorer</div>
@@ -212,17 +189,11 @@ function renderDashboard(app, data) {
       </div>
     </div>
 
-    <!-- Rangliste + Podium + Bonus -->
     <div class="two-col">
       <div class="card">
         <div class="card-title">Rangliste – indledende runde</div>
         <table class="rank-table">
-          <thead>
-            <tr>
-              <th>#</th><th>Navn</th><th>Type</th>
-              <th style="text-align:right">Pt</th><th></th>
-            </tr>
-          </thead>
+          <thead><tr><th>#</th><th>Navn</th><th>Type</th><th style="text-align:right">Pt</th><th></th></tr></thead>
           <tbody>
             ${spillere.map((p, i) => `
               <tr class="${i===0?'gold':i===1?'silver':''}">
@@ -255,18 +226,18 @@ function renderDashboard(app, data) {
           <div class="bonus-grid">
             ${(data.bonus || []).map(b => `
               <div class="bonus-card">
-                <div class="bonus-q">${b.spørgsmål}</div>
+                <div class="bonus-q">${b.spoergsmaal ?? b.spørgsmål ?? ''}</div>
                 <div class="bonus-facit" style="${b.facit?'':'color:#aaa'}">
                   ${b.facit ? 'Facit: ' + b.facit : 'Afventer…'}
                 </div>
-                <div class="bonus-pts">${b.beskrivelse}</div>
+                <div class="bonus-pts">${b.beskrivelse ?? ''}</div>
               </div>`).join('')}
+            ${!(data.bonus && data.bonus.length) ? '<div class="bonus-card"><div class="bonus-q">Hvem vinder VM?</div><div class="bonus-facit" style="color:#aaa">Afventer…</div><div class="bonus-pts">Korrekt svar giver 4 point</div></div>' : ''}
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Søjlediagram + Kampe -->
     <div class="two-col">
       <div class="card">
         <div class="card-title">Pointfordeling – alle deltagere</div>
@@ -275,27 +246,24 @@ function renderDashboard(app, data) {
         </div>
       </div>
 
-      <div>
-        <div class="card" style="margin-bottom:16px">
-          <div class="card-title">Kampe – indledende runde</div>
-          <ul class="match-list">
-            ${kampe.map(m => {
-              const done = m.resultat && m.resultat.trim() !== '';
-              return `<li class="match-item">
-                <span class="match-dot ${done?'done':'pending'}"></span>
-                <span class="match-name">${m.kamp}</span>
-                <span class="match-result ${done?'':'pending'}">${done ? m.resultat : 'Afventer'}</span>
-              </li>`;
-            }).join('')}
-          </ul>
-        </div>
+      <div class="card">
+        <div class="card-title">Kampe – indledende runde</div>
+        <ul class="match-list">
+          ${kampe.map(m => {
+            const done = m.resultat && m.resultat.trim() !== '' && m.resultat.trim() !== 'AFVENTER';
+            return '<li class="match-item">' +
+              '<span class="match-dot ' + (done?'done':'pending') + '"></span>' +
+              '<span class="match-name">' + m.kamp + '</span>' +
+              '<span class="match-result ' + (done?'':'pending') + '">' + (done ? m.resultat : 'Afventer') + '</span>' +
+              '</li>';
+          }).join('')}
+        </ul>
       </div>
     </div>
 
-    <!-- VM-vinder -->
     <div class="card">
       <div class="card-title">VM-vinder tips – hvem satser folk på?</div>
-      <div id="winnerChart" style="padding-top:4px">
+      <div style="padding-top:4px">
         ${vmSorted.map(w => `
           <div class="winner-row">
             <span class="winner-country">${w.land}</span>
@@ -312,15 +280,13 @@ function renderDashboard(app, data) {
     </div>
   `;
 
-  // Byg søjlediagram
   new Chart(document.getElementById('barChart'), {
     type: 'bar',
     data: {
       labels: spillere.map(p => p.navn),
       datasets: [{
         data: spillere.map(p => p.point),
-        backgroundColor: spillere.map((p, i) =>
-          i === 0 ? '#0e5c3f' : i < 5 ? '#1a7f5a' : '#5DCAA5'),
+        backgroundColor: spillere.map((p, i) => i===0 ? '#0e5c3f' : i<5 ? '#1a7f5a' : '#5DCAA5'),
         borderRadius: 4,
       }]
     },
@@ -329,7 +295,7 @@ function renderDashboard(app, data) {
       maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y} point` } }
+        tooltip: { callbacks: { label: ctx => ' ' + ctx.parsed.y + ' point' } }
       },
       scales: {
         x: { ticks: { font: { size: 10 }, maxRotation: 50, autoSkip: false }, grid: { display: false } },
