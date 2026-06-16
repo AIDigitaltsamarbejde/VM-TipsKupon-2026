@@ -1,23 +1,62 @@
-name: Opdater data.json
+name: Opdater data.json fra Gmail
 
 on:
-  repository_dispatch:
-    types: [opdater-data]
+  schedule:
+    - cron: '*/10 * * * *'  # Kører hvert 10. minut
+  workflow_dispatch:  # Kan også køres manuelt
 
 jobs:
-  skriv-fil:
+  hent-data:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
-      - name: Skriv data.json
+      - name: Installer Python dependencies
+        run: pip install imapclient
+
+      - name: Hent data fra Gmail
         run: |
-          echo '${{ github.event.client_payload.data }}' > data.json
+          python3 << 'EOF'
+          import imapclient
+          import email
+          import json
+          import os
+
+          client = imapclient.IMAPClient('imap.gmail.com', ssl=True)
+          client.login(os.environ['GMAIL_ADDRESS'], os.environ['GMAIL_APP_PASSWORD'])
+          client.select_folder('INBOX')
+
+          messages = client.search(['FROM', os.environ['GMAIL_ADDRESS']])
+          if not messages:
+              print("Ingen emails fundet")
+              exit(0)
+
+          latest = messages[-1]
+          raw = client.fetch([latest], ['RFC822'])
+          msg = email.message_from_bytes(raw[latest][b'RFC822'])
+
+          body = ''
+          if msg.is_multipart():
+              for part in msg.walk():
+                  if part.get_content_type() == 'text/plain':
+                      body = part.get_payload(decode=True).decode()
+                      break
+          else:
+              body = msg.get_payload(decode=True).decode()
+
+          json.loads(body)  # Validér at det er gyldig JSON
+          with open('data.json', 'w') as f:
+              f.write(body)
+          print("data.json opdateret!")
+          EOF
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
 
       - name: Commit og push
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add data.json
-          git commit -m "Opdater data.json"
+          git diff --staged --quiet || git commit -m "Opdater data.json"
           git push
