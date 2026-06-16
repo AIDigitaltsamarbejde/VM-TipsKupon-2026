@@ -52,7 +52,6 @@ jobs:
 
           excel_data = json.loads(match.group(1))
 
-          # Rens @odata felter
           for key in ['spillere', 'kampe', 'vmVindere']:
               if key in excel_data:
                   cleaned = []
@@ -65,19 +64,17 @@ jobs:
                         for item in excel_data.get('vmVindere', [])]
 
           spillere = excel_data.get('spillere', [])
-          # Brian C vises som SnazzyFlex
           for s in spillere:
               if s.get('Initialer', s.get('initialer', '')) == 'BCO':
                   s['Navn'] = 'SnazzyFlex'
                   s['navn'] = 'SnazzyFlex'
 
-          # ── 2. Hent kampdata fra API-Football ─────────────────────
-          headers = {'x-apisports-key': os.environ['API_FOOTBALL_TOKEN']}
+          # ── 2. Hent kampdata fra football-data.org ─────────────────
+          headers = {'X-Auth-Token': os.environ['FOOTBALL_API_TOKEN']}
 
           r = requests.get(
-              'https://v3.football.api-sports.io/fixtures',
-              headers=headers,
-              params={'league': '1', 'season': '2026'}
+              'https://api.football-data.org/v4/competitions/WC/matches',
+              headers=headers
           )
 
           total_maal = 0
@@ -85,43 +82,48 @@ jobs:
           kampe = []
 
           if r.status_code == 200:
-              fixtures = r.json().get('response', [])
-              print(f"Hentet {len(fixtures)} kampe fra API")
+              matches = r.json().get('matches', [])
+              print(f"Hentet {len(matches)} kampe fra football-data.org")
 
-              for m in fixtures:
-                  hjemme = m['teams']['home']['name']
-                  ude    = m['teams']['away']['name']
-                  status = m['fixture']['status']['short']
+              # Hent røde kort per kamp via match details
+              for m in matches:
+                  hjemme = m['homeTeam']['name']
+                  ude    = m['awayTeam']['name']
+                  status = m['status']
 
                   resultat = ''
                   maal = 0
+                  kort = 0
 
-                  if status == 'FT':
-                      hg = m['goals']['home'] or 0
-                      ag = m['goals']['away'] or 0
+                  if status == 'FINISHED':
+                      hg = m['score']['fullTime']['home'] or 0
+                      ag = m['score']['fullTime']['away'] or 0
                       resultat = f'{hg}-{ag}'
                       maal = hg + ag
                       total_maal += maal
+
+                      # Hent røde kort for denne kamp
+                      match_id = m['id']
+                      r2 = requests.get(
+                          f'https://api.football-data.org/v4/matches/{match_id}',
+                          headers=headers
+                      )
+                      if r2.status_code == 200:
+                          bookings = r2.json().get('bookings', [])
+                          kort = sum(1 for b in bookings
+                                     if b.get('card') in ['RED_CARD', 'YELLOW_RED_CARD'])
+                          roede_kort += kort
 
                   kampe.append({
                       'kamp': f'{hjemme} – {ude}',
                       'resultat': resultat,
                       'maal': maal,
+                      'roedeKort': kort,
                   })
 
-              # Hent røde kort via events endpoint
-              r2 = requests.get(
-                  'https://v3.football.api-sports.io/fixtures/events',
-                  headers=headers,
-                  params={'league': '1', 'season': '2026', 'type': 'Card'}
-              )
-              if r2.status_code == 200:
-                  events = r2.json().get('response', [])
-                  roede_kort = sum(1 for e in events
-                                   if e.get('detail') in ['Red Card', 'Second Yellow card'])
-                  print(f"Røde kort: {roede_kort}")
+              print(f"Total maal: {total_maal}, Roede kort: {roede_kort}")
           else:
-              print(f"API fejl: {r.status_code}")
+              print(f"API fejl: {r.status_code} - {r.text[:200]}")
               kampe = excel_data.get('kampe', [])
 
           # ── 3. Sammensæt og gem data.json ──────────────────────────
@@ -142,7 +144,7 @@ jobs:
         env:
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          API_FOOTBALL_TOKEN: ${{ secrets.API_FOOTBALL_TOKEN }}
+          FOOTBALL_API_TOKEN: ${{ secrets.FOOTBALL_API_TOKEN }}
 
       - name: Commit og push
         run: |
