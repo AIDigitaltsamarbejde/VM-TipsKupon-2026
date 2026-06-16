@@ -1,138 +1,15 @@
-name: Opdater data.json
-
-on:
-  schedule:
-    - cron: '*/30 * * * *' 
-  workflow_dispatch:
-
-jobs:
-  hent-data:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Installer Python dependencies
-        run: pip install imapclient requests
-
-      - name: Hent og merge data
+- name: Find VM 2026 ID
         run: |
           python3 << 'EOF'
-          import imapclient
-          import email
-          import json
-          import os
-          import re
           import requests
+          import os
 
-          # ── 1. Hent spillerdata fra Gmail ──────────────────────────
-          client = imapclient.IMAPClient('imap.gmail.com', ssl=True)
-          client.login(os.environ['GMAIL_ADDRESS'], os.environ['GMAIL_APP_PASSWORD'])
-          client.select_folder('INBOX')
-
-          messages = client.search(['SUBJECT', 'VM2026 data'])
-          if not messages:
-              print("Ingen emails fundet")
-              exit(1)
-
-          latest = messages[-1]
-          raw = client.fetch([latest], ['RFC822'])
-          msg = email.message_from_bytes(raw[latest][b'RFC822'])
-
-          body = ''
-          for part in msg.walk():
-              if part.get_content_type() == 'text/plain':
-                  body = part.get_payload(decode=True).decode('utf-8', errors='ignore')
-                  break
-
-          match = re.search(r'(\{.*\})', body, re.DOTALL)
-          if not match:
-              print("Ingen JSON i email")
-              exit(1)
-
-          excel_data = json.loads(match.group(1))
-
-          # Rens @odata felter
-          for key in ['spillere', 'kampe', 'vmVindere']:
-              if key in excel_data:
-                  cleaned = []
-                  for item in excel_data[key]:
-                      cleaned.append({k: v for k, v in item.items()
-                                      if not k.startswith('@') and k != 'ItemInternalId'})
-                  excel_data[key] = cleaned
-
-          vm_vindere = [item.get('Lande', item.get('land', ''))
-                        for item in excel_data.get('vmVindere', [])]
-
-          # ── 2. Hent kampdata fra football-data.org ─────────────────
-          headers = {'X-Auth-Token': os.environ['FOOTBALL_API_TOKEN']}
-          
-          # VM 2026 competition kode
-          url = 'https://api.football-data.org/v4/competitions/WC/matches'
-          r = requests.get(url, headers=headers)
-          
-          total_maal = 0
-          roede_kort = 0
-          kampe = []
-
-          if r.status_code == 200:
-              matches = r.json().get('matches', [])
-              for m in matches:
-                  hjemme = m['homeTeam']['name']
-                  ude    = m['awayTeam']['name']
-                  status = m['status']
-                  
-                  resultat = ''
-                  maal = 0
-                  kort = 0
-
-                  if status == 'FINISHED':
-                      hg = m['score']['fullTime']['home'] or 0
-                      ag = m['score']['fullTime']['away'] or 0
-                      resultat = f'{hg}-{ag}'
-                      maal = hg + ag
-                      total_maal += maal
-
-                  # Røde kort fra bookings hvis tilgængeligt
-                  if 'bookings' in m:
-                      kort = sum(1 for b in m['bookings'] if b.get('card') in ['RED_CARD', 'YELLOW_RED_CARD'])
-                      roede_kort += kort
-
-                  kampe.append({
-                      'kamp': f'{hjemme} – {ude}',
-                      'resultat': resultat,
-                      'maal': maal,
-                      'roedeKort': kort,
-                  })
-          else:
-              print(f"API fejl: {r.status_code} - {r.text}")
-              # Brug Excel-kampe som fallback
-              kampe = excel_data.get('kampe', [])
-
-          # ── 3. Sammensæt og gem data.json ──────────────────────────
-          import datetime
-          data = {
-              'opdateret': datetime.date.today().strftime('%d. %B %Y'),
-              'totalKampe': 90,
-              'totalMaal': total_maal,
-              'roedeKort': roede_kort,
-              'spillere': excel_data.get('spillere', []),
-              'kampe': kampe,
-              'vmVindere': vm_vindere,
+          headers = {
+              'x-apisports-key': os.environ['API_FOOTBALL_TOKEN']
           }
 
-          with open('data.json', 'w', encoding='utf-8') as f:
-              json.dump(data, f, ensure_ascii=False, indent=2)
-          print(f"data.json skrevet! {len(kampe)} kampe, {total_maal} mål, {roede_kort} røde kort")
+          r = requests.get('https://v3.football.api-sports.io/leagues?name=FIFA World Cup', headers=headers)
+          print(r.json())
           EOF
         env:
-          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
-          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          FOOTBALL_API_TOKEN: ${{ secrets.FOOTBALL_API_TOKEN }}
-
-      - name: Commit og push
-        run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
-          git add -A
-          git diff --staged --quiet || git commit -m "Opdater data.json"
-          git push
+          API_FOOTBALL_TOKEN: ${{ secrets.API_FOOTBALL_TOKEN }}
