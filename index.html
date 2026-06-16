@@ -12,32 +12,27 @@
 
   .dash { max-width: 1100px; margin: 0 auto; padding: 24px 20px 48px; }
 
-  /* Header */
   .header { background: linear-gradient(135deg, #1a7f5a 0%, #0e5c3f 100%); border-radius: 14px; padding: 28px 32px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; }
   .header-title { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
   .header-sub { font-size: 14px; color: rgba(255,255,255,0.72); }
   .header-progress { text-align: right; }
   .header-progress-label { font-size: 12px; color: rgba(255,255,255,0.65); margin-bottom: 6px; }
   .header-progress-bar { width: 180px; height: 6px; background: rgba(255,255,255,0.25); border-radius: 3px; margin-bottom: 6px; }
-  .header-progress-fill { height: 100%; background: #5DCAA5; border-radius: 3px; width: 18.9%; }
+  .header-progress-fill { height: 100%; background: #5DCAA5; border-radius: 3px; }
   .header-progress-num { font-size: 22px; font-weight: 700; color: #fff; }
 
-  /* Metrics row */
   .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
   .metric { background: #fff; border-radius: 10px; padding: 16px 18px; border: 1px solid #eaeaea; }
   .metric-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
   .metric-value { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1; }
   .metric-sub { font-size: 12px; color: #888; margin-top: 5px; }
 
-  /* Two-column layout */
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
   .three-col { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
 
-  /* Card */
   .card { background: #fff; border-radius: 12px; border: 1px solid #eaeaea; padding: 20px 22px; }
   .card-title { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 16px; }
 
-  /* Podium */
   .podium { display: flex; align-items: flex-end; justify-content: center; gap: 10px; margin-bottom: 4px; }
   .pod { text-align: center; flex: 1; }
   .pod-bar { border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: #fff; }
@@ -48,7 +43,6 @@
   .pod-name { font-size: 13px; font-weight: 600; color: #1a1a1a; margin-top: 8px; }
   .pod-pts { font-size: 12px; color: #888; }
 
-  /* Rank table */
   .rank-table { width: 100%; border-collapse: collapse; }
   .rank-table th { font-size: 11px; color: #999; font-weight: 600; text-align: left; padding: 6px 8px; border-bottom: 1px solid #f0f0f0; }
   .rank-table td { padding: 9px 8px; border-bottom: 1px solid #f5f5f5; vertical-align: middle; }
@@ -61,12 +55,10 @@
   .bar-bg { height: 6px; background: #f0f0f0; border-radius: 3px; width: 80px; }
   .bar-fg { height: 100%; background: #1a7f5a; border-radius: 3px; }
 
-  /* Badge */
   .badge { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 20px; font-weight: 600; }
   .badge-free { background: #e8f8f2; color: #1a7f5a; }
   .badge-pay { background: #f0f0f0; color: #666; }
 
-  /* Match list */
   .match-list { list-style: none; }
   .match-item { display: flex; align-items: center; padding: 8px 0; border-bottom: 1px solid #f5f5f5; gap: 10px; }
   .match-item:last-child { border-bottom: none; }
@@ -77,23 +69,29 @@
   .match-result { font-size: 12px; font-weight: 700; background: #f0faf5; color: #1a7f5a; padding: 3px 9px; border-radius: 20px; min-width: 46px; text-align: center; }
   .match-result.pending { background: #f5f5f5; color: #aaa; }
 
-  /* Bonus cards */
   .bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
   .bonus-card { background: #f8f9fb; border-radius: 9px; padding: 13px 14px; }
   .bonus-q { font-size: 11px; color: #888; margin-bottom: 5px; line-height: 1.4; }
   .bonus-facit { font-size: 15px; font-weight: 700; color: #1a7f5a; }
   .bonus-pts { font-size: 11px; color: #aaa; margin-top: 3px; }
 
-  /* Chart */
   .chart-wrap { position: relative; width: 100%; height: 260px; }
 
-  /* Winner poll */
   .winner-row { display: flex; align-items: center; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid #f5f5f5; }
   .winner-row:last-child { border-bottom: none; }
   .winner-country { font-size: 13px; font-weight: 600; }
   .winner-bar-wrap { flex: 1; height: 8px; background: #f0f0f0; border-radius: 4px; margin: 0 12px; }
   .winner-bar-fill { height: 100%; background: #1a7f5a; border-radius: 4px; }
   .winner-count { font-size: 12px; color: #888; min-width: 50px; text-align: right; }
+
+  /* Loading state */
+  .loading { text-align: center; padding: 60px 20px; color: #888; font-size: 15px; }
+  .loading-spinner { width: 32px; height: 32px; border: 3px solid #eee; border-top-color: #1a7f5a; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Error state */
+  .error-box { background: #fff5f5; border: 1px solid #fcc; border-radius: 10px; padding: 20px 24px; color: #c00; font-size: 13px; margin: 20px 0; }
+  .error-box strong { display: block; margin-bottom: 6px; }
 
   @media (max-width: 700px) {
     .metrics { grid-template-columns: 1fr 1fr; }
@@ -105,287 +103,243 @@
 </style>
 </head>
 <body>
-<div class="dash">
-
-  <!-- Header -->
-  <div class="header">
-    <div>
-      <div class="header-title">🏆 VM 2026 Tipsklub</div>
-      <div class="header-sub">AI · Indledende runde · 24 deltagere</div>
-    </div>
-    <div class="header-progress">
-      <div class="header-progress-label">Spilte kampe</div>
-      <div class="header-progress-bar"><div class="header-progress-fill"></div></div>
-      <div class="header-progress-num">17 <span style="font-size:14px;font-weight:400;opacity:.7">/ 90 kampe</span></div>
-    </div>
+<div class="dash" id="app">
+  <div class="loading">
+    <div class="loading-spinner"></div>
+    Henter data…
   </div>
+</div>
 
-  <!-- Metrics -->
-  <div class="metrics">
-    <div class="metric">
-      <div class="metric-label">Topscorer</div>
-      <div class="metric-value">9</div>
-      <div class="metric-sub">Ramazan (RAK)</div>
-    </div>
-    <div class="metric">
-      <div class="metric-label">Deltagere</div>
-      <div class="metric-value">24</div>
-      <div class="metric-sub">20 betalende · 4 gratis</div>
-    </div>
-    <div class="metric">
-      <div class="metric-label">Gennemsnit</div>
-      <div class="metric-value">6.0</div>
-      <div class="metric-sub">point per deltager</div>
-    </div>
-    <div class="metric">
-      <div class="metric-label">Resterende kampe</div>
-      <div class="metric-value">73</div>
-      <div class="metric-sub">i indledende runde</div>
-    </div>
-  </div>
+<script>
+// ============================================================
+//  KUN DENNE LINJE SKAL OPDATERES:
+//  Indsæt den direkte URL til din data.json fil i SharePoint
+// ============================================================
+const DATA_URL = 'https://ai4.sharepoint.com/sites/AIas-Intra2/_layouts/15/download.aspx?UniqueId=2af8d13a1e424373a30d375b5fc3ca20&e=h39rNr';
+// ============================================================
 
-  <!-- Podium + Rank table -->
-  <div class="two-col">
+async function loadData() {
+  const app = document.getElementById('app');
 
-    <div class="card">
-      <div class="card-title">Rangliste – indledende runde</div>
-      <table class="rank-table" id="rankTable">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Navn</th>
-            <th>Type</th>
-            <th style="text-align:right">Pt</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody id="rankBody"></tbody>
-      </table>
+  try {
+    const res = await fetch(DATA_URL);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    renderDashboard(app, data);
+  } catch (err) {
+    app.innerHTML = `
+      <div class="error-box">
+        <strong>Kunne ikke hente data</strong>
+        Tjek at data.json ligger på SharePoint og at URL'en er korrekt.<br>
+        <small style="color:#999;margin-top:6px;display:block">Fejl: ${err.message}</small>
+      </div>`;
+  }
+}
+
+function renderDashboard(app, data) {
+  // Sorter spillere efter point
+  const spillere = [...data.spillere].sort((a, b) => b.point - a.point);
+  const maxPts = spillere[0]?.point || 1;
+
+  const kampe = data.kampe || [];
+  const spelteKampe = kampe.filter(k => k.resultat && k.resultat.trim() !== '');
+  const totalKampe = data.totalKampe || 90;
+  const progressPct = Math.round((spelteKampe.length / totalKampe) * 100);
+
+  const betalende = spillere.filter(s => !s.gratis).length;
+  const gratis    = spillere.filter(s => s.gratis).length;
+  const gennemsnit = spillere.length
+    ? (spillere.reduce((s, p) => s + p.point, 0) / spillere.length).toFixed(1)
+    : 0;
+  const topscorer = spillere[0] || {};
+  const resterende = totalKampe - spelteKampe.length;
+
+  // VM-vinder tæl
+  const vmTæller = {};
+  (data.vmVindere || []).forEach(v => {
+    vmTæller[v] = (vmTæller[v] || 0) + 1;
+  });
+  const vmSorted = Object.entries(vmTæller)
+    .map(([land, antal]) => ({ land, antal }))
+    .sort((a, b) => b.antal - a.antal);
+  const maxVm = vmSorted[0]?.antal || 1;
+
+  // Top 3 podium-rækkefølge: 2. – 1. – 3.
+  const top3 = spillere.slice(0, 3);
+  const podOrder  = [top3[1], top3[0], top3[2]].filter(Boolean);
+  const podMedals  = ['🥈', '🥇', '🥉'];
+  const podClasses = ['pod-2', 'pod-1', 'pod-3'];
+
+  app.innerHTML = `
+    <!-- Header -->
+    <div class="header">
+      <div>
+        <div class="header-title">🏆 VM 2026 Tipsklub</div>
+        <div class="header-sub">AI · Indledende runde · ${spillere.length} deltagere</div>
+      </div>
+      <div class="header-progress">
+        <div class="header-progress-label">Spilte kampe</div>
+        <div class="header-progress-bar">
+          <div class="header-progress-fill" style="width:${progressPct}%"></div>
+        </div>
+        <div class="header-progress-num">
+          ${spelteKampe.length} <span style="font-size:14px;font-weight:400;opacity:.7">/ ${totalKampe} kampe</span>
+        </div>
+      </div>
     </div>
 
-    <div>
-      <div class="card" style="margin-bottom:16px">
-        <div class="card-title">Podiet</div>
-        <div class="podium" id="podium"></div>
+    <!-- Metrics -->
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-label">Topscorer</div>
+        <div class="metric-value">${topscorer.point ?? '–'}</div>
+        <div class="metric-sub">${topscorer.navn ?? ''} (${topscorer.initialer ?? ''})</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Deltagere</div>
+        <div class="metric-value">${spillere.length}</div>
+        <div class="metric-sub">${betalende} betalende · ${gratis} gratis</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Gennemsnit</div>
+        <div class="metric-value">${gennemsnit}</div>
+        <div class="metric-sub">point per deltager</div>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Resterende kampe</div>
+        <div class="metric-value">${resterende}</div>
+        <div class="metric-sub">i indledende runde</div>
+      </div>
+    </div>
+
+    <!-- Rangliste + Podium + Bonus -->
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">Rangliste – indledende runde</div>
+        <table class="rank-table">
+          <thead>
+            <tr>
+              <th>#</th><th>Navn</th><th>Type</th>
+              <th style="text-align:right">Pt</th><th></th>
+            </tr>
+          </thead>
+          <tbody>
+            ${spillere.map((p, i) => `
+              <tr class="${i===0?'gold':i===1?'silver':''}">
+                <td class="rank-num">${i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}</td>
+                <td class="rank-name">${p.navn}</td>
+                <td><span class="badge ${p.gratis?'badge-free':'badge-pay'}">${p.gratis?'Gratis':'Betaling'}</span></td>
+                <td class="rank-pts-cell">${p.point}</td>
+                <td><div class="bar-bg"><div class="bar-fg" style="width:${Math.round(p.point/maxPts*100)}%"></div></div></td>
+              </tr>`).join('')}
+          </tbody>
+        </table>
       </div>
 
-      <div class="card">
-        <div class="card-title">Bonusspørgsmål</div>
-        <div class="bonus-grid">
-          <div class="bonus-card">
-            <div class="bonus-q">Antal 0-0 kampe i indledende?</div>
-            <div class="bonus-facit">Facit: 1</div>
-            <div class="bonus-pts">Tættest giver 1 point</div>
+      <div>
+        <div class="card" style="margin-bottom:16px">
+          <div class="card-title">Podiet</div>
+          <div class="podium">
+            ${podOrder.map((p, i) => `
+              <div class="pod ${podClasses[i]}">
+                <div class="pod-medal">${podMedals[i]}</div>
+                <div class="pod-bar">${p.point}</div>
+                <div class="pod-name">${p.navn}</div>
+                <div class="pod-pts">${p.point} point</div>
+              </div>`).join('')}
           </div>
-          <div class="bonus-card">
-            <div class="bonus-q">Røde kort i hele slutrunden?</div>
-            <div class="bonus-facit">Facit: 3</div>
-            <div class="bonus-pts">Tættest giver 2 point</div>
-          </div>
-          <div class="bonus-card">
-            <div class="bonus-q">Samlet antal mål i slutrunden?</div>
-            <div class="bonus-facit">Facit: 46</div>
-            <div class="bonus-pts">Tættest giver 3 point</div>
-          </div>
-          <div class="bonus-card">
-            <div class="bonus-q">Hvem vinder VM?</div>
-            <div class="bonus-facit" style="color:#aaa">Afventer…</div>
-            <div class="bonus-pts">Korrekt svar giver 4 point</div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Bonusspørgsmål</div>
+          <div class="bonus-grid">
+            ${(data.bonus || []).map(b => `
+              <div class="bonus-card">
+                <div class="bonus-q">${b.spørgsmål}</div>
+                <div class="bonus-facit" style="${b.facit?'':'color:#aaa'}">
+                  ${b.facit ? 'Facit: ' + b.facit : 'Afventer…'}
+                </div>
+                <div class="bonus-pts">${b.beskrivelse}</div>
+              </div>`).join('')}
           </div>
         </div>
       </div>
     </div>
 
-  </div>
+    <!-- Søjlediagram + Kampe -->
+    <div class="two-col">
+      <div class="card">
+        <div class="card-title">Pointfordeling – alle deltagere</div>
+        <div class="chart-wrap">
+          <canvas id="barChart"></canvas>
+        </div>
+      </div>
 
-  <!-- Chart + Matches -->
-  <div class="two-col">
+      <div>
+        <div class="card" style="margin-bottom:16px">
+          <div class="card-title">Kampe – indledende runde</div>
+          <ul class="match-list">
+            ${kampe.map(m => {
+              const done = m.resultat && m.resultat.trim() !== '';
+              return `<li class="match-item">
+                <span class="match-dot ${done?'done':'pending'}"></span>
+                <span class="match-name">${m.kamp}</span>
+                <span class="match-result ${done?'':'pending'}">${done ? m.resultat : 'Afventer'}</span>
+              </li>`;
+            }).join('')}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- VM-vinder -->
     <div class="card">
-      <div class="card-title">Pointfordeling – alle deltagere</div>
-      <div class="chart-wrap">
-        <canvas id="barChart" role="img" aria-label="Søjlediagram over pointfordeling for alle 24 deltagere. Ramazan leder med 9 point.">Pointfordeling: Ramazan 9, Søren V 8, Savannah 8, Rasmus S 8, Martin WK 8, osv.</canvas>
+      <div class="card-title">VM-vinder tips – hvem satser folk på?</div>
+      <div id="winnerChart" style="padding-top:4px">
+        ${vmSorted.map(w => `
+          <div class="winner-row">
+            <span class="winner-country">${w.land}</span>
+            <div class="winner-bar-wrap">
+              <div class="winner-bar-fill" style="width:${Math.round(w.antal/maxVm*100)}%"></div>
+            </div>
+            <span class="winner-count">${w.antal} tips</span>
+          </div>`).join('')}
       </div>
     </div>
 
-    <div>
-      <div class="card" style="margin-bottom:16px">
-        <div class="card-title">Kampe – indledende runde</div>
-        <ul class="match-list" id="matchList"></ul>
-      </div>
+    <div style="margin-top:20px; font-size:11px; color:#bbb; text-align:center">
+      Sidst opdateret: ${data.opdateret || '–'} · AI Tipsklub VM 2026
     </div>
-  </div>
-
-  <!-- VM-vinder fordeling -->
-  <div class="card">
-    <div class="card-title">VM-vinder tips – hvem satser folk på?</div>
-    <div id="winnerChart" style="padding-top:4px"></div>
-  </div>
-
-  <div style="margin-top:20px; font-size:11px; color:#bbb; text-align:center">
-    Sidst opdateret: 11. juni 2026 · AI Tipsklub VM 2026
-  </div>
-
-</div>
-
-<script>
-const players = [
-  { name: 'Ramazan (RAK)',     pts: 9,  free: false },
-  { name: 'Søren V (SVE)',     pts: 8,  free: false },
-  { name: 'Savannah (SVP)',    pts: 8,  free: false },
-  { name: 'Rasmus S (RST)',    pts: 8,  free: false },
-  { name: 'Martin WK (MWK)',   pts: 8,  free: false },
-  { name: 'Mathias F (MFR)',   pts: 7,  free: false },
-  { name: 'Brian C (BCO)',     pts: 7,  free: true  },
-  { name: 'Kåre (KLH)',        pts: 7,  free: false },
-  { name: 'A.I.D.S (DS)',      pts: 7,  free: false },
-  { name: 'Christian M (CHM)', pts: 6,  free: false },
-  { name: 'Niels B (NBU)',     pts: 6,  free: false },
-  { name: 'Henrik S (HSK)',    pts: 6,  free: false },
-  { name: 'Tobias H (THO)',    pts: 6,  free: false },
-  { name: 'Florant (FSP)',     pts: 6,  free: false },
-  { name: 'Daniel A (DAA)',    pts: 6,  free: false },
-  { name: 'Oskar (OMA)',       pts: 5,  free: false },
-  { name: 'Jonas A (JAB)',     pts: 5,  free: false },
-  { name: 'Brian VL (BVL)',    pts: 5,  free: false },
-  { name: 'Kamal (KAP)',       pts: 5,  free: false },
-  { name: 'Sam VJ (SVJ)',      pts: 5,  free: false },
-  { name: 'Abda (aka)',        pts: 5,  free: true  },
-  { name: 'Patrick (SVP)',     pts: 4,  free: false },
-  { name: 'Martin WK (MWK)',   pts: 5,  free: false },
-  { name: 'Marta (MKG)',       pts: 2,  free: true  },
-];
-
-// Deduplicate and sort
-const seen = new Set();
-const uniquePlayers = players.filter(p => {
-  if (seen.has(p.name)) return false;
-  seen.add(p.name); return true;
-}).sort((a,b) => b.pts - a.pts);
-
-const maxPts = uniquePlayers[0].pts;
-
-// Rank table
-const body = document.getElementById('rankBody');
-uniquePlayers.forEach((p, i) => {
-  const tr = document.createElement('tr');
-  if (i === 0) tr.className = 'gold';
-  else if (i === 1) tr.className = 'silver';
-  const medal = i === 0 ? '🥇' : i === 1 ? '🥈' : i === 2 ? '🥉' : '';
-  tr.innerHTML = `
-    <td class="rank-num">${medal || (i+1)}</td>
-    <td class="rank-name">${p.name}</td>
-    <td><span class="badge ${p.free ? 'badge-free' : 'badge-pay'}">${p.free ? 'Gratis' : 'Betaling'}</span></td>
-    <td class="rank-pts-cell">${p.pts}</td>
-    <td><div class="bar-bg"><div class="bar-fg" style="width:${Math.round(p.pts/maxPts*100)}%"></div></div></td>
   `;
-  body.appendChild(tr);
-});
 
-// Podium (top 3)
-const top3 = uniquePlayers.slice(0,3);
-const order = [top3[1], top3[0], top3[2]];
-const medals = ['🥈','🥇','🥉'];
-const classes = ['pod-2','pod-1','pod-3'];
-const podEl = document.getElementById('podium');
-order.forEach((p,i) => {
-  const div = document.createElement('div');
-  div.className = `pod ${classes[i]}`;
-  div.innerHTML = `
-    <div class="pod-medal">${medals[i]}</div>
-    <div class="pod-bar">${p.pts}</div>
-    <div class="pod-name">${p.name.split('(')[0].trim()}</div>
-    <div class="pod-pts">${p.pts} point</div>
-  `;
-  podEl.appendChild(div);
-});
-
-// Match list
-const matches = [
-  { name: 'Mexico – Sydafrika',          result: '2-0' },
-  { name: 'Sydkorea – Tjekkiet',         result: '2-1' },
-  { name: 'Canada – Bosnien-Hercegovina',result: '1-1' },
-  { name: 'USA – Paraguay',              result: '4-1' },
-  { name: 'Qatar – Schweiz',             result: '1-1' },
-  { name: 'Brasilien – Marokko',         result: '1-1' },
-  { name: 'Haiti – Skotland',            result: '0-1' },
-  { name: 'Australien – Tyrkiet',        result: '2-0' },
-  { name: 'Tyskland – Curacao',          result: '7-1' },
-  { name: 'Holland – Japan',             result: '2-2' },
-  { name: 'Elfenbenskysten – Ecuador',   result: '1-0' },
-  { name: 'Sverige – Tunesien',          result: '5-1' },
-  { name: 'Spanien – Kap Verde',         result: '0-0' },
-  { name: 'Belgien – Egypten',           result: '1-1' },
-  { name: 'Saudi-Arabien – Uruguay',     result: '1-1' },
-  { name: 'Iran – New Zealand',          result: '2-2' },
-  { name: 'Frankrig – Senegal',          result: null },
-  { name: 'Irak – Norge',               result: null },
-  { name: 'Argentina – Algeriet',        result: null },
-  { name: 'Østrig – Jordan',            result: null },
-  { name: 'Portugal – DR Congo',         result: null },
-  { name: 'England – Kroatien',          result: null },
-];
-
-const ml = document.getElementById('matchList');
-matches.forEach(m => {
-  const li = document.createElement('li');
-  li.className = 'match-item';
-  const done = !!m.result;
-  li.innerHTML = `
-    <span class="match-dot ${done ? 'done' : 'pending'}"></span>
-    <span class="match-name">${m.name}</span>
-    <span class="match-result ${done ? '' : 'pending'}">${m.result || 'Afventer'}</span>
-  `;
-  ml.appendChild(li);
-});
-
-// Bar chart
-const sorted = [...uniquePlayers].sort((a,b) => b.pts - a.pts);
-new Chart(document.getElementById('barChart'), {
-  type: 'bar',
-  data: {
-    labels: sorted.map(p => p.name.replace(/\s*\(.*\)/, '')),
-    datasets: [{
-      data: sorted.map(p => p.pts),
-      backgroundColor: sorted.map((p,i) => i === 0 ? '#0e5c3f' : i < 5 ? '#1a7f5a' : '#5DCAA5'),
-      borderRadius: 4,
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: { legend: { display: false }, tooltip: {
-      callbacks: { label: ctx => ` ${ctx.parsed.y} point` }
-    }},
-    scales: {
-      x: { ticks: { font: { size: 10 }, maxRotation: 50, autoSkip: false }, grid: { display: false } },
-      y: { min: 0, max: 10, ticks: { stepSize: 2 }, grid: { color: '#f0f0f0' } }
+  // Byg søjlediagram
+  new Chart(document.getElementById('barChart'), {
+    type: 'bar',
+    data: {
+      labels: spillere.map(p => p.navn),
+      datasets: [{
+        data: spillere.map(p => p.point),
+        backgroundColor: spillere.map((p, i) =>
+          i === 0 ? '#0e5c3f' : i < 5 ? '#1a7f5a' : '#5DCAA5'),
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y} point` } }
+      },
+      scales: {
+        x: { ticks: { font: { size: 10 }, maxRotation: 50, autoSkip: false }, grid: { display: false } },
+        y: { min: 0, ticks: { stepSize: 2 }, grid: { color: '#f0f0f0' } }
+      }
     }
-  }
-});
+  });
+}
 
-// VM winner poll
-const vmWinners = [
-  { country: 'Spanien',   count: 8 },
-  { country: 'Frankrig',  count: 7 },
-  { country: 'Brasilien', count: 2 },
-  { country: 'Portugal',  count: 1 },
-  { country: 'England',   count: 2 },
-  { country: 'Skotland',  count: 1 },
-  { country: 'Marokko',   count: 1 },
-].sort((a,b) => b.count - a.count);
-
-const maxCount = vmWinners[0].count;
-const wc = document.getElementById('winnerChart');
-vmWinners.forEach(w => {
-  const div = document.createElement('div');
-  div.className = 'winner-row';
-  div.innerHTML = `
-    <span class="winner-country">${w.country}</span>
-    <div class="winner-bar-wrap"><div class="winner-bar-fill" style="width:${Math.round(w.count/maxCount*100)}%"></div></div>
-    <span class="winner-count">${w.count} tips</span>
-  `;
-  wc.appendChild(div);
-});
+loadData();
 </script>
 </body>
 </html>
