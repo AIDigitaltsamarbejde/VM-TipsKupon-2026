@@ -1,6 +1,8 @@
-name: Find VM 2026 ID
+name: Opdater data.json
 
 on:
+  schedule:
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -12,32 +14,134 @@ jobs:
       - name: Installer Python dependencies
         run: pip install requests imapclient
 
-      - name: Find VM 2026 ID
+      - name: Hent og merge data
         run: |
           python3 << 'PYEOF'
-          import requests
+          import imapclient
+          import email
+          import json
           import os
+          import re
+          import requests
+          import datetime
 
-          headers = {
-              'x-apisports-key': os.environ['API_FOOTBALL_TOKEN']
+          # ── 1. Hent spillerdata fra Gmail ──────────────────────────
+          client = imapclient.IMAPClient('imap.gmail.com', ssl=True)
+          client.login(os.environ['GMAIL_ADDRESS'], os.environ['GMAIL_APP_PASSWORD'])
+          client.select_folder('INBOX')
+
+          messages = client.search(['SUBJECT', 'VM2026 data'])
+          if not messages:
+              print("Ingen emails fundet")
+              exit(1)
+
+          latest = messages[-1]
+          raw = client.fetch([latest], ['RFC822'])
+          msg = email.message_from_bytes(raw[latest][b'RFC822'])
+
+          body = ''
+          for part in msg.walk():
+              if part.get_content_type() == 'text/plain':
+                  body = part.get_payload(decode=True).decode('utf-8', errors='ignore')
+                  break
+
+          match = re.search(r'(\{.*\})', body, re.DOTALL)
+          if not match:
+              print("Ingen JSON i email")
+              exit(1)
+
+          excel_data = json.loads(match.group(1))
+
+          # Rens @odata felter
+          for key in ['spillere', 'kampe', 'vmVindere']:
+              if key in excel_data:
+                  cleaned = []
+                  for item in excel_data[key]:
+                      cleaned.append({k: v for k, v in item.items()
+                                      if not k.startswith('@') and k != 'ItemInternalId'})
+                  excel_data[key] = cleaned
+
+          vm_vindere = [item.get('Lande', item.get('land', ''))
+                        for item in excel_data.get('vmVindere', [])]
+
+          spillere = excel_data.get('spillere', [])
+          # Brian C vises som SnazzyFlex
+          for s in spillere:
+              if s.get('Initialer', s.get('initialer', '')) == 'BCO':
+                  s['Navn'] = 'SnazzyFlex'
+                  s['navn'] = 'SnazzyFlex'
+
+          # ── 2. Hent kampdata fra API-Football ─────────────────────
+          headers = {'x-apisports-key': os.environ['API_FOOTBALL_TOKEN']}
+
+          r = requests.get(
+              'https://v3.football.api-sports.io/fixtures',
+              headers=headers,
+              params={'league': '1', 'season': '2026'}
+          )
+
+          total_maal = 0
+          roede_kort = 0
+          kampe = []
+
+          if r.status_code == 200:
+              fixtures = r.json().get('response', [])
+              print(f"Hentet {len(fixtures)} kampe fra API")
+
+              for m in fixtures:
+                  hjemme = m['teams']['home']['name']
+                  ude    = m['teams']['away']['name']
+                  status = m['fixture']['status']['short']
+
+                  resultat = ''
+                  maal = 0
+
+                  if status == 'FT':
+                      hg = m['goals']['home'] or 0
+                      ag = m['goals']['away'] or 0
+                      resultat = f'{hg}-{ag}'
+                      maal = hg + ag
+                      total_maal += maal
+
+                  kampe.append({
+                      'kamp': f'{hjemme} – {ude}',
+                      'resultat': resultat,
+                      'maal': maal,
+                  })
+
+              # Hent røde kort via events endpoint
+              r2 = requests.get(
+                  'https://v3.football.api-sports.io/fixtures/events',
+                  headers=headers,
+                  params={'league': '1', 'season': '2026', 'type': 'Card'}
+              )
+              if r2.status_code == 200:
+                  events = r2.json().get('response', [])
+                  roede_kort = sum(1 for e in events
+                                   if e.get('detail') in ['Red Card', 'Second Yellow card'])
+                  print(f"Røde kort: {roede_kort}")
+          else:
+              print(f"API fejl: {r.status_code}")
+              kampe = excel_data.get('kampe', [])
+
+          # ── 3. Sammensæt og gem data.json ──────────────────────────
+          data = {
+              'opdateret': datetime.date.today().strftime('%d. %B %Y'),
+              'totalKampe': 104,
+              'totalMaal': total_maal,
+              'roedeKort': roede_kort,
+              'spillere': spillere,
+              'kampe': kampe,
+              'vmVindere': vm_vindere,
           }
 
-          # Tjek account status og hvilke leagues der er tilgængelige
-          r = requests.get('https://v3.football.api-sports.io/status', headers=headers)
-          print("Account status:", r.json())
-
-          # Søg specifikt efter World Cup
-          r2 = requests.get('https://v3.football.api-sports.io/leagues?id=1', headers=headers)
-          print("League ID 1:", r2.json())
-
-          r3 = requests.get('https://v3.football.api-sports.io/leagues?search=world+cup', headers=headers)
-          data = r3.json()
-          print(f"World Cup søgning - antal: {data.get('results', 0)}")
-          for league in data.get('response', []):
-              l = league.get('league', {})
-              print(f"ID: {l.get('id')} | Navn: {l.get('name')}")
+          with open('data.json', 'w', encoding='utf-8') as f:
+              json.dump(data, f, ensure_ascii=False, indent=2)
+          print(f"data.json skrevet! {len(kampe)} kampe, {total_maal} maal, {roede_kort} roede kort")
           PYEOF
         env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           API_FOOTBALL_TOKEN: ${{ secrets.API_FOOTBALL_TOKEN }}
 
       - name: Commit og push
