@@ -22,14 +22,20 @@ jobs:
               'x-apisports-key': os.environ['API_FOOTBALL_TOKEN']
           }
 
-          # Søg efter World Cup 2026
-          r = requests.get('https://v3.football.api-sports.io/leagues?season=2026&type=Cup', headers=headers)
-          data = r.json()
-          print(f"Status: {r.status_code}")
-          print(f"Antal resultater: {data.get('results', 0)}")
+          # Tjek account status og hvilke leagues der er tilgængelige
+          r = requests.get('https://v3.football.api-sports.io/status', headers=headers)
+          print("Account status:", r.json())
+
+          # Søg specifikt efter World Cup
+          r2 = requests.get('https://v3.football.api-sports.io/leagues?id=1', headers=headers)
+          print("League ID 1:", r2.json())
+
+          r3 = requests.get('https://v3.football.api-sports.io/leagues?search=world+cup', headers=headers)
+          data = r3.json()
+          print(f"World Cup søgning - antal: {data.get('results', 0)}")
           for league in data.get('response', []):
               l = league.get('league', {})
-              print(f"ID: {l.get('id')} | Navn: {l.get('name')} | Type: {l.get('type')}")
+              print(f"ID: {l.get('id')} | Navn: {l.get('name')}")
           PYEOF
         env:
           API_FOOTBALL_TOKEN: ${{ secrets.API_FOOTBALL_TOKEN }}
