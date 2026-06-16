@@ -26,9 +26,9 @@ jobs:
           client.login(os.environ['GMAIL_ADDRESS'], os.environ['GMAIL_APP_PASSWORD'])
           client.select_folder('INBOX')
 
-          messages = client.search(['FROM', os.environ['GMAIL_ADDRESS']])
+          messages = client.search(['SUBJECT', 'VM2026 data'])
           if not messages:
-              print("Ingen emails fundet")
+              print("Ingen emails fundet - skriver ikke fil")
               exit(0)
 
           latest = messages[-1]
@@ -36,18 +36,25 @@ jobs:
           msg = email.message_from_bytes(raw[latest][b'RFC822'])
 
           body = ''
-          if msg.is_multipart():
-              for part in msg.walk():
-                  if part.get_content_type() == 'text/plain':
-                      body = part.get_payload(decode=True).decode()
-                      break
-          else:
-              body = msg.get_payload(decode=True).decode()
+          for part in msg.walk():
+              if part.get_content_type() == 'text/plain':
+                  body = part.get_payload(decode=True).decode('utf-8', errors='ignore')
+                  break
+          if not body:
+              body = msg.get_payload(decode=True).decode('utf-8', errors='ignore')
 
-          json.loads(body)  # Validér at det er gyldig JSON
-          with open('data.json', 'w') as f:
-              f.write(body)
-          print("data.json opdateret!")
+          body = body.strip()
+          print("Email body:", body[:200])
+
+          try:
+              json.loads(body)
+              with open('data.json', 'w', encoding='utf-8') as f:
+                  f.write(body)
+              print("data.json skrevet!")
+          except json.JSONDecodeError as e:
+              print("Ugyldig JSON:", e)
+              print("Fuld body:", body)
+              exit(1)
           EOF
         env:
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
