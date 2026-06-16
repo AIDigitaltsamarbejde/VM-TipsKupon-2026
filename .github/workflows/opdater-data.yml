@@ -1,0 +1,23 @@
+name: Opdater data.json
+
+on:
+  repository_dispatch:
+    types: [opdater-data]
+
+jobs:
+  skriv-fil:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Skriv data.json
+        run: |
+          echo '${{ github.event.client_payload.data }}' > data.json
+
+      - name: Commit og push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data.json
+          git commit -m "Opdater data.json"
+          git push
