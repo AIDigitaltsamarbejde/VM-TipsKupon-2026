@@ -1,7 +1,7 @@
 {
-  "opdateret": "16. June 2026",
+  "opdateret": "17. June 2026",
   "totalKampe": 104,
-  "totalMaal": 50,
+  "totalMaal": 62,
   "roedeKort": 0,
   "spillere": [
     {
@@ -249,20 +249,20 @@
     },
     {
       "kamp": "Iraq – Norway",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "1-4",
+      "maal": 5,
       "roedeKort": 0
     },
     {
       "kamp": "Argentina – Algeria",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "3-0",
+      "maal": 3,
       "roedeKort": 0
     },
     {
       "kamp": "Austria – Jordan",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "3-1",
+      "maal": 4,
       "roedeKort": 0
     },
     {
