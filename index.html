@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VM 2026 Tipsklub – AI</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f6f8; color: #1a1a1a; font-size: 14px; }
@@ -310,15 +309,6 @@ function renderDashboard(app, data) {
   const topscorer = spillere[0] || {};
   const resterende = totalKampe - spelteKampe.length;
 
-  const vmTaeller = {};
-  (data.vmVindere || []).forEach(v => {
-    if (v) vmTaeller[v] = (vmTaeller[v] || 0) + 1;
-  });
-  const vmSorted = Object.entries(vmTaeller)
-    .map(([land, antal]) => ({ land, antal }))
-    .sort((a, b) => b.antal - a.antal);
-  const maxVm = vmSorted[0]?.antal || 1;
-
   const top3 = spillere.slice(0, 3);
   const podOrder   = [top3[1], top3[0], top3[2]].filter(Boolean);
   const podMedals  = ['🥈', '🥇', '🥉'];
@@ -475,71 +465,24 @@ function renderDashboard(app, data) {
       </div>
     </div>
 
-    <div class="two-col">
-      <div class="card">
-        <div class="card-title">Pointfordeling – alle deltagere</div>
-        <div class="chart-wrap">
-          <canvas id="barChart"></canvas>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-title">Kampe – indledende runde</div>
-        <ul class="match-list">
-          ${kampe.map(m => {
-            const done = m.resultat && m.resultat.trim() !== '' && m.resultat.trim() !== 'AFVENTER';
-            return '<li class="match-item">' +
-              '<span class="match-dot ' + (done?'done':'pending') + '"></span>' +
-              '<span class="match-name">' + m.kamp + '</span>' +
-              '<span class="match-result ' + (done?'':'pending') + '">' + (done ? m.resultat : 'Afventer') + '</span>' +
-              '</li>';
-          }).join('')}
-        </ul>
-      </div>
-    </div>
-
     <div class="card">
-      <div class="card-title">VM-vinder tips – hvem satser folk på?</div>
-      <div style="padding-top:4px">
-        ${vmSorted.map(w => `
-          <div class="winner-row">
-            <span class="winner-country">${w.land}</span>
-            <div class="winner-bar-wrap">
-              <div class="winner-bar-fill" style="width:${Math.round(w.antal/maxVm*100)}%"></div>
-            </div>
-            <span class="winner-count">${w.antal} tips</span>
-          </div>`).join('')}
-      </div>
+      <div class="card-title">Kampe – indledende runde</div>
+      <ul class="match-list">
+        ${kampe.map(m => {
+          const done = m.resultat && m.resultat.trim() !== '' && m.resultat.trim() !== 'AFVENTER';
+          return '<li class="match-item">' +
+            '<span class="match-dot ' + (done?'done':'pending') + '"></span>' +
+            '<span class="match-name">' + m.kamp + '</span>' +
+            '<span class="match-result ' + (done?'':'pending') + '">' + (done ? m.resultat : 'Afventer') + '</span>' +
+            '</li>';
+        }).join('')}
+      </ul>
     </div>
 
     <div style="margin-top:20px; font-size:11px; color:#bbb; text-align:center">
       Sidst opdateret: ${data.opdateret || '–'} · AI Tipsklub VM 2026
     </div>
   `;
-
-  new Chart(document.getElementById('barChart'), {
-    type: 'bar',
-    data: {
-      labels: spillere.map(p => p.navn),
-      datasets: [{
-        data: spillere.map(p => p.point),
-        backgroundColor: spillere.map((p, i) => i===0 ? '#0e5c3f' : i<5 ? '#1a7f5a' : '#5DCAA5'),
-        borderRadius: 4,
-      }]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false },
-        tooltip: { callbacks: { label: ctx => ' ' + ctx.parsed.y + ' point' } }
-      },
-      scales: {
-        x: { ticks: { font: { size: 10 }, maxRotation: 50, autoSkip: false }, grid: { display: false } },
-        y: { min: 0, ticks: { stepSize: 2 }, grid: { color: '#f0f0f0' } }
-      }
-    }
-  });
 }
 
 loadData();
