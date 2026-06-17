@@ -25,7 +25,7 @@ jobs:
           import requests
           import datetime
 
-          # ── 1. Hent spillerdata fra Gmail ──────────────────────────
+          # ── 1. Hent spillerdata + røde kort fra Gmail (Excel) ──────
           client = imapclient.IMAPClient('imap.gmail.com', ssl=True)
           client.login(os.environ['GMAIL_ADDRESS'], os.environ['GMAIL_APP_PASSWORD'])
           client.select_folder('INBOX')
@@ -69,7 +69,16 @@ jobs:
                   s['Navn'] = 'SnazzyFlex'
                   s['navn'] = 'SnazzyFlex'
 
-          # ── 2. Hent kampdata fra football-data.org ─────────────────
+          # Summer røde kort fra Excel-kampene
+          roede_kort_excel = 0
+          for k in excel_data.get('kampe', []):
+              raw_val = k.get('RødeKort', k.get('RoedeKort', k.get('roedeKort', 0)))
+              try:
+                  roede_kort_excel += int(raw_val) if raw_val not in ('', None) else 0
+              except (ValueError, TypeError):
+                  pass
+
+          # ── 2. Hent kampresultater fra football-data.org ───────────
           headers = {'X-Auth-Token': os.environ['FOOTBALL_API_TOKEN']}
 
           r = requests.get(
@@ -78,14 +87,12 @@ jobs:
           )
 
           total_maal = 0
-          roede_kort = 0
           kampe = []
 
           if r.status_code == 200:
               matches = r.json().get('matches', [])
               print(f"Hentet {len(matches)} kampe fra football-data.org")
 
-              # Hent røde kort per kamp via match details
               for m in matches:
                   hjemme = m['homeTeam']['name']
                   ude    = m['awayTeam']['name']
@@ -93,7 +100,6 @@ jobs:
 
                   resultat = ''
                   maal = 0
-                  kort = 0
 
                   if status == 'FINISHED':
                       hg = m['score']['fullTime']['home'] or 0
@@ -102,36 +108,25 @@ jobs:
                       maal = hg + ag
                       total_maal += maal
 
-                      # Hent røde kort for denne kamp
-                      match_id = m['id']
-                      r2 = requests.get(
-                          f'https://api.football-data.org/v4/matches/{match_id}',
-                          headers=headers
-                      )
-                      if r2.status_code == 200:
-                          bookings = r2.json().get('bookings', [])
-                          kort = sum(1 for b in bookings
-                                     if b.get('card') in ['RED_CARD', 'YELLOW_RED_CARD'])
-                          roede_kort += kort
-
                   kampe.append({
                       'kamp': f'{hjemme} – {ude}',
                       'resultat': resultat,
                       'maal': maal,
-                      'roedeKort': kort,
                   })
 
-              print(f"Total maal: {total_maal}, Roede kort: {roede_kort}")
+              print(f"Total maal: {total_maal}")
           else:
               print(f"API fejl: {r.status_code} - {r.text[:200]}")
               kampe = excel_data.get('kampe', [])
+
+          print(f"Roede kort fra Excel: {roede_kort_excel}")
 
           # ── 3. Sammensæt og gem data.json ──────────────────────────
           data = {
               'opdateret': datetime.date.today().strftime('%d. %B %Y'),
               'totalKampe': 104,
               'totalMaal': total_maal,
-              'roedeKort': roede_kort,
+              'roedeKort': roede_kort_excel,
               'spillere': spillere,
               'kampe': kampe,
               'vmVindere': vm_vindere,
@@ -139,7 +134,7 @@ jobs:
 
           with open('data.json', 'w', encoding='utf-8') as f:
               json.dump(data, f, ensure_ascii=False, indent=2)
-          print(f"data.json skrevet! {len(kampe)} kampe, {total_maal} maal, {roede_kort} roede kort")
+          print(f"data.json skrevet! {len(kampe)} kampe, {total_maal} maal, {roede_kort_excel} roede kort")
           PYEOF
         env:
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
