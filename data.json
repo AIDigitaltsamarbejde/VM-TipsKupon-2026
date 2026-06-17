@@ -1,7 +1,7 @@
 {
   "opdateret": "17. June 2026",
   "totalKampe": 104,
-  "totalMaal": 62,
+  "totalMaal": 64,
   "roedeKort": 3,
   "spillere": [
     {
@@ -339,8 +339,8 @@
     },
     {
       "kamp": "Portugal – Congo DR",
-      "resultat": "",
-      "maal": 0
+      "resultat": "1-1",
+      "maal": 2
     },
     {
       "kamp": "England – Croatia",
