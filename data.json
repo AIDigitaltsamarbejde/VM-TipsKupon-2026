@@ -2,7 +2,7 @@
   "opdateret": "17. June 2026",
   "totalKampe": 104,
   "totalMaal": 62,
-  "roedeKort": 0,
+  "roedeKort": 47,
   "spillere": [
     {
       "Navn": "Søren V (SVE)",
@@ -148,626 +148,522 @@
     {
       "kamp": "Mexico – South Africa",
       "resultat": "2-0",
-      "maal": 2,
-      "roedeKort": 0
+      "maal": 2
     },
     {
       "kamp": "South Korea – Czechia",
       "resultat": "2-1",
-      "maal": 3,
-      "roedeKort": 0
+      "maal": 3
     },
     {
       "kamp": "Canada – Bosnia-Herzegovina",
       "resultat": "1-1",
-      "maal": 2,
-      "roedeKort": 0
+      "maal": 2
     },
     {
       "kamp": "United States – Paraguay",
       "resultat": "4-1",
-      "maal": 5,
-      "roedeKort": 0
+      "maal": 5
     },
     {
       "kamp": "Qatar – Switzerland",
       "resultat": "1-1",
-      "maal": 2,
-      "roedeKort": 0
+      "maal": 2
     },
     {
       "kamp": "Brazil – Morocco",
       "resultat": "1-1",
-      "maal": 2,
-      "roedeKort": 0
+      "maal": 2
     },
     {
       "kamp": "Haiti – Scotland",
       "resultat": "0-1",
-      "maal": 1,
-      "roedeKort": 0
+      "maal": 1
     },
     {
       "kamp": "Australia – Turkey",
       "resultat": "2-0",
-      "maal": 2,
-      "roedeKort": 0
+      "maal": 2
     },
     {
       "kamp": "Germany – Curaçao",
       "resultat": "7-1",
-      "maal": 8,
-      "roedeKort": 0
+      "maal": 8
     },
     {
       "kamp": "Netherlands – Japan",
       "resultat": "2-2",
-      "maal": 4,
-      "roedeKort": 0
+      "maal": 4
     },
     {
       "kamp": "Ivory Coast – Ecuador",
       "resultat": "1-0",
-      "maal": 1,
-      "roedeKort": 0
+      "maal": 1
     },
     {
       "kamp": "Sweden – Tunisia",
       "resultat": "5-1",
-      "maal": 6,
-      "roedeKort": 0
+      "maal": 6
     },
     {
       "kamp": "Spain – Cape Verde Islands",
       "resultat": "0-0",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Belgium – Egypt",
       "resultat": "1-1",
-      "maal": 2,
-      "roedeKort": 0
+      "maal": 2
     },
     {
       "kamp": "Saudi Arabia – Uruguay",
       "resultat": "1-1",
-      "maal": 2,
-      "roedeKort": 0
+      "maal": 2
     },
     {
       "kamp": "Iran – New Zealand",
       "resultat": "2-2",
-      "maal": 4,
-      "roedeKort": 0
+      "maal": 4
     },
     {
       "kamp": "France – Senegal",
       "resultat": "3-1",
-      "maal": 4,
-      "roedeKort": 0
+      "maal": 4
     },
     {
       "kamp": "Iraq – Norway",
       "resultat": "1-4",
-      "maal": 5,
-      "roedeKort": 0
+      "maal": 5
     },
     {
       "kamp": "Argentina – Algeria",
       "resultat": "3-0",
-      "maal": 3,
-      "roedeKort": 0
+      "maal": 3
     },
     {
       "kamp": "Austria – Jordan",
       "resultat": "3-1",
-      "maal": 4,
-      "roedeKort": 0
+      "maal": 4
     },
     {
       "kamp": "Portugal – Congo DR",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "England – Croatia",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Ghana – Panama",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Uzbekistan – Colombia",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Czechia – South Africa",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Switzerland – Bosnia-Herzegovina",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Canada – Qatar",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Mexico – South Korea",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "United States – Australia",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Scotland – Morocco",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Brazil – Haiti",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Turkey – Paraguay",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Netherlands – Sweden",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Germany – Ivory Coast",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Ecuador – Curaçao",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Tunisia – Japan",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Spain – Saudi Arabia",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Belgium – Iran",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Uruguay – Cape Verde Islands",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "New Zealand – Egypt",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Argentina – Austria",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "France – Iraq",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Norway – Senegal",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Jordan – Algeria",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Portugal – Uzbekistan",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "England – Ghana",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Panama – Croatia",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Colombia – Congo DR",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Switzerland – Canada",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Bosnia-Herzegovina – Qatar",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Morocco – Haiti",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Scotland – Brazil",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Czechia – Mexico",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "South Africa – South Korea",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Ecuador – Germany",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Curaçao – Ivory Coast",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Tunisia – Netherlands",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Japan – Sweden",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Turkey – United States",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Paraguay – Australia",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Norway – France",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Senegal – Iraq",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Uruguay – Spain",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Cape Verde Islands – Saudi Arabia",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "New Zealand – Belgium",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Egypt – Iran",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Panama – England",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Croatia – Ghana",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Colombia – Portugal",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Congo DR – Uzbekistan",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Jordan – Argentina",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "Algeria – Austria",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     },
     {
       "kamp": "None – None",
       "resultat": "",
-      "maal": 0,
-      "roedeKort": 0
+      "maal": 0
     }
   ],
   "vmVindere": [
