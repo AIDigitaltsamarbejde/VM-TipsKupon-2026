@@ -73,9 +73,13 @@
 
   .slider-track { position: relative; height: 30px; margin: 0 6px; }
   .slider-line { position: absolute; top: 50%; left: 0; right: 0; height: 4px; background: #e8eaed; border-radius: 2px; transform: translateY(-50%); }
-  .slider-tick { position: absolute; top: 50%; width: 9px; height: 9px; border-radius: 50%; background: #c6cbd1; transform: translate(-50%, -50%); }
+  .slider-tick { position: absolute; top: 50%; width: 9px; height: 9px; border-radius: 50%; background: #c6cbd1; transform: translate(-50%, -50%); cursor: pointer; }
   .slider-tick.winner { background: #1a7f5a; width: 13px; height: 13px; box-shadow: 0 0 0 3px rgba(26,127,90,0.18); z-index: 2; }
-  .slider-tick.actual { background: #e85d4e; width: 3px; height: 22px; border-radius: 2px; }
+  .slider-tick.actual { background: #e85d4e; width: 3px; height: 22px; border-radius: 2px; cursor: default; }
+  .slider-tick:hover:not(.actual) { background: #0e5c3f; transform: translate(-50%, -50%) scale(1.4); z-index: 5; }
+  .slider-tick .tip-bubble { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); background: #1a1a1a; color: #fff; font-size: 11px; font-weight: 600; padding: 4px 9px; border-radius: 6px; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.12s ease; z-index: 10; }
+  .slider-tick .tip-bubble::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 4px solid transparent; border-top-color: #1a1a1a; }
+  .slider-tick:hover .tip-bubble { opacity: 1; }
   .slider-labels { display: flex; justify-content: space-between; font-size: 10px; color: #aaa; }
   .slider-winner-label { font-size: 11px; color: #1a7f5a; font-weight: 600; margin-top: 8px; }
 
@@ -229,18 +233,33 @@ function lavSlider(spillere, felt, facit, maxVisning) {
   const pos = v => ((v - min) / range) * 100;
   const vinder = taettestPaa(spillere, felt, facit);
 
-  const ticks = spillere.map(s => {
+  // Gruppér spillere efter samme gættet værdi, så tooltip viser alle navne på det punkt
+  const grupperet = {};
+  spillere.forEach(s => {
     const g = Number(s[felt]);
-    if (isNaN(g)) return '';
-    const erVinder = vinder && s.navn === vinder.navn;
-    return `<div class="slider-tick ${erVinder ? 'winner' : ''}" style="left:${pos(g)}%" title="${s.navn}: ${g}"></div>`;
+    if (isNaN(g)) return;
+    if (!grupperet[g]) grupperet[g] = [];
+    grupperet[g].push(s.navn);
+  });
+
+  const ticks = Object.entries(grupperet).map(([g, navne]) => {
+    const gNum = Number(g);
+    const erVinder = vinder && navne.includes(vinder.navn);
+    const navnetekst = navne.length > 2
+      ? `${navne.slice(0, 2).join(', ')} +${navne.length - 2} mere (${gNum})`
+      : `${navne.join(', ')} (${gNum})`;
+    return `<div class="slider-tick ${erVinder ? 'winner' : ''}" style="left:${pos(gNum)}%">
+      <div class="tip-bubble">${navnetekst}</div>
+    </div>`;
   }).join('');
 
   return `
     <div class="slider-track">
       <div class="slider-line"></div>
       ${ticks}
-      <div class="slider-tick actual" style="left:${pos(facit)}%" title="Facit: ${facit}"></div>
+      <div class="slider-tick actual" style="left:${pos(facit)}%">
+        <div class="tip-bubble">Facit: ${facit}</div>
+      </div>
     </div>
     <div class="slider-labels"><span>${min}</span><span>${max}</span></div>
     ${vinder ? `<div class="slider-winner-label">🎯 ${vinder.navn} er tættest (gættede ${Number(vinder[felt])})</div>` : ''}
@@ -261,8 +280,9 @@ async function loadData() {
 
 function renderDashboard(app, data) {
   // Normaliser feltnavne (SharePoint bruger stort begyndelsesbogstav)
+  const navnUdenInitialer = navn => navn.replace(/\s*\([^)]*\)\s*$/, '').trim();
   const norm = p => ({
-    navn:      p.navn      ?? p.Navn      ?? '',
+    navn:      navnUdenInitialer(p.navn      ?? p.Navn      ?? ''),
     initialer: p.initialer ?? p.Initialer ?? '',
     point:     Number(p.point ?? p.Point  ?? 0),
     gratis:    (p.gratis ?? p.Gratis) === true || String(p.gratis ?? p.Gratis).toLowerCase() === 'true',
@@ -333,7 +353,7 @@ function renderDashboard(app, data) {
         <div class="header-sub">AI · Indledende runde · ${spillere.length} deltagere</div>
       </div>
       <div class="header-progress">
-        <div class="header-progress-label">Spilte kampe</div>
+        <div class="header-progress-label">Spillede kampe</div>
         <div class="header-progress-bar">
           <div class="header-progress-fill" style="width:${progressPct}%"></div>
         </div>
