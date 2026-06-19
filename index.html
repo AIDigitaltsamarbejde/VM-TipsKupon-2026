@@ -1,485 +1,152 @@
-<!DOCTYPE html>
-<html lang="da">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VM 2026 Tipsklub – AI</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f6f8; color: #1a1a1a; font-size: 14px; }
-  a { color: inherit; text-decoration: none; }
-  .dash { max-width: 1100px; margin: 0 auto; padding: 24px 20px 48px; }
-  .header { background: linear-gradient(135deg, #0098D8 0%, #005C8A 100%); border-radius: 14px; padding: 28px 32px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; }
-  .header-title { font-size: 26px; font-weight: 700; color: #fff; margin-bottom: 6px; }
-  .header-sub { font-size: 14px; color: rgba(255,255,255,0.72); }
-  .header-progress { text-align: right; }
-  .header-progress-label { font-size: 12px; color: rgba(255,255,255,0.65); margin-bottom: 6px; }
-  .header-progress-bar { width: 180px; height: 6px; background: rgba(255,255,255,0.25); border-radius: 3px; margin-bottom: 6px; }
-  .header-progress-fill { height: 100%; background: #5BC8F5; border-radius: 3px; }
-  .header-progress-num { font-size: 22px; font-weight: 700; color: #fff; }
-  .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
-  .metric { background: #fff; border-radius: 10px; padding: 16px 18px; border: 1px solid #eaeaea; }
-  .metric-label { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
-  .metric-value { font-size: 28px; font-weight: 700; color: #1a1a1a; line-height: 1; }
-  .metric-sub { font-size: 12px; color: #888; margin-top: 5px; }
-  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-  .card { background: #fff; border-radius: 12px; border: 1px solid #eaeaea; padding: 20px 22px; }
-  .card-title { font-size: 11px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 16px; }
-  .podium { display: flex; align-items: flex-end; justify-content: center; gap: 10px; margin-bottom: 4px; }
-  .pod { text-align: center; flex: 1; }
-  .pod-bar { border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: #fff; }
-  .pod-1 .pod-bar { background: #0098D8; height: 90px; }
-  .pod-2 .pod-bar { background: #1AAEE8; height: 66px; }
-  .pod-3 .pod-bar { background: #5BC8F5; height: 50px; color: #005C8A; }
-  .pod-medal { font-size: 22px; margin-bottom: 6px; }
-  .pod-name { font-size: 13px; font-weight: 600; color: #1a1a1a; margin-top: 8px; }
-  .pod-pts { font-size: 12px; color: #888; }
-  .rank-table { width: 100%; border-collapse: collapse; }
-  .rank-table th { font-size: 11px; color: #999; font-weight: 600; text-align: left; padding: 6px 8px; border-bottom: 1px solid #f0f0f0; }
-  .rank-table td { padding: 9px 8px; border-bottom: 1px solid #f5f5f5; vertical-align: middle; }
-  .rank-table tr:last-child td { border-bottom: none; }
-  .rank-table tr.gold td { background: #EBF8FF; }
-  .rank-table tr.silver td { background: #F2FAFF; }
-  .rank-num { font-size: 13px; color: #bbb; width: 28px; }
-  .rank-name { font-weight: 600; font-size: 13px; }
-  .rank-pts-cell { text-align: right; font-size: 14px; font-weight: 700; color: #0098D8; }
-  .bar-bg { height: 6px; background: #f0f0f0; border-radius: 3px; width: 80px; }
-  .bar-fg { height: 100%; background: #0098D8; border-radius: 3px; }
-  .badge { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 20px; font-weight: 600; }
-  .badge-free { background: #E3F4FC; color: #0098D8; }
-  .badge-pay { background: #f0f0f0; color: #666; }
-  .match-list { list-style: none; }
-  .match-item { display: flex; align-items: center; padding: 8px 0; border-bottom: 1px solid #f5f5f5; gap: 10px; }
-  .match-item:last-child { border-bottom: none; }
-  .match-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
-  .match-dot.done { background: #0098D8; }
-  .match-dot.pending { background: #ddd; }
-  .match-name { font-size: 13px; color: #1a1a1a; flex: 1; }
-  .match-result { font-size: 12px; font-weight: 700; background: #EBF8FF; color: #0098D8; padding: 3px 9px; border-radius: 20px; min-width: 46px; text-align: center; }
-  .match-result.pending { background: #f5f5f5; color: #aaa; }
-  .bonus-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .bonus-card { background: #f8f9fb; border-radius: 9px; padding: 13px 14px; }
-  .bonus-q { font-size: 11px; color: #888; margin-bottom: 5px; line-height: 1.4; }
-  .bonus-facit { font-size: 15px; font-weight: 700; color: #0098D8; }
-  .bonus-pts { font-size: 11px; color: #aaa; margin-top: 3px; }
+name: Opdater data.json
 
-  .bonus-card-wide { background: #f8f9fb; border-radius: 9px; padding: 14px 16px; margin-bottom: 10px; }
-  .bonus-card-wide:last-child { margin-bottom: 0; }
-  .bonus-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; gap: 10px; }
-  .bonus-head-q { font-size: 12px; color: #555; font-weight: 600; line-height: 1.4; }
-  .bonus-head-facit { font-size: 13px; font-weight: 700; color: #0098D8; text-align: right; white-space: nowrap; }
-  .bonus-head-pts { font-size: 10px; color: #aaa; display: block; font-weight: 400; margin-top: 2px; }
+on:
+  schedule:
+    - cron: '*/5 6-9 * * *'
+  workflow_dispatch:
 
-  .slider-track { position: relative; height: 30px; margin: 0 6px; }
-  .slider-line { position: absolute; top: 50%; left: 0; right: 0; height: 4px; background: #e8eaed; border-radius: 2px; transform: translateY(-50%); }
-  .slider-tick { position: absolute; top: 50%; width: 9px; height: 9px; border-radius: 50%; background: #c6cbd1; transform: translate(-50%, -50%); cursor: pointer; }
-  .slider-tick.winner { background: #0098D8; width: 13px; height: 13px; box-shadow: 0 0 0 3px rgba(26,127,90,0.18); z-index: 2; }
-  .slider-tick.actual { background: #e85d4e; width: 3px; height: 22px; border-radius: 2px; cursor: default; }
-  .slider-tick:hover:not(.actual) { background: #005C8A; transform: translate(-50%, -50%) scale(1.4); z-index: 5; }
-  .slider-tick .tip-bubble { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); background: #1a1a1a; color: #fff; font-size: 11px; font-weight: 600; padding: 6px 10px; border-radius: 6px; white-space: normal; max-width: 180px; width: max-content; text-align: center; line-height: 1.4; opacity: 0; pointer-events: none; transition: opacity 0.12s ease; z-index: 10; }
-  .slider-tick .tip-bubble::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); border: 4px solid transparent; border-top-color: #1a1a1a; }
-  .slider-tick:hover .tip-bubble { opacity: 1; }
-  .slider-labels { display: flex; justify-content: space-between; font-size: 10px; color: #aaa; }
-  .slider-winner-label { font-size: 11px; color: #0098D8; font-weight: 600; margin-top: 8px; }
+jobs:
+  hent-data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
 
-  .vm-card { background: #f8f9fb; border-radius: 10px; padding: 9px 12px; display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-  .vm-card.eliminated { opacity: 0.45; }
-  .vm-name { font-size: 12px; font-weight: 600; }
-  .vm-name.eliminated-text { text-decoration: line-through; color: #c0392b; }
-  .vm-country { font-size: 11px; color: #888; }
-  .vm-status { font-size: 9px; padding: 2px 7px; border-radius: 10px; font-weight: 700; white-space: nowrap; flex-shrink: 0; }
-  .vm-status.alive { background: #E3F4FC; color: #0098D8; }
-  .vm-status.out { background: #fdeeec; color: #c0392b; }
-  .vm-winners-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .chart-wrap { position: relative; width: 100%; height: 260px; }
-  .winner-row { display: flex; align-items: center; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid #f5f5f5; }
-  .winner-row:last-child { border-bottom: none; }
-  .winner-country { font-size: 13px; font-weight: 600; }
-  .winner-bar-wrap { flex: 1; height: 8px; background: #f0f0f0; border-radius: 4px; margin: 0 12px; }
-  .winner-bar-fill { height: 100%; background: #0098D8; border-radius: 4px; }
-  .winner-count { font-size: 12px; color: #888; min-width: 50px; text-align: right; }
-  .loading { text-align: center; padding: 60px 20px; color: #888; font-size: 15px; }
-  .loading-spinner { width: 32px; height: 32px; border: 3px solid #eee; border-top-color: #0098D8; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .error-box { background: #fff5f5; border: 1px solid #fcc; border-radius: 10px; padding: 20px 24px; color: #c00; font-size: 13px; margin: 20px 0; }
-  .error-box strong { display: block; margin-bottom: 6px; }
-  @media (max-width: 700px) {
-    .metrics { grid-template-columns: 1fr 1fr; }
-    .two-col { grid-template-columns: 1fr; }
-    .header { flex-direction: column; gap: 16px; }
-    .header-progress { text-align: left; }
-    .bar-bg { display: none; }
-  }
-</style>
-</head>
-<body>
-<div class="dash" id="app">
-  <div class="loading">
-    <div class="loading-spinner"></div>
-    Henter data…
-  </div>
-</div>
-<script>
-const DATA_URL = 'https://AIDigitaltsamarbejde.github.io/VM-TipsKupon-2026/data.json';
+      - name: Installer Python dependencies
+        run: pip install requests imapclient
 
-// VM 2026 gruppeinddeling
-const GRUPPER = {
-  'Mexico':'A','Sydafrika':'A','Sydkorea':'A','Tjekkiet':'A',
-  'Canada':'B','Bosnien-Hercegovina':'B','Qatar':'B','Schweiz':'B',
-  'Brasilien':'C','Marokko':'C','Haiti':'C','Skotland':'C',
-  'USA':'D','Paraguay':'D','Australien':'D','Tyrkiet':'D',
-  'Tyskland':'E','Curacao':'E','Curaçao':'E','Elfenbenskysten':'E','Ecuador':'E',
-  'Holland':'F','Nederlandene':'F','Japan':'F','Sverige':'F','Tunesien':'F',
-  'Belgien':'G','Egypten':'G','Iran':'G','New Zealand':'G',
-  'Spanien':'H','Kap Verde':'H','Saudi-Arabien':'H','Uruguay':'H',
-  'Frankrig':'I','Senegal':'I','Irak':'I','Norge':'I',
-  'Argentina':'J','Algeriet':'J','Østrig':'J','Jordan':'J',
-  'Portugal':'K','DR Congo':'K','Usbekistan':'K','Colombia':'K',
-  'England':'L','Kroatien':'L','Ghana':'L','Panama':'L',
-};
+      - name: Hent og merge data
+        run: |
+          python3 << 'PYEOF'
+          import imapclient
+          import email
+          import json
+          import os
+          import re
+          import requests
+          import datetime
 
-// Beregner gruppetabeller fra kampresultater og afgør hvilke hold der er "ude"
-function beregnUdeHold(kampe) {
-  const tabel = {}; // land -> {point, gscored, gagainst, spillet, gruppe}
-  Object.keys(GRUPPER).forEach(land => {
-    tabel[land] = { land, gruppe: GRUPPER[land], point: 0, gscored: 0, gagainst: 0, spillet: 0 };
-  });
+          # ── 1. Hent spillerdata + røde kort fra Gmail (Excel) ──────
+          client = imapclient.IMAPClient('imap.gmail.com', ssl=True)
+          client.login(os.environ['GMAIL_ADDRESS'], os.environ['GMAIL_APP_PASSWORD'])
+          client.select_folder('INBOX')
 
-  kampe.forEach(k => {
-    const m = k.kamp.split(/–|-(?!\d)/).map(s => s.trim());
-    if (m.length < 2) return;
-    const [hjemme, ude] = m;
-    const res = (k.resultat || '').trim();
-    if (!res || res === 'AFVENTER' || !/^\d+-\d+$/.test(res)) return;
-    const [hg, ag] = res.split('-').map(Number);
+          messages = client.search(['SUBJECT', 'VM2026 data'])
+          if not messages:
+              print("Ingen emails fundet")
+              exit(1)
 
-    if (tabel[hjemme]) {
-      tabel[hjemme].spillet++;
-      tabel[hjemme].gscored += hg;
-      tabel[hjemme].gagainst += ag;
-      tabel[hjemme].point += hg > ag ? 3 : hg === ag ? 1 : 0;
-    }
-    if (tabel[ude]) {
-      tabel[ude].spillet++;
-      tabel[ude].gscored += ag;
-      tabel[ude].gagainst += hg;
-      tabel[ude].point += ag > hg ? 3 : ag === hg ? 1 : 0;
-    }
-  });
+          latest = messages[-1]
+          raw = client.fetch([latest], ['RFC822'])
+          msg = email.message_from_bytes(raw[latest][b'RFC822'])
 
-  // Gruppér hold efter gruppe
-  const grupper = {};
-  Object.values(tabel).forEach(t => {
-    if (!grupper[t.gruppe]) grupper[t.gruppe] = [];
-    grupper[t.gruppe].push(t);
-  });
+          body = ''
+          for part in msg.walk():
+              if part.get_content_type() == 'text/plain':
+                  body = part.get_payload(decode=True).decode('utf-8', errors='ignore')
+                  break
 
-  const alleFaerdige = Object.values(grupper).every(g => g.every(t => t.spillet >= 3));
+          match = re.search(r'(\{.*\})', body, re.DOTALL)
+          if not match:
+              print("Ingen JSON i email")
+              exit(1)
 
-  // Sortér hver gruppe (point, så målforskel)
-  const treere = [];
-  const sikreVidere = new Set();
-  Object.values(grupper).forEach(gruppe => {
-    const sorted = [...gruppe].sort((a, b) =>
-      b.point - a.point || (b.gscored - b.gagainst) - (a.gscored - a.gagainst) || b.gscored - a.gscored);
-    if (sorted[0]) sikreVidere.add(sorted[0].land);
-    if (sorted[1]) sikreVidere.add(sorted[1].land);
-    if (sorted[2]) treere.push(sorted[2]);
-  });
+          excel_data = json.loads(match.group(1))
 
-  // Hvis ALLE grupper er færdigspillet, kan vi udregne de 8 bedste treere
-  let bedsteTreere = new Set();
-  if (alleFaerdige) {
-    const sortedTreere = [...treere].sort((a, b) =>
-      b.point - a.point || (b.gscored - b.gagainst) - (a.gscored - a.gagainst) || b.gscored - a.gscored);
-    sortedTreere.slice(0, 8).forEach(t => bedsteTreere.add(t.land));
-  }
+          for key in ['spillere', 'kampe', 'vmVindere']:
+              if key in excel_data:
+                  cleaned = []
+                  for item in excel_data[key]:
+                      cleaned.append({k: v for k, v in item.items()
+                                      if not k.startswith('@') and k != 'ItemInternalId'})
+                  excel_data[key] = cleaned
 
-  const ude = new Set();
-  Object.values(tabel).forEach(t => {
-    if (t.spillet < 3) return; // stadig i spil, kan ikke afgøres endnu
-    if (sikreVidere.has(t.land)) return;
-    if (alleFaerdige && bedsteTreere.has(t.land)) return;
-    if (!alleFaerdige) {
-      // Mens gruppespillet stadig kører: kun marker hold ude der matematisk ikke kan nå top 2 OG har 0 point efter 3 kampe
-      if (t.point === 0) ude.add(t.land);
-      return;
-    }
-    ude.add(t.land);
-  });
+          vm_vindere = [item.get('Lande', item.get('land', ''))
+                        for item in excel_data.get('vmVindere', [])]
 
-  return ude;
-}
+          spillere = excel_data.get('spillere', [])
+          for s in spillere:
+              if s.get('Initialer', s.get('initialer', '')) == 'BCO':
+                  s['Navn'] = 'SnazzyFlex'
+                  s['navn'] = 'SnazzyFlex'
 
-// Finder hvem der gættede tættest på et tal
-function taettestPaa(spillere, felt, facit) {
-  let bedste = null, bedsteDiff = Infinity;
-  spillere.forEach(s => {
-    const gaet = Number(s[felt]);
-    if (isNaN(gaet)) return;
-    const diff = Math.abs(gaet - facit);
-    if (diff < bedsteDiff) { bedsteDiff = diff; bedste = s; }
-  });
-  return bedste;
-}
+          # Summer røde kort fra Excel-kampene
+          roede_kort_excel = 0
+          for k in excel_data.get('kampe', []):
+              raw_val = k.get('RødeKort', k.get('RoedeKort', k.get('roedeKort', 0)))
+              try:
+                  roede_kort_excel += int(raw_val) if raw_val not in ('', None) else 0
+              except (ValueError, TypeError):
+                  pass
 
-function lavSlider(spillere, felt, facit, maxVisning) {
-  const gaet = spillere.map(s => Number(s[felt])).filter(g => !isNaN(g));
-  if (!gaet.length) return '';
-  const min = Math.min(...gaet, facit);
-  const max = Math.max(...gaet, facit, maxVisning || 0);
-  const range = max - min || 1;
-  const pos = v => ((v - min) / range) * 100;
-  const vinder = taettestPaa(spillere, felt, facit);
+          # ── 2. Hent kampresultater fra football-data.org ───────────
+          headers = {'X-Auth-Token': os.environ['FOOTBALL_API_TOKEN']}
 
-  // Gruppér spillere efter samme gættet værdi, så tooltip viser alle navne på det punkt
-  const grupperet = {};
-  spillere.forEach(s => {
-    const g = Number(s[felt]);
-    if (isNaN(g)) return;
-    if (!grupperet[g]) grupperet[g] = [];
-    grupperet[g].push(s.navn);
-  });
+          r = requests.get(
+              'https://api.football-data.org/v4/competitions/WC/matches',
+              headers=headers
+          )
 
-  const ticks = Object.entries(grupperet).map(([g, navne]) => {
-    const gNum = Number(g);
-    const erVinder = vinder && navne.includes(vinder.navn);
-    const navnetekst = `${navne.join(', ')} (${gNum})`;
-    return `<div class="slider-tick ${erVinder ? 'winner' : ''}" style="left:${pos(gNum)}%">
-      <div class="tip-bubble">${navnetekst}</div>
-    </div>`;
-  }).join('');
+          total_maal = 0
+          kampe = []
 
-  return `
-    <div class="slider-track">
-      <div class="slider-line"></div>
-      ${ticks}
-      <div class="slider-tick actual" style="left:${pos(facit)}%">
-        <div class="tip-bubble">Facit: ${facit}</div>
-      </div>
-    </div>
-    <div class="slider-labels"><span>${min}</span><span>${max}</span></div>
-    ${vinder ? `<div class="slider-winner-label">🎯 ${vinder.navn} er tættest (gættede ${Number(vinder[felt])})</div>` : ''}
-  `;
-}
+          if r.status_code == 200:
+              matches = r.json().get('matches', [])
+              print(f"Hentet {len(matches)} kampe fra football-data.org")
 
-async function loadData() {
-  const app = document.getElementById('app');
-  try {
-    const res = await fetch(DATA_URL + '?t=' + Date.now());
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const data = await res.json();
-    renderDashboard(app, data);
-  } catch (err) {
-    app.innerHTML = '<div class="error-box"><strong>Kunne ikke hente data</strong>Tjek at data.json ligger korrekt på GitHub.<br><small style="color:#999;margin-top:6px;display:block">Fejl: ' + err.message + '</small></div>';
-  }
-}
+              for m in matches:
+                  hjemme = m['homeTeam']['name']
+                  ude    = m['awayTeam']['name']
+                  status = m['status']
+                  stage  = m.get('stage', '')
 
-function renderDashboard(app, data) {
-  // Normaliser feltnavne (SharePoint bruger stort begyndelsesbogstav)
-  const navnUdenInitialer = navn => navn.replace(/\s*\([^)]*\)\s*$/, '').trim();
-  const norm = p => ({
-    navn:      navnUdenInitialer(p.navn      ?? p.Navn      ?? ''),
-    initialer: p.initialer ?? p.Initialer ?? '',
-    point:     Number(p.point ?? p.Point  ?? 0),
-    gratis:    (p.gratis ?? p.Gratis) === true || String(p.gratis ?? p.Gratis).toLowerCase() === 'true',
-    nulNulGaet:    p.nulNulKampe   ?? p.NulNulKampe   ?? null,
-    roedeKortGaet: p.roedeKortGaet ?? p.RødeKortGæt   ?? p.RoedeKortGaet ?? null,
-    maalGaet:      p.maalGaet      ?? p.MålGæt        ?? p.MaalGaet     ?? null,
-    vmVinderGaet:  p.vmVinderGaet  ?? p.VMVinderGæt    ?? p.VMVinderGaet ?? '',
-  });
-  const normKamp = k => ({
-    kamp:     k.kamp     ?? k.Kamp     ?? '',
-    resultat: k.resultat ?? k.Resultat ?? '',
-  });
+                  resultat = ''
+                  maal = 0
 
-  const spillere = [...data.spillere].map(norm).sort((a, b) => b.point - a.point);
-  const maxPts = spillere[0]?.point || 1;
+                  if status == 'FINISHED':
+                      hg = m['score']['fullTime']['home'] or 0
+                      ag = m['score']['fullTime']['away'] or 0
+                      resultat = f'{hg}-{ag}'
+                      maal = hg + ag
+                      total_maal += maal
 
-  const kampe = (data.kampe || []).map(normKamp);
-  const spelteKampe = kampe.filter(k => k.resultat && k.resultat.trim() !== '' && k.resultat.trim() !== 'AFVENTER');
-  const totalKampe = data.totalKampe || 90;
-  const progressPct = Math.round((spelteKampe.length / totalKampe) * 100);
+                  kampe.append({
+                      'kamp': f'{hjemme} – {ude}',
+                      'resultat': resultat,
+                      'maal': maal,
+                      'stage': stage,
+                  })
 
-  const betalende = spillere.filter(s => !s.gratis).length;
-  const gratis    = spillere.filter(s => s.gratis).length;
-  const gennemsnit = spillere.length
-    ? (spillere.reduce((s, p) => s + p.point, 0) / spillere.length).toFixed(1)
-    : 0;
-  const resterende = totalKampe - spelteKampe.length;
+              print(f"Total maal: {total_maal}")
+          else:
+              print(f"API fejl: {r.status_code} - {r.text[:200]}")
+              kampe = excel_data.get('kampe', [])
 
-  const top3 = spillere.slice(0, 3);
-  const podOrder   = [top3[1], top3[0], top3[2]].filter(Boolean);
-  const podMedals  = ['🥈', '🥇', '🥉'];
-  const podClasses = ['pod-2', 'pod-1', 'pod-3'];
+          print(f"Roede kort fra Excel: {roede_kort_excel}")
 
-  // ── Bonusspørgsmål: facit og gæt ──────────────────────────
-  const nulNulFacit = spelteKampe.filter(k => k.resultat.trim() === '0-0').length;
-  const maalFacit   = data.totalMaal ?? 0;
-  const roedeKortFacit = data.roedeKort ?? 0;
+          # ── 3. Sammensæt og gem data.json ──────────────────────────
+          data = {
+              'opdateret': datetime.date.today().strftime('%d. %B %Y'),
+              'totalKampe': 104,
+              'totalMaal': total_maal,
+              'roedeKort': roede_kort_excel,
+              'spillere': spillere,
+              'kampe': kampe,
+              'vmVindere': vm_vindere,
+          }
 
-  const udeHold = beregnUdeHold(kampe);
-  const vmGaetTaeller = {};
-  spillere.forEach(s => {
-    if (s.vmVinderGaet) vmGaetTaeller[s.vmVinderGaet] = (vmGaetTaeller[s.vmVinderGaet] || 0) + 1;
-  });
-  const vmKandidater = Object.keys(vmGaetTaeller).sort((a, b) => {
-    const aUde = udeHold.has(a) ? 1 : 0, bUde = udeHold.has(b) ? 1 : 0;
-    if (aUde !== bUde) return aUde - bUde;
-    return vmGaetTaeller[b] - vmGaetTaeller[a];
-  });
+          with open('data.json', 'w', encoding='utf-8') as f:
+              json.dump(data, f, ensure_ascii=False, indent=2)
+          print(f"data.json skrevet! {len(kampe)} kampe, {total_maal} maal, {roede_kort_excel} roede kort")
+          PYEOF
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          FOOTBALL_API_TOKEN: ${{ secrets.FOOTBALL_API_TOKEN }}
 
-  const nulNulSlider  = lavSlider(spillere, 'nulNulGaet', nulNulFacit);
-  const roedeKortSlider = lavSlider(spillere, 'roedeKortGaet', roedeKortFacit);
-  const maalSlider    = lavSlider(spillere, 'maalGaet', maalFacit);
-
-  app.innerHTML = `
-    <div class="header">
-      <div>
-        <div class="header-title">🏆 VM 2026 Tipsklub</div>
-        <div class="header-sub">AI · Indledende runde · ${spillere.length} deltagere</div>
-      </div>
-      <div class="header-progress">
-        <div class="header-progress-label">Spillede kampe</div>
-        <div class="header-progress-bar">
-          <div class="header-progress-fill" style="width:${progressPct}%"></div>
-        </div>
-        <div class="header-progress-num">
-          ${spelteKampe.length} <span style="font-size:14px;font-weight:400;opacity:.7">/ ${totalKampe} kampe</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="metrics" style="grid-template-columns: repeat(5, 1fr);">
-      <div class="metric">
-        <div class="metric-label">Deltagere</div>
-        <div class="metric-value">${spillere.length}</div>
-        <div class="metric-sub">${betalende} betalende · ${gratis} gratis</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Gennemsnit</div>
-        <div class="metric-value">${gennemsnit}</div>
-        <div class="metric-sub">point per deltager</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Resterende kampe</div>
-        <div class="metric-value">${resterende}</div>
-        <div class="metric-sub">i indledende runde</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Samlede mål</div>
-        <div class="metric-value">${data.totalMaal ?? 0}</div>
-        <div class="metric-sub">${spelteKampe.length > 0 ? (data.totalMaal / spelteKampe.length).toFixed(1) + ' mål/kamp' : '–'}</div>
-      </div>
-      <div class="metric">
-        <div class="metric-label">Røde kort</div>
-        <div class="metric-value">${data.roedeKort ?? 0}</div>
-        <div class="metric-sub">i turneringen</div>
-      </div>
-    </div>
-
-    <div class="two-col">
-      <div class="card">
-        <div class="card-title">Rangliste – indledende runde</div>
-        <table class="rank-table">
-          <thead><tr><th>#</th><th>Navn</th><th>Type</th><th style="text-align:right">Pt</th><th></th></tr></thead>
-          <tbody>
-            ${spillere.map((p, i) => `
-              <tr class="${i===0?'gold':i===1?'silver':''}">
-                <td class="rank-num">${i===0?'🥇':i===1?'🥈':i===2?'🥉':i+1}</td>
-                <td class="rank-name">${p.navn}</td>
-                <td><span class="badge ${p.gratis?'badge-free':'badge-pay'}">${p.gratis?'Gratis':'Betaling'}</span></td>
-                <td class="rank-pts-cell">${p.point}</td>
-                <td><div class="bar-bg"><div class="bar-fg" style="width:${Math.round(p.point/maxPts*100)}%"></div></div></td>
-              </tr>`).join('')}
-          </tbody>
-        </table>
-      </div>
-
-      <div>
-        <div class="card">
-          <div class="card-title">Podiet</div>
-          <div class="podium">
-            ${podOrder.map((p, i) => `
-              <div class="pod ${podClasses[i]}">
-                <div class="pod-medal">${podMedals[i]}</div>
-                <div class="pod-bar">${p.point}</div>
-                <div class="pod-name">${p.navn}</div>
-                <div class="pod-pts">${p.point} point</div>
-              </div>`).join('')}
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card" style="margin-bottom:16px">
-      <div class="card-title">Bonusspørgsmål</div>
-
-      <div class="bonus-card-wide">
-        <div class="bonus-head">
-          <div class="bonus-head-q">Hvor mange kampe i indledende gruppespil ender 0-0?<span class="bonus-head-pts">Tættest giver 1 point</span></div>
-          <div class="bonus-head-facit">${spelteKampe.length > 0 ? nulNulFacit : '–'}</div>
-        </div>
-        ${spelteKampe.length > 0 ? nulNulSlider : '<div style="font-size:11px;color:#aaa">Afventer spillede kampe…</div>'}
-      </div>
-
-      <div class="bonus-card-wide">
-        <div class="bonus-head">
-          <div class="bonus-head-q">Hvor mange røde kort bliver der uddelt i hele slutrunden?<span class="bonus-head-pts">Tættest giver 2 point</span></div>
-          <div class="bonus-head-facit">${roedeKortFacit}</div>
-        </div>
-        ${roedeKortSlider || '<div style="font-size:11px;color:#aaa">Afventer røde kort…</div>'}
-      </div>
-
-      <div class="bonus-card-wide">
-        <div class="bonus-head">
-          <div class="bonus-head-q">Hvad bliver det samlede antal mål i hele slutrunden?<span class="bonus-head-pts">Tættest giver 3 point</span></div>
-          <div class="bonus-head-facit">${maalFacit}</div>
-        </div>
-        ${maalSlider || '<div style="font-size:11px;color:#aaa">Afventer mål…</div>'}
-      </div>
-
-      <div class="bonus-card-wide">
-        <div class="bonus-head">
-          <div class="bonus-head-q">Hvem vinder VM?<span class="bonus-head-pts">Rigtigt svar giver 4 point</span></div>
-        </div>
-        <div class="vm-winners-grid">
-          ${vmKandidater.map(land => {
-            const ud = udeHold.has(land);
-            return `
-            <div class="vm-card ${ud ? 'eliminated' : ''}">
-              <div>
-                <div class="vm-name ${ud ? 'eliminated-text' : ''}">${land}</div>
-                <div class="vm-country">${vmGaetTaeller[land]} tip${vmGaetTaeller[land] > 1 ? 's' : ''}</div>
-              </div>
-              <span class="vm-status ${ud ? 'out' : 'alive'}">${ud ? 'UDE' : 'MED'}</span>
-            </div>`;
-          }).join('')}
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-title">Kampe – indledende runde</div>
-      <ul class="match-list">
-        ${kampe.map(m => {
-          const done = m.resultat && m.resultat.trim() !== '' && m.resultat.trim() !== 'AFVENTER';
-          return '<li class="match-item">' +
-            '<span class="match-dot ' + (done?'done':'pending') + '"></span>' +
-            '<span class="match-name">' + m.kamp + '</span>' +
-            '<span class="match-result ' + (done?'':'pending') + '">' + (done ? m.resultat : 'Afventer') + '</span>' +
-            '</li>';
-        }).join('')}
-      </ul>
-    </div>
-
-    <div style="margin-top:20px; font-size:11px; color:#bbb; text-align:center">
-      Sidst opdateret: ${data.opdateret || '–'} · AI Tipsklub VM 2026
-    </div>
-  `;
-}
-
-loadData();
-</script>
-</body>
-</html>
+      - name: Commit og push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "Opdater data.json"
+          git push
