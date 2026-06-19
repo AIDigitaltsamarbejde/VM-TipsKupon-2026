@@ -1,7 +1,7 @@
 {
   "opdateret": "19. June 2026",
   "totalKampe": 104,
-  "totalMaal": 87,
+  "totalMaal": 89,
   "roedeKort": 6,
   "spillere": [
     {
@@ -251,8 +251,8 @@
     },
     {
       "kamp": "Canada – Bosnia-Herzegovina",
-      "resultat": "0-0",
-      "maal": 0,
+      "resultat": "1-1",
+      "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
