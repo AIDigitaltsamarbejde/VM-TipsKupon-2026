@@ -1,8 +1,6 @@
 name: Opdater data.json
 
 on:
-  schedule:
-    - cron: '*/5 6-9 * * *'
   workflow_dispatch:
 
 jobs:
@@ -97,6 +95,7 @@ jobs:
                   hjemme = m['homeTeam']['name']
                   ude    = m['awayTeam']['name']
                   status = m['status']
+                  stage  = m.get('stage', '')
 
                   resultat = ''
                   maal = 0
@@ -112,6 +111,7 @@ jobs:
                       'kamp': f'{hjemme} – {ude}',
                       'resultat': resultat,
                       'maal': maal,
+                      'stage': stage,
                   })
 
               print(f"Total maal: {total_maal}")
