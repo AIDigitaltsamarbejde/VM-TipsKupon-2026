@@ -2,7 +2,7 @@ name: Opdater data.json
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/5 6-9 * * *'
   workflow_dispatch:
 
 jobs:
