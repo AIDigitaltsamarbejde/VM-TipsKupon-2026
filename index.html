@@ -91,6 +91,20 @@
   .vm-status.alive { background: #E3F4FC; color: #0098D8; }
   .vm-status.out { background: #fdeeec; color: #c0392b; }
   .vm-winners-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+  .bracket-scroll { overflow-x: auto; padding-bottom: 8px; }
+  .bracket-wrap { display: flex; gap: 28px; min-width: max-content; padding: 4px 2px; }
+  .bracket-col { display: flex; flex-direction: column; justify-content: space-around; gap: 14px; min-width: 168px; }
+  .bracket-col-title { font-size: 10px; font-weight: 700; color: #0098D8; text-transform: uppercase; letter-spacing: 0.06em; text-align: center; margin-bottom: 4px; }
+  .bracket-col-matches { display: flex; flex-direction: column; justify-content: space-around; gap: 14px; flex: 1; }
+  .bracket-match { background: #fff; border: 1px solid #eaeaea; border-radius: 8px; overflow: hidden; }
+  .bracket-team { display: flex; justify-content: space-between; align-items: center; padding: 6px 9px; font-size: 11px; font-weight: 600; color: #555; border-bottom: 1px solid #f5f5f5; }
+  .bracket-team:last-child { border-bottom: none; }
+  .bracket-team.bracket-winner { color: #005C8A; background: #EBF8FF; }
+  .bracket-team-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 110px; }
+  .bracket-score { font-weight: 700; color: #0098D8; margin-left: 6px; }
+  .bracket-bronze { margin-top: 18px; padding-top: 14px; border-top: 1px dashed #e5e5e5; max-width: 220px; }
+  .bracket-bronze .bracket-col-title { text-align: left; }
   .chart-wrap { position: relative; width: 100%; height: 260px; }
   .winner-row { display: flex; align-items: center; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid #f5f5f5; }
   .winner-row:last-child { border-bottom: none; }
@@ -263,6 +277,89 @@ function lavSlider(spillere, felt, facit, maxVisning) {
   `;
 }
 
+// Bygger knockout-bracket struktur ud fra kampe der ikke er gruppespil.
+// Runder identificeres ud fra antal kampe (16=Round of 32, 8=Round of 16, 4=Kvart, 2=Semi, 1=Finale)
+// så koden er robust uanset hvad API'et navngiver hver stage internt.
+function lavBracket(kampe) {
+  const knockoutKampe = kampe.filter(k => k.stage && k.stage !== 'GROUP_STAGE');
+  if (!knockoutKampe.length) return null;
+
+  // Gruppér efter stage-værdi
+  const stages = {};
+  knockoutKampe.forEach(k => {
+    if (!stages[k.stage]) stages[k.stage] = [];
+    stages[k.stage].push(k);
+  });
+
+  const RUNDE_NAVNE = { 16: '1/16-finale', 8: '1/8-finale', 4: 'Kvartfinale', 2: 'Semifinale', 1: 'Finale' };
+
+  // Sortér runder efter faldende antal kampe (flest kampe = tidligst i turneringen)
+  const runder = Object.entries(stages)
+    .map(([stage, liste]) => ({ stage, kampe: liste, antal: liste.length }))
+    .sort((a, b) => b.antal - a.antal);
+
+  // Bronzekamp er typisk en separat stage med kun 1 kamp, samme runde som finalen men ikke selve finalen.
+  // Vi identificerer den ved at den hedder noget med "THIRD" eller "BRONZE", ellers behandles den som sin egen lille runde.
+  const bronzeIdx = runder.findIndex(r => /THIRD|BRONZE/i.test(r.stage));
+  let bronzeRunde = null;
+  if (bronzeIdx !== -1) {
+    bronzeRunde = runder.splice(bronzeIdx, 1)[0];
+  }
+
+  return { runder, bronzeRunde, navnFor: antal => RUNDE_NAVNE[antal] || `Runde (${antal} kampe)` };
+}
+
+function lavBracketHtml(bracketData) {
+  if (!bracketData) return '';
+  const { runder, bronzeRunde, navnFor } = bracketData;
+
+  const kampBoks = m => {
+    const done = m.resultat && m.resultat.trim() !== '' && m.resultat.trim() !== 'AFVENTER';
+    const navne = m.kamp.split(/–/).map(s => s.trim());
+    const [hjemme, ude] = navne.length === 2 ? navne : [m.kamp, ''];
+    let hg = '', ag = '';
+    if (done && /^\d+-\d+$/.test(m.resultat.trim())) {
+      [hg, ag] = m.resultat.trim().split('-');
+    }
+    return `
+      <div class="bracket-match">
+        <div class="bracket-team ${done && hg > ag ? 'bracket-winner' : ''}">
+          <span class="bracket-team-name">${hjemme || '?'}</span>
+          <span class="bracket-score">${hg !== '' ? hg : ''}</span>
+        </div>
+        <div class="bracket-team ${done && ag > hg ? 'bracket-winner' : ''}">
+          <span class="bracket-team-name">${ude || '?'}</span>
+          <span class="bracket-score">${ag !== '' ? ag : ''}</span>
+        </div>
+      </div>`;
+  };
+
+  const kolonner = runder.map(r => `
+    <div class="bracket-col">
+      <div class="bracket-col-title">${navnFor(r.antal)}</div>
+      <div class="bracket-col-matches">
+        ${r.kampe.map(kampBoks).join('')}
+      </div>
+    </div>
+  `).join('');
+
+  const bronzeHtml = bronzeRunde ? `
+    <div class="bracket-bronze">
+      <div class="bracket-col-title">🥉 Bronzekamp</div>
+      ${bronzeRunde.kampe.map(kampBoks).join('')}
+    </div>
+  ` : '';
+
+  return `
+    <div class="bracket-scroll">
+      <div class="bracket-wrap">
+        ${kolonner}
+      </div>
+    </div>
+    ${bronzeHtml}
+  `;
+}
+
 async function loadData() {
   const app = document.getElementById('app');
   try {
@@ -305,6 +402,8 @@ function renderDashboard(app, data) {
   const spelteKampe = gruppespilKampe.filter(k => k.resultat && k.resultat.trim() !== '' && k.resultat.trim() !== 'AFVENTER');
   const totalKampe = 72; // 12 grupper × 6 kampe i indledende runde
   const progressPct = Math.round((spelteKampe.length / totalKampe) * 100);
+
+  const bracketData = lavBracket(kampe);
 
   const betalende = spillere.filter(s => !s.gratis).length;
   const gratis    = spillere.filter(s => s.gratis).length;
@@ -463,6 +562,13 @@ function renderDashboard(app, data) {
         </div>
       </div>
     </div>
+
+    ${bracketData ? `
+    <div class="card" style="margin-bottom:16px">
+      <div class="card-title">Knockoutfasen</div>
+      ${lavBracketHtml(bracketData)}
+    </div>
+    ` : ''}
 
     <div class="card">
       <div class="card-title">Kampe – indledende runde</div>
