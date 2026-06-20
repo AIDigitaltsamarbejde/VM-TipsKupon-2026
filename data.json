@@ -1,7 +1,7 @@
 {
-  "opdateret": "19. June 2026",
+  "opdateret": "20. June 2026",
   "totalKampe": 104,
-  "totalMaal": 89,
+  "totalMaal": 96,
   "roedeKort": 6,
   "spillere": [
     {
@@ -407,26 +407,26 @@
     },
     {
       "kamp": "United States – Australia",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "2-0",
+      "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Scotland – Morocco",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "0-1",
+      "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Brazil – Haiti",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "3-0",
+      "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Turkey – Paraguay",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "0-1",
+      "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
