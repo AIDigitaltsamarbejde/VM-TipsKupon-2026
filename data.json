@@ -1,7 +1,7 @@
 {
   "opdateret": "21. June 2026",
   "totalKampe": 104,
-  "totalMaal": 105,
+  "totalMaal": 109,
   "roedeKort": 6,
   "spillere": [
     {
@@ -449,8 +449,8 @@
     },
     {
       "kamp": "Tunisia – Japan",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "0-4",
+      "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
