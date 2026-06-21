@@ -1,7 +1,7 @@
 {
-  "opdateret": "20. June 2026",
+  "opdateret": "21. June 2026",
   "totalKampe": 104,
-  "totalMaal": 96,
+  "totalMaal": 105,
   "roedeKort": 6,
   "spillere": [
     {
@@ -431,19 +431,19 @@
     },
     {
       "kamp": "Netherlands – Sweden",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "5-1",
+      "maal": 6,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Germany – Ivory Coast",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "2-1",
+      "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Ecuador – Curaçao",
-      "resultat": "",
+      "resultat": "0-0",
       "maal": 0,
       "stage": "GROUP_STAGE"
     },
