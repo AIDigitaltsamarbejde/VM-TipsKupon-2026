@@ -1,7 +1,7 @@
 {
-  "opdateret": "21. June 2026",
+  "opdateret": "22. June 2026",
   "totalKampe": 104,
-  "totalMaal": 109,
+  "totalMaal": 121,
   "roedeKort": 6,
   "spillere": [
     {
@@ -455,26 +455,26 @@
     },
     {
       "kamp": "Spain – Saudi Arabia",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "4-0",
+      "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Belgium – Iran",
-      "resultat": "",
+      "resultat": "0-0",
       "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Uruguay – Cape Verde Islands",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "2-2",
+      "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "New Zealand – Egypt",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "1-3",
+      "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
