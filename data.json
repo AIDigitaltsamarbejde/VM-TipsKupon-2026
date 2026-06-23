@@ -682,7 +682,19 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Germany – None",
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
@@ -706,12 +718,6 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Mexico – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
       "kamp": "None – None",
       "resultat": "",
       "maal": 0,
@@ -719,12 +725,6 @@
     },
     {
       "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "United States – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
