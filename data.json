@@ -1,7 +1,7 @@
 {
-  "opdateret": "23. June 2026",
+  "opdateret": "24. June 2026",
   "totalKampe": 104,
-  "totalMaal": 134,
+  "totalMaal": 141,
   "roedeKort": 8,
   "spillere": [
     {
@@ -503,26 +503,26 @@
     },
     {
       "kamp": "Portugal – Uzbekistan",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "5-0",
+      "maal": 5,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "England – Ghana",
-      "resultat": "",
+      "resultat": "0-0",
       "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Panama – Croatia",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "0-1",
+      "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Colombia – Congo DR",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "1-0",
+      "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
@@ -682,7 +682,19 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Germany – None",
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
@@ -706,12 +718,6 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Mexico – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
       "kamp": "None – None",
       "resultat": "",
       "maal": 0,
@@ -719,12 +725,6 @@
     },
     {
       "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "United States – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
