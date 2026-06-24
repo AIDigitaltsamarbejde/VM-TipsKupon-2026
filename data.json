@@ -1,7 +1,7 @@
 {
   "opdateret": "24. June 2026",
   "totalKampe": 104,
-  "totalMaal": 141,
+  "totalMaal": 139,
   "roedeKort": 8,
   "spillere": [
     {
@@ -251,8 +251,8 @@
     },
     {
       "kamp": "Canada – Bosnia-Herzegovina",
-      "resultat": "1-1",
-      "maal": 2,
+      "resultat": "0-0",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
@@ -682,12 +682,6 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Germany – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
       "kamp": "None – None",
       "resultat": "",
       "maal": 0,
@@ -706,25 +700,7 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Mexico – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
       "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "United States – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
@@ -754,7 +730,31 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Argentina – None",
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
