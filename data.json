@@ -1,7 +1,7 @@
 {
-  "opdateret": "24. June 2026",
+  "opdateret": "25. June 2026",
   "totalKampe": 104,
-  "totalMaal": 141,
+  "totalMaal": 161,
   "roedeKort": 8,
   "spillere": [
     {
@@ -527,38 +527,38 @@
     },
     {
       "kamp": "Switzerland – Canada",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "2-1",
+      "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Bosnia-Herzegovina – Qatar",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "3-1",
+      "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Morocco – Haiti",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "4-2",
+      "maal": 6,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Scotland – Brazil",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "0-3",
+      "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Czechia – Mexico",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "0-3",
+      "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "South Africa – South Korea",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "1-0",
+      "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
@@ -682,12 +682,6 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Germany – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
       "kamp": "None – None",
       "resultat": "",
       "maal": 0,
@@ -706,25 +700,7 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Mexico – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
       "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "United States – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
@@ -754,7 +730,31 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Argentina – None",
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
