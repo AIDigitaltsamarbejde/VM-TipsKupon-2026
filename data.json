@@ -1,7 +1,7 @@
 {
   "opdateret": "26. June 2026",
   "totalKampe": 104,
-  "totalMaal": 177,
+  "totalMaal": 162,
   "roedeKort": 8,
   "spillere": [
     {
@@ -551,38 +551,38 @@
     },
     {
       "kamp": "Czechia – Mexico",
-      "resultat": "0-3",
-      "maal": 3,
+      "resultat": "",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "South Africa – South Korea",
-      "resultat": "1-0",
-      "maal": 1,
+      "resultat": "",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Ecuador – Germany",
-      "resultat": "2-1",
-      "maal": 3,
+      "resultat": "",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Curaçao – Ivory Coast",
-      "resultat": "0-2",
-      "maal": 2,
+      "resultat": "",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Tunisia – Netherlands",
-      "resultat": "1-3",
-      "maal": 4,
+      "resultat": "",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Japan – Sweden",
-      "resultat": "1-1",
-      "maal": 2,
+      "resultat": "",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
@@ -682,7 +682,49 @@
       "stage": "LAST_32"
     },
     {
+      "kamp": "Germany – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
       "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "Mexico – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "United States – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
@@ -712,49 +754,7 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "None – None",
+      "kamp": "Argentina – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
