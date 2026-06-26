@@ -1,7 +1,7 @@
 {
   "opdateret": "26. June 2026",
   "totalKampe": 104,
-  "totalMaal": 177,
+  "totalMaal": 162,
   "roedeKort": 8,
   "spillere": [
     {
@@ -228,7 +228,7 @@
     {
       "Navn": "A.I.D.S (DS)",
       "Initialer": "DS",
-      "Point": "30",
+      "Point": "33",
       "Gratis": "False",
       "NulNulKampe": "5",
       "RødeKortGæt": "10",
@@ -551,38 +551,38 @@
     },
     {
       "kamp": "Czechia – Mexico",
-      "resultat": "0-3",
-      "maal": 3,
+      "resultat": "",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "South Africa – South Korea",
-      "resultat": "1-0",
-      "maal": 1,
+      "resultat": "",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Ecuador – Germany",
-      "resultat": "2-1",
-      "maal": 3,
+      "resultat": "",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Curaçao – Ivory Coast",
-      "resultat": "0-2",
-      "maal": 2,
+      "resultat": "",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Tunisia – Netherlands",
-      "resultat": "1-3",
-      "maal": 4,
+      "resultat": "",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Japan – Sweden",
-      "resultat": "1-1",
-      "maal": 2,
+      "resultat": "",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
@@ -670,13 +670,13 @@
       "stage": "GROUP_STAGE"
     },
     {
-      "kamp": "South Africa – Canada",
+      "kamp": "None – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
     },
     {
-      "kamp": "Brazil – Japan",
+      "kamp": "None – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
@@ -688,7 +688,7 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Netherlands – Morocco",
+      "kamp": "None – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
@@ -724,7 +724,7 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "United States – Bosnia-Herzegovina",
+      "kamp": "United States – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
@@ -742,13 +742,13 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Switzerland – None",
+      "kamp": "None – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
     },
     {
-      "kamp": "Australia – None",
+      "kamp": "None – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
