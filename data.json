@@ -1,7 +1,7 @@
 {
   "opdateret": "26. June 2026",
   "totalKampe": 104,
-  "totalMaal": 162,
+  "totalMaal": 177,
   "roedeKort": 8,
   "spillere": [
     {
@@ -551,38 +551,38 @@
     },
     {
       "kamp": "Czechia – Mexico",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "0-3",
+      "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "South Africa – South Korea",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "1-0",
+      "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Ecuador – Germany",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "2-1",
+      "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Curaçao – Ivory Coast",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "0-2",
+      "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Tunisia – Netherlands",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "1-3",
+      "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Japan – Sweden",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "1-1",
+      "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
@@ -682,12 +682,6 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Germany – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
       "kamp": "None – None",
       "resultat": "",
       "maal": 0,
@@ -706,25 +700,7 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Mexico – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
       "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "None – None",
-      "resultat": "",
-      "maal": 0,
-      "stage": "LAST_32"
-    },
-    {
-      "kamp": "United States – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
@@ -754,7 +730,31 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Argentina – None",
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "None – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
