@@ -1,7 +1,7 @@
 {
-  "opdateret": "25. June 2026",
+  "opdateret": "26. June 2026",
   "totalKampe": 104,
-  "totalMaal": 161,
+  "totalMaal": 177,
   "roedeKort": 8,
   "spillere": [
     {
@@ -563,37 +563,37 @@
     },
     {
       "kamp": "Ecuador – Germany",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "2-1",
+      "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Curaçao – Ivory Coast",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "0-2",
+      "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Tunisia – Netherlands",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "1-3",
+      "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Japan – Sweden",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "1-1",
+      "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Turkey – United States",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "3-2",
+      "maal": 5,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Paraguay – Australia",
-      "resultat": "",
+      "resultat": "0-0",
       "maal": 0,
       "stage": "GROUP_STAGE"
     },
