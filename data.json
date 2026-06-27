@@ -1,7 +1,7 @@
 {
   "opdateret": "27. June 2026",
   "totalKampe": 104,
-  "totalMaal": 196,
+  "totalMaal": 187,
   "roedeKort": 8,
   "spillere": [
     {
@@ -599,14 +599,14 @@
     },
     {
       "kamp": "Norway – France",
-      "resultat": "1-4",
-      "maal": 5,
+      "resultat": "",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Senegal – Iraq",
-      "resultat": "5-0",
-      "maal": 5,
+      "resultat": "",
+      "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
@@ -629,8 +629,8 @@
     },
     {
       "kamp": "Egypt – Iran",
-      "resultat": "1-1",
-      "maal": 2,
+      "resultat": "1-2",
+      "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
@@ -694,7 +694,7 @@
       "stage": "LAST_32"
     },
     {
-      "kamp": "Ivory Coast – None",
+      "kamp": "None – None",
       "resultat": "",
       "maal": 0,
       "stage": "LAST_32"
