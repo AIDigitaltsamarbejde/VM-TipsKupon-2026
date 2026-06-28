@@ -1,7 +1,7 @@
 {
-  "opdateret": "27. June 2026",
+  "opdateret": "28. June 2026",
   "totalKampe": 104,
-  "totalMaal": 196,
+  "totalMaal": 215,
   "roedeKort": 8,
   "spillere": [
     {
@@ -635,38 +635,38 @@
     },
     {
       "kamp": "Panama – England",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "0-2",
+      "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Croatia – Ghana",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "2-1",
+      "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Colombia – Portugal",
-      "resultat": "",
+      "resultat": "0-0",
       "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Congo DR – Uzbekistan",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "3-1",
+      "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Jordan – Argentina",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "1-3",
+      "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Algeria – Austria",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "3-3",
+      "maal": 6,
       "stage": "GROUP_STAGE"
     },
     {
