@@ -17,7 +17,7 @@
     {
       "Navn": "Oskar (OMA)",
       "Initialer": "OMA",
-      "Point": "48",
+      "Point": "49",
       "Gratis": "False",
       "NulNulKampe": "6",
       "RødeKortGæt": "8",
@@ -58,7 +58,7 @@
     {
       "Navn": "Brian VL (BVL)",
       "Initialer": "BVL",
-      "Point": "36",
+      "Point": "45",
       "Gratis": "False",
       "NulNulKampe": "5",
       "RødeKortGæt": "21",
@@ -68,7 +68,7 @@
     {
       "Navn": "Ramazan (RAK)",
       "Initialer": "RAK",
-      "Point": "38",
+      "Point": "45",
       "Gratis": "False",
       "NulNulKampe": "6",
       "RødeKortGæt": "5",
@@ -78,7 +78,7 @@
     {
       "Navn": "Martin WK (MWK)",
       "Initialer": "MWK",
-      "Point": "38",
+      "Point": "48",
       "Gratis": "False",
       "NulNulKampe": "5",
       "RødeKortGæt": "8",
@@ -88,7 +88,7 @@
     {
       "Navn": "Tobias Holck (THO)",
       "Initialer": "THO",
-      "Point": "33",
+      "Point": "39",
       "Gratis": "False",
       "NulNulKampe": "7",
       "RødeKortGæt": "12",
@@ -98,7 +98,7 @@
     {
       "Navn": "Sam VJ (SVJ)",
       "Initialer": "SVJ",
-      "Point": "32",
+      "Point": "41",
       "Gratis": "False",
       "NulNulKampe": "8",
       "RødeKortGæt": "11",
@@ -108,7 +108,7 @@
     {
       "Navn": "Florant (FSP)",
       "Initialer": "FSP",
-      "Point": "37",
+      "Point": "46",
       "Gratis": "False",
       "NulNulKampe": "5",
       "RødeKortGæt": "15",
@@ -118,7 +118,7 @@
     {
       "Navn": "Abda (aka)",
       "Initialer": "AKA",
-      "Point": "36",
+      "Point": "45",
       "Gratis": "True",
       "NulNulKampe": "7",
       "RødeKortGæt": "18",
@@ -128,7 +128,7 @@
     {
       "Navn": "Savannah (SVP)",
       "Initialer": "SVP",
-      "Point": "30",
+      "Point": "34",
       "Gratis": "False",
       "NulNulKampe": "15",
       "RødeKortGæt": "8",
@@ -138,7 +138,7 @@
     {
       "Navn": "Patrick (SVP)",
       "Initialer": "SVP",
-      "Point": "29",
+      "Point": "36",
       "Gratis": "False",
       "NulNulKampe": "9",
       "RødeKortGæt": "6",
@@ -148,7 +148,7 @@
     {
       "Navn": "Daniel A (DAA)",
       "Initialer": "DAA",
-      "Point": "33",
+      "Point": "41",
       "Gratis": "False",
       "NulNulKampe": "9",
       "RødeKortGæt": "10",
@@ -158,7 +158,7 @@
     {
       "Navn": "Rasmus S (RST)",
       "Initialer": "RST",
-      "Point": "37",
+      "Point": "44",
       "Gratis": "False",
       "NulNulKampe": "5",
       "RødeKortGæt": "4",
@@ -168,7 +168,7 @@
     {
       "Navn": "Marta (MKG)",
       "Initialer": "MKG",
-      "Point": "5",
+      "Point": "7",
       "Gratis": "True",
       "NulNulKampe": "6",
       "RødeKortGæt": "1",
@@ -178,7 +178,7 @@
     {
       "Navn": "Christian M (CHM)",
       "Initialer": "CHM",
-      "Point": "32",
+      "Point": "39",
       "Gratis": "False",
       "NulNulKampe": "4",
       "RødeKortGæt": "11",
@@ -188,7 +188,7 @@
     {
       "Navn": "Mathias F (MFR)",
       "Initialer": "MFR",
-      "Point": "33",
+      "Point": "42",
       "Gratis": "False",
       "NulNulKampe": "5",
       "RødeKortGæt": "5",
@@ -198,7 +198,7 @@
     {
       "Navn": "Kåre (KLH)",
       "Initialer": "KLH",
-      "Point": "39",
+      "Point": "45",
       "Gratis": "False",
       "NulNulKampe": "7",
       "RødeKortGæt": "7",
@@ -208,7 +208,7 @@
     {
       "Navn": "Henrik S (HSK",
       "Initialer": "HSK",
-      "Point": "30",
+      "Point": "39",
       "Gratis": "False",
       "NulNulKampe": "5",
       "RødeKortGæt": "13",
@@ -218,7 +218,7 @@
     {
       "Navn": "Niels B (NBU",
       "Initialer": "NBU",
-      "Point": "28",
+      "Point": "36",
       "Gratis": "False",
       "NulNulKampe": "10",
       "RødeKortGæt": "15",
@@ -228,7 +228,7 @@
     {
       "Navn": "A.I.D.S (DS)",
       "Initialer": "DS",
-      "Point": "33",
+      "Point": "41",
       "Gratis": "False",
       "NulNulKampe": "5",
       "RødeKortGæt": "10",
