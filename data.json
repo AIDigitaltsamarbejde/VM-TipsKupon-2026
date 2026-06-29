@@ -7,7 +7,7 @@
     {
       "Navn": "Søren V (SVE)",
       "Initialer": "SVE",
-      "Point": "35",
+      "Point": "41",
       "Gratis": "False",
       "NulNulKampe": "9",
       "RødeKortGæt": "7",
@@ -17,7 +17,7 @@
     {
       "Navn": "Oskar (OMA)",
       "Initialer": "OMA",
-      "Point": "38",
+      "Point": "48",
       "Gratis": "False",
       "NulNulKampe": "6",
       "RødeKortGæt": "8",
@@ -27,7 +27,7 @@
     {
       "Navn": "Jonas A (JAB)",
       "Initialer": "JAB",
-      "Point": "37",
+      "Point": "44",
       "Gratis": "False",
       "NulNulKampe": "6",
       "RødeKortGæt": "16",
@@ -37,7 +37,7 @@
     {
       "Navn": "SnazzyFlex",
       "Initialer": "BCO",
-      "Point": "35",
+      "Point": "43",
       "Gratis": "True",
       "NulNulKampe": "7",
       "RødeKortGæt": "5",
@@ -48,7 +48,7 @@
     {
       "Navn": "Kamal (KAP)",
       "Initialer": "KAP",
-      "Point": "35",
+      "Point": "45",
       "Gratis": "False",
       "NulNulKampe": "3",
       "RødeKortGæt": "15",
