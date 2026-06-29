@@ -1,7 +1,7 @@
 {
-  "opdateret": "28. June 2026",
+  "opdateret": "29. June 2026",
   "totalKampe": 104,
-  "totalMaal": 215,
+  "totalMaal": 216,
   "roedeKort": 8,
   "spillere": [
     {
@@ -671,8 +671,8 @@
     },
     {
       "kamp": "South Africa – Canada",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "0-1",
+      "maal": 1,
       "stage": "LAST_32"
     },
     {
