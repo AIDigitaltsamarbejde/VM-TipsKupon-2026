@@ -160,7 +160,7 @@ function beregnUdeHold(kampe) {
   });
 
   kampe.forEach(k => {
-    const m = k.kamp.split(/–|-(?!\d)/).map(s => s.trim());
+    const m = k.kamp.split(' – ').map(s => s.trim());
     if (m.length < 2) return;
     const [hjemme, ude] = m;
     const res = (k.resultat || '').trim();
@@ -315,7 +315,7 @@ function lavBracketHtml(bracketData) {
 
   const kampBoks = m => {
     const done = m.resultat && m.resultat.trim() !== '' && m.resultat.trim() !== 'AFVENTER';
-    const navne = m.kamp.split(/–/).map(s => s.trim());
+    const navne = m.kamp.split(' – ').map(s => s.trim());
     const [hjemme, ude] = navne.length === 2 ? navne : [m.kamp, ''];
     let hg = '', ag = '';
     if (done && /^\d+-\d+$/.test(m.resultat.trim())) {
