@@ -136,7 +136,7 @@
 <script>
 const DATA_URL = 'https://AIDigitaltsamarbejde.github.io/VM-TipsKupon-2026/data.json';
 
-// VM 2026 gruppeinddeling
+// VM 2026 gruppeinddeling (danske navne)
 const GRUPPER = {
   'Mexico':'A','Sydafrika':'A','Sydkorea':'A','Tjekkiet':'A',
   'Canada':'B','Bosnien-Hercegovina':'B','Qatar':'B','Schweiz':'B',
@@ -152,9 +152,35 @@ const GRUPPER = {
   'England':'L','Kroatien':'L','Ghana':'L','Panama':'L',
 };
 
+// Mapping fra engelske API-navne til danske (football-data.org returnerer engelske navne)
+const ENG_TIL_DAN = {
+  'Brazil':'Brasilien','Morocco':'Marokko','Scotland':'Skotland',
+  'South Africa':'Sydafrika','South Korea':'Sydkorea','Czech Republic':'Tjekkiet','Czechia':'Tjekkiet',
+  'Bosnia and Herzegovina':'Bosnien-Hercegovina','Switzerland':'Schweiz',
+  'Australia':'Australien','Turkey':'Tyrkiet','Türkiye':'Tyrkiet',
+  'Germany':'Tyskland','Curacao':'Curacao','Ivory Coast':'Elfenbenskysten',"Côte d'Ivoire":'Elfenbenskysten',
+  'Netherlands':'Holland','Sweden':'Sverige','Tunisia':'Tunesien',
+  'Belgium':'Belgien','Egypt':'Egypten','France':'Frankrig',
+  'Senegal':'Senegal','Iraq':'Irak','Norway':'Norge',
+  'Algeria':'Algeriet','Austria':'Østrig',
+  'Portugal':'Portugal','DR Congo':'DR Congo','Congo DR':'DR Congo',
+  'Uzbekistan':'Usbekistan','Colombia':'Colombia',
+  'Croatia':'Kroatien','Ghana':'Ghana',
+  'Cape Verde':'Kap Verde','Saudi Arabia':'Saudi-Arabien',
+  'Spain':'Spanien','Uruguay':'Uruguay',
+  'England':'England','Panama':'Panama',
+  'Mexico':'Mexico','Qatar':'Qatar','Canada':'Canada',
+  'USA':'USA','Paraguay':'Paraguay','Jordan':'Jordan',
+  'Argentina':'Argentina','Ecuador':'Ecuador','Japan':'Japan',
+  'New Zealand':'New Zealand','Iran':'Iran','Haiti':'Haiti',
+};
+
+// Oversæt holdnavn fra engelsk til dansk
+const danNavn = navn => ENG_TIL_DAN[navn] || navn;
+
 // Beregner gruppetabeller fra kampresultater og afgør hvilke hold der er "ude"
 function beregnUdeHold(kampe) {
-  const tabel = {}; // land -> {point, gscored, gagainst, spillet, gruppe}
+  const tabel = {};
   Object.keys(GRUPPER).forEach(land => {
     tabel[land] = { land, gruppe: GRUPPER[land], point: 0, gscored: 0, gagainst: 0, spillet: 0 };
   });
@@ -162,7 +188,7 @@ function beregnUdeHold(kampe) {
   kampe.forEach(k => {
     const m = k.kamp.split(' – ').map(s => s.trim());
     if (m.length < 2) return;
-    const [hjemme, ude] = m;
+    const [hjemme, ude] = m.map(danNavn);
     const res = (k.resultat || '').trim();
     if (!res || res === 'AFVENTER' || !/^\d+-\d+$/.test(res)) return;
     const [hg, ag] = res.split('-').map(Number);
@@ -188,38 +214,51 @@ function beregnUdeHold(kampe) {
     grupper[t.gruppe].push(t);
   });
 
+  const sorter = arr => [...arr].sort((a, b) =>
+    b.point - a.point || (b.gscored - b.gagainst) - (a.gscored - a.gagainst) || b.gscored - a.gscored);
+
   const alleFaerdige = Object.values(grupper).every(g => g.every(t => t.spillet >= 3));
 
-  // Sortér hver gruppe (point, så målforskel)
-  const treere = [];
-  const sikreVidere = new Set();
+  // Saml alle 3'ere fra færdige grupper til sammenligning
+  const faerdigeTreere = [];
   Object.values(grupper).forEach(gruppe => {
-    const sorted = [...gruppe].sort((a, b) =>
-      b.point - a.point || (b.gscored - b.gagainst) - (a.gscored - a.gagainst) || b.gscored - a.gscored);
-    if (sorted[0]) sikreVidere.add(sorted[0].land);
-    if (sorted[1]) sikreVidere.add(sorted[1].land);
-    if (sorted[2]) treere.push(sorted[2]);
+    if (!gruppe.every(t => t.spillet >= 3)) return; // kun færdige grupper
+    const sorted = sorter(gruppe);
+    if (sorted[2]) faerdigeTreere.push(sorted[2]);
   });
 
-  // Hvis ALLE grupper er færdigspillet, kan vi udregne de 8 bedste treere
-  let bedsteTreere = new Set();
-  if (alleFaerdige) {
-    const sortedTreere = [...treere].sort((a, b) =>
-      b.point - a.point || (b.gscored - b.gagainst) - (a.gscored - a.gagainst) || b.gscored - a.gscored);
-    sortedTreere.slice(0, 8).forEach(t => bedsteTreere.add(t.land));
-  }
+  // Sortér 3'erne: bedste øverst
+  faerdigeTreere.sort((a, b) =>
+    b.point - a.point || (b.gscored - b.gagainst) - (a.gscored - a.gagainst) || b.gscored - a.gscored);
 
   const ude = new Set();
-  Object.values(tabel).forEach(t => {
-    if (t.spillet < 3) return; // stadig i spil, kan ikke afgøres endnu
-    if (sikreVidere.has(t.land)) return;
-    if (alleFaerdige && bedsteTreere.has(t.land)) return;
-    if (!alleFaerdige) {
-      // Mens gruppespillet stadig kører: kun marker hold ude der matematisk ikke kan nå top 2 OG har 0 point efter 3 kampe
-      if (t.point === 0) ude.add(t.land);
-      return;
+
+  Object.values(grupper).forEach(gruppe => {
+    const erFaerdig = gruppe.every(t => t.spillet >= 3);
+    if (!erFaerdig) return; // gruppen er ikke færdig endnu
+
+    const sorted = sorter(gruppe);
+    const nr1 = sorted[0];
+    const nr2 = sorted[1];
+    const nr3 = sorted[2];
+    const nr4 = sorted[3];
+
+    // Nr. 4 er altid ude når gruppen er færdig
+    if (nr4) ude.add(nr4.land);
+
+    // Nr. 3: ude hvis alle 12 grupper er færdige og de ikke er blandt de 8 bedste 3'ere
+    // ELLER hvis de allerede har færre point end den 8. bedste 3'er (matematisk umuligt at komme videre)
+    if (nr3 && alleFaerdige) {
+      const bedste8 = faerdigeTreere.slice(0, 8).map(t => t.land);
+      if (!bedste8.includes(nr3.land)) ude.add(nr3.land);
+    } else if (nr3 && faerdigeTreere.length >= 8) {
+      // Selv mens ikke alle er færdige: hvis 3'eren allerede er dårligere end den nuværende 8. bedste, er den ude
+      const ottendeBedste = faerdigeTreere[7];
+      const dårligereEndOttende =
+        nr3.point < ottendeBedste.point ||
+        (nr3.point === ottendeBedste.point && (nr3.gscored - nr3.gagainst) < (ottendeBedste.gscored - ottendeBedste.gagainst));
+      if (dårligereEndOttende) ude.add(nr3.land);
     }
-    ude.add(t.land);
   });
 
   return ude;
