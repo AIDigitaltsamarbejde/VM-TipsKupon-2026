@@ -1,7 +1,7 @@
 {
   "opdateret": "30. June 2026",
   "totalKampe": 104,
-  "totalMaal": 235,
+  "totalMaal": 238,
   "roedeKort": 10,
   "spillere": [
     {
@@ -695,8 +695,8 @@
     },
     {
       "kamp": "Ivory Coast – Norway",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "1-2",
+      "maal": 3,
       "stage": "LAST_32"
     },
     {
