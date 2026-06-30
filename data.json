@@ -1,7 +1,7 @@
 {
-  "opdateret": "29. June 2026",
+  "opdateret": "30. June 2026",
   "totalKampe": 104,
-  "totalMaal": 216,
+  "totalMaal": 236,
   "roedeKort": 10,
   "spillere": [
     {
@@ -677,20 +677,20 @@
     },
     {
       "kamp": "Brazil – Japan",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "2-1",
+      "maal": 3,
       "stage": "LAST_32"
     },
     {
       "kamp": "Germany – Paraguay",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "4-5",
+      "maal": 9,
       "stage": "LAST_32"
     },
     {
       "kamp": "Netherlands – Morocco",
-      "resultat": "",
-      "maal": 0,
+      "resultat": "4-4",
+      "maal": 8,
       "stage": "LAST_32"
     },
     {
