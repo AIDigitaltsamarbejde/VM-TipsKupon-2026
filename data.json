@@ -1,7 +1,7 @@
 {
   "opdateret": "30. June 2026",
   "totalKampe": 104,
-  "totalMaal": 236,
+  "totalMaal": 235,
   "roedeKort": 10,
   "spillere": [
     {
@@ -689,8 +689,8 @@
     },
     {
       "kamp": "Netherlands – Morocco",
-      "resultat": "4-4",
-      "maal": 8,
+      "resultat": "3-4",
+      "maal": 7,
       "stage": "LAST_32"
     },
     {
