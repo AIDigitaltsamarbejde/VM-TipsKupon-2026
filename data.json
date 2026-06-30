@@ -1,7 +1,7 @@
 {
   "opdateret": "30. June 2026",
   "totalKampe": 104,
-  "totalMaal": 0,
+  "totalMaal": 235,
   "roedeKort": 10,
   "spillere": [
     {
@@ -238,364 +238,628 @@
   ],
   "kampe": [
     {
-      "Kamp": "Mexico – Sydafrika",
-      "Resultat": "2-0",
-      "RødeKort": "3"
+      "kamp": "Mexico – South Africa",
+      "resultat": "2-0",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Sydkorea -Tjekkiet",
-      "Resultat": "2-1",
-      "RødeKort": "0"
+      "kamp": "South Korea – Czechia",
+      "resultat": "2-1",
+      "maal": 3,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Canada – Bosnien-Hercegovina",
-      "Resultat": "1-1",
-      "RødeKort": "0"
+      "kamp": "Canada – Bosnia-Herzegovina",
+      "resultat": "1-1",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "USA – Paraguay",
-      "Resultat": "4-1",
-      "RødeKort": "0"
+      "kamp": "United States – Paraguay",
+      "resultat": "4-1",
+      "maal": 5,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Qatar – Schweiz",
-      "Resultat": "1-1",
-      "RødeKort": "0"
+      "kamp": "Qatar – Switzerland",
+      "resultat": "1-1",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Brasilien – Marokko",
-      "Resultat": "1-1",
-      "RødeKort": "0"
+      "kamp": "Brazil – Morocco",
+      "resultat": "1-1",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Haiti – Skotland",
-      "Resultat": "0-1",
-      "RødeKort": "0"
+      "kamp": "Haiti – Scotland",
+      "resultat": "0-1",
+      "maal": 1,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Australien – Tyrkiet",
-      "Resultat": "2-0",
-      "RødeKort": "0"
+      "kamp": "Australia – Turkey",
+      "resultat": "2-0",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Tyskland – Curacao",
-      "Resultat": "7-1",
-      "RødeKort": "0"
+      "kamp": "Germany – Curaçao",
+      "resultat": "7-1",
+      "maal": 8,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Holland – Japan",
-      "Resultat": "2-2",
-      "RødeKort": "0"
+      "kamp": "Netherlands – Japan",
+      "resultat": "2-2",
+      "maal": 4,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Elfenbenskysten – Ecuador",
-      "Resultat": "1-0",
-      "RødeKort": "0"
+      "kamp": "Ivory Coast – Ecuador",
+      "resultat": "1-0",
+      "maal": 1,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Sverige – Tunesien",
-      "Resultat": "5-1",
-      "RødeKort": "0"
+      "kamp": "Sweden – Tunisia",
+      "resultat": "5-1",
+      "maal": 6,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Spanien – Kap Verde",
-      "Resultat": "0-0",
-      "RødeKort": "0"
+      "kamp": "Spain – Cape Verde Islands",
+      "resultat": "0-0",
+      "maal": 0,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Belgien – Egypten",
-      "Resultat": "1-1",
-      "RødeKort": "0"
+      "kamp": "Belgium – Egypt",
+      "resultat": "1-1",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Saudi-Arabien – Uruguay",
-      "Resultat": "1-1",
-      "RødeKort": "0"
+      "kamp": "Saudi Arabia – Uruguay",
+      "resultat": "1-1",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Iran – New Zealand",
-      "Resultat": "2-2",
-      "RødeKort": "0"
+      "kamp": "Iran – New Zealand",
+      "resultat": "2-2",
+      "maal": 4,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Frankrig – Senegal",
-      "Resultat": "3-1",
-      "RødeKort": "0"
+      "kamp": "France – Senegal",
+      "resultat": "3-1",
+      "maal": 4,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Irak – Norge",
-      "Resultat": "1-4",
-      "RødeKort": "0"
+      "kamp": "Iraq – Norway",
+      "resultat": "1-4",
+      "maal": 5,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Argentina – Algeriet",
-      "Resultat": "3-0",
-      "RødeKort": "0"
+      "kamp": "Argentina – Algeria",
+      "resultat": "3-0",
+      "maal": 3,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Østrig – Jordan",
-      "Resultat": "3-1",
-      "RødeKort": "0"
+      "kamp": "Austria – Jordan",
+      "resultat": "3-1",
+      "maal": 4,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Portugal – DR Congo",
-      "Resultat": "1-1",
-      "RødeKort": "0"
+      "kamp": "Portugal – Congo DR",
+      "resultat": "1-1",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "England – Kroatien",
-      "Resultat": "4-2",
-      "RødeKort": "0"
+      "kamp": "England – Croatia",
+      "resultat": "4-2",
+      "maal": 6,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Ghana – Panama",
-      "Resultat": "1-0",
-      "RødeKort": "0"
+      "kamp": "Ghana – Panama",
+      "resultat": "1-0",
+      "maal": 1,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Usbekistan – Colombia",
-      "Resultat": "1-3",
-      "RødeKort": "0"
+      "kamp": "Uzbekistan – Colombia",
+      "resultat": "1-3",
+      "maal": 4,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Tjekkiet – Sydafrika",
-      "Resultat": "1-1",
-      "RødeKort": "0"
+      "kamp": "Czechia – South Africa",
+      "resultat": "1-1",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Schweiz – Bosnien-Hercegovina",
-      "Resultat": "4-1",
-      "RødeKort": "1"
+      "kamp": "Switzerland – Bosnia-Herzegovina",
+      "resultat": "4-1",
+      "maal": 5,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Canada – Qatar",
-      "Resultat": "6-0",
-      "RødeKort": "2"
+      "kamp": "Canada – Qatar",
+      "resultat": "6-0",
+      "maal": 6,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Mexico – Sydkorea",
-      "Resultat": "1-0",
-      "RødeKort": "0"
+      "kamp": "Mexico – South Korea",
+      "resultat": "1-0",
+      "maal": 1,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "USA – Australien",
-      "Resultat": "2-0",
-      "RødeKort": "0"
+      "kamp": "United States – Australia",
+      "resultat": "2-0",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Skotland – Marokko",
-      "Resultat": "0-1",
-      "RødeKort": "0"
+      "kamp": "Scotland – Morocco",
+      "resultat": "0-1",
+      "maal": 1,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Brasilien – Haiti",
-      "Resultat": "3-0",
-      "RødeKort": "0"
+      "kamp": "Brazil – Haiti",
+      "resultat": "3-0",
+      "maal": 3,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Tyrkiet – Paraguay",
-      "Resultat": "0-1",
-      "RødeKort": "1"
+      "kamp": "Turkey – Paraguay",
+      "resultat": "0-1",
+      "maal": 1,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Holland – Sverige",
-      "Resultat": "5-1",
-      "RødeKort": "0"
+      "kamp": "Netherlands – Sweden",
+      "resultat": "5-1",
+      "maal": 6,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Tyskland – Elfenbenskysten",
-      "Resultat": "2-1",
-      "RødeKort": "0"
+      "kamp": "Germany – Ivory Coast",
+      "resultat": "2-1",
+      "maal": 3,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Ecuador – Curacao",
-      "Resultat": "0-0",
-      "RødeKort": "0"
+      "kamp": "Ecuador – Curaçao",
+      "resultat": "0-0",
+      "maal": 0,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Tunesien – Japan",
-      "Resultat": "0-4",
-      "RødeKort": "0"
+      "kamp": "Tunisia – Japan",
+      "resultat": "0-4",
+      "maal": 4,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Spanien – Saudi-Arabien",
-      "Resultat": "4-0",
-      "RødeKort": "0"
+      "kamp": "Spain – Saudi Arabia",
+      "resultat": "4-0",
+      "maal": 4,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Belgien – Iran",
-      "Resultat": "0-0",
-      "RødeKort": "1"
+      "kamp": "Belgium – Iran",
+      "resultat": "0-0",
+      "maal": 0,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Uruguay – Kap Verde",
-      "Resultat": "2-2",
-      "RødeKort": "0"
+      "kamp": "Uruguay – Cape Verde Islands",
+      "resultat": "2-2",
+      "maal": 4,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "New Zealand – Egypten",
-      "Resultat": "1-3",
-      "RødeKort": "0"
+      "kamp": "New Zealand – Egypt",
+      "resultat": "1-3",
+      "maal": 4,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Argentina – Østrig",
-      "Resultat": "2-0",
-      "RødeKort": "0"
+      "kamp": "Argentina – Austria",
+      "resultat": "2-0",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Frankrig – Irak",
-      "Resultat": "3-0",
-      "RødeKort": "0"
+      "kamp": "France – Iraq",
+      "resultat": "3-0",
+      "maal": 3,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Norge – Senegal",
-      "Resultat": "3-2",
-      "RødeKort": "0"
+      "kamp": "Norway – Senegal",
+      "resultat": "3-2",
+      "maal": 5,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Jordan – Algeriet",
-      "Resultat": "1-2",
-      "RødeKort": "0"
+      "kamp": "Jordan – Algeria",
+      "resultat": "1-2",
+      "maal": 3,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Portugal – Usbekistan",
-      "Resultat": "5-0",
-      "RødeKort": "0"
+      "kamp": "Portugal – Uzbekistan",
+      "resultat": "5-0",
+      "maal": 5,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "England – Ghana",
-      "Resultat": "0-0",
-      "RødeKort": "0"
+      "kamp": "England – Ghana",
+      "resultat": "0-0",
+      "maal": 0,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Panama – Kroatien",
-      "Resultat": "0-1",
-      "RødeKort": "0"
+      "kamp": "Panama – Croatia",
+      "resultat": "0-1",
+      "maal": 1,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Colombia – DR Congo",
-      "Resultat": "1-0",
-      "RødeKort": "0"
+      "kamp": "Colombia – Congo DR",
+      "resultat": "1-0",
+      "maal": 1,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Schweiz – Canada",
-      "Resultat": "2-1",
-      "RødeKort": "0"
+      "kamp": "Switzerland – Canada",
+      "resultat": "2-1",
+      "maal": 3,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Bosnien-Hercegovina – Qatar",
-      "Resultat": "3-1",
-      "RødeKort": "0"
+      "kamp": "Bosnia-Herzegovina – Qatar",
+      "resultat": "3-1",
+      "maal": 4,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Skotland – Brasilien",
-      "Resultat": "0-3",
-      "RødeKort": "0"
+      "kamp": "Morocco – Haiti",
+      "resultat": "4-2",
+      "maal": 6,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Marokko – Haiti",
-      "Resultat": "4-2",
-      "RødeKort": "0"
+      "kamp": "Scotland – Brazil",
+      "resultat": "0-3",
+      "maal": 3,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Tjekkiet – Mexico",
-      "Resultat": "0-3",
-      "RødeKort": "0"
+      "kamp": "Czechia – Mexico",
+      "resultat": "0-3",
+      "maal": 3,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Sydafrika – Sydkorea",
-      "Resultat": "1-0",
-      "RødeKort": "0"
+      "kamp": "South Africa – South Korea",
+      "resultat": "1-0",
+      "maal": 1,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Curacao – Elfenbenskysten",
-      "Resultat": "0-2",
-      "RødeKort": "0"
+      "kamp": "Ecuador – Germany",
+      "resultat": "2-1",
+      "maal": 3,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Ecuador – Tyskland",
-      "Resultat": "2-1",
-      "RødeKort": "0"
+      "kamp": "Curaçao – Ivory Coast",
+      "resultat": "0-2",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Japan – Sverige",
-      "Resultat": "1-1",
-      "RødeKort": "0"
+      "kamp": "Tunisia – Netherlands",
+      "resultat": "1-3",
+      "maal": 4,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Tunesien – Holland",
-      "Resultat": "1-3",
-      "RødeKort": "0"
+      "kamp": "Japan – Sweden",
+      "resultat": "1-1",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Tyrkiet – USA",
-      "Resultat": "3-2",
-      "RødeKort": "0"
+      "kamp": "Turkey – United States",
+      "resultat": "3-2",
+      "maal": 5,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Paraguay – Australien",
-      "Resultat": "0-0",
-      "RødeKort": "0"
+      "kamp": "Paraguay – Australia",
+      "resultat": "0-0",
+      "maal": 0,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Norge – Frankrig",
-      "Resultat": "1-4",
-      "RødeKort": "0"
+      "kamp": "Norway – France",
+      "resultat": "1-4",
+      "maal": 5,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Senegal – Irak",
-      "Resultat": "5-0",
-      "RødeKort": "1"
+      "kamp": "Senegal – Iraq",
+      "resultat": "5-0",
+      "maal": 5,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Kap Verde – Saudi-Arabien",
-      "Resultat": "0-0",
-      "RødeKort": "0"
+      "kamp": "Uruguay – Spain",
+      "resultat": "0-1",
+      "maal": 1,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Uruguay – Spanien",
-      "Resultat": "0-1",
-      "RødeKort": "1"
+      "kamp": "Cape Verde Islands – Saudi Arabia",
+      "resultat": "0-0",
+      "maal": 0,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Egypten – Iran",
-      "Resultat": "1-1",
-      "RødeKort": "0"
+      "kamp": "New Zealand – Belgium",
+      "resultat": "1-5",
+      "maal": 6,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "New Zealand – Belgien",
-      "Resultat": "1-5",
-      "RødeKort": "0"
+      "kamp": "Egypt – Iran",
+      "resultat": "1-1",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Panama – England",
-      "Resultat": "0-2",
-      "RødeKort": "0"
+      "kamp": "Panama – England",
+      "resultat": "0-2",
+      "maal": 2,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Kroatien – Ghana",
-      "Resultat": "2-1",
-      "RødeKort": "0"
+      "kamp": "Croatia – Ghana",
+      "resultat": "2-1",
+      "maal": 3,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Colombia – Portugal",
-      "Resultat": "0-0",
-      "RødeKort": "0"
+      "kamp": "Colombia – Portugal",
+      "resultat": "0-0",
+      "maal": 0,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "DR Congo – Usbekistan",
-      "Resultat": "3-1",
-      "RødeKort": "0"
+      "kamp": "Congo DR – Uzbekistan",
+      "resultat": "3-1",
+      "maal": 4,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Algeriet – Østrig",
-      "Resultat": "3-3",
-      "RødeKort": "0"
+      "kamp": "Jordan – Argentina",
+      "resultat": "1-3",
+      "maal": 4,
+      "stage": "GROUP_STAGE"
     },
     {
-      "Kamp": "Jordan – Argentina",
-      "Resultat": "1-3",
-      "RødeKort": "0"
+      "kamp": "Algeria – Austria",
+      "resultat": "3-3",
+      "maal": 6,
+      "stage": "GROUP_STAGE"
+    },
+    {
+      "kamp": "South Africa – Canada",
+      "resultat": "0-1",
+      "maal": 1,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "Brazil – Japan",
+      "resultat": "2-1",
+      "maal": 3,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "Germany – Paraguay",
+      "resultat": "4-5",
+      "maal": 9,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "Netherlands – Morocco",
+      "resultat": "3-4",
+      "maal": 7,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "Ivory Coast – Norway",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "France – Sweden",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "Mexico – Ecuador",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "England – Congo DR",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "Belgium – Senegal",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "United States – Bosnia-Herzegovina",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "Spain – Austria",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "Portugal – Croatia",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "Switzerland – Algeria",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "Australia – Egypt",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "Argentina – Cape Verde Islands",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "Colombia – Ghana",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_32"
+    },
+    {
+      "kamp": "Canada – Morocco",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_16"
+    },
+    {
+      "kamp": "Paraguay – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_16"
+    },
+    {
+      "kamp": "Brazil – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_16"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_16"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_16"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_16"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_16"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "LAST_16"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "QUARTER_FINALS"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "QUARTER_FINALS"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "QUARTER_FINALS"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "QUARTER_FINALS"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "SEMI_FINALS"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "SEMI_FINALS"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "THIRD_PLACE"
+    },
+    {
+      "kamp": "None – None",
+      "resultat": "",
+      "maal": 0,
+      "stage": "FINAL"
     }
   ],
   "vmVindere": [
