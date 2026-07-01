@@ -1,7 +1,7 @@
 {
   "opdateret": "01. July 2026",
   "totalKampe": 104,
-  "totalMaal": 243,
+  "totalMaal": 255,
   "roedeKort": 10,
   "spillere": [
     {
@@ -240,624 +240,832 @@
     {
       "kamp": "Mexico – South Africa",
       "resultat": "2-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "South Korea – Czechia",
       "resultat": "2-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Canada – Bosnia-Herzegovina",
       "resultat": "1-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "United States – Paraguay",
       "resultat": "4-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 5,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Qatar – Switzerland",
       "resultat": "1-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Brazil – Morocco",
       "resultat": "1-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Haiti – Scotland",
       "resultat": "0-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Australia – Turkey",
       "resultat": "2-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Germany – Curaçao",
       "resultat": "7-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 8,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Netherlands – Japan",
       "resultat": "2-2",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Ivory Coast – Ecuador",
       "resultat": "1-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Sweden – Tunisia",
       "resultat": "5-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 6,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Spain – Cape Verde Islands",
       "resultat": "0-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Belgium – Egypt",
       "resultat": "1-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Saudi Arabia – Uruguay",
       "resultat": "1-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Iran – New Zealand",
       "resultat": "2-2",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "France – Senegal",
       "resultat": "3-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Iraq – Norway",
       "resultat": "1-4",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 5,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Argentina – Algeria",
       "resultat": "3-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Austria – Jordan",
       "resultat": "3-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Portugal – Congo DR",
       "resultat": "1-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "England – Croatia",
       "resultat": "4-2",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 6,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Ghana – Panama",
       "resultat": "1-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Uzbekistan – Colombia",
       "resultat": "1-3",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Czechia – South Africa",
       "resultat": "1-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Switzerland – Bosnia-Herzegovina",
       "resultat": "4-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 5,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Canada – Qatar",
       "resultat": "6-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 6,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Mexico – South Korea",
       "resultat": "1-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "United States – Australia",
       "resultat": "2-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Scotland – Morocco",
       "resultat": "0-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Brazil – Haiti",
       "resultat": "3-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Turkey – Paraguay",
       "resultat": "0-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Netherlands – Sweden",
       "resultat": "5-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 6,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Germany – Ivory Coast",
       "resultat": "2-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Ecuador – Curaçao",
       "resultat": "0-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Tunisia – Japan",
       "resultat": "0-4",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Spain – Saudi Arabia",
       "resultat": "4-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Belgium – Iran",
       "resultat": "0-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Uruguay – Cape Verde Islands",
       "resultat": "2-2",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "New Zealand – Egypt",
       "resultat": "1-3",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Argentina – Austria",
       "resultat": "2-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "France – Iraq",
       "resultat": "3-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Norway – Senegal",
       "resultat": "3-2",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 5,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Jordan – Algeria",
       "resultat": "1-2",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Portugal – Uzbekistan",
       "resultat": "5-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 5,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "England – Ghana",
       "resultat": "0-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Panama – Croatia",
       "resultat": "0-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Colombia – Congo DR",
       "resultat": "1-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Switzerland – Canada",
       "resultat": "2-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Bosnia-Herzegovina – Qatar",
       "resultat": "3-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Morocco – Haiti",
       "resultat": "4-2",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 6,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Scotland – Brazil",
       "resultat": "0-3",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Czechia – Mexico",
       "resultat": "0-3",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "South Africa – South Korea",
       "resultat": "1-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Ecuador – Germany",
       "resultat": "2-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Curaçao – Ivory Coast",
       "resultat": "0-2",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Tunisia – Netherlands",
       "resultat": "1-3",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Japan – Sweden",
       "resultat": "1-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Turkey – United States",
       "resultat": "3-2",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 5,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Paraguay – Australia",
       "resultat": "0-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Norway – France",
       "resultat": "1-4",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 5,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Senegal – Iraq",
       "resultat": "5-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 5,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Uruguay – Spain",
       "resultat": "0-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 1,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Cape Verde Islands – Saudi Arabia",
       "resultat": "0-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "New Zealand – Belgium",
       "resultat": "1-5",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 6,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Egypt – Iran",
       "resultat": "1-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Panama – England",
       "resultat": "0-2",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Croatia – Ghana",
       "resultat": "2-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 3,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Colombia – Portugal",
       "resultat": "0-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Congo DR – Uzbekistan",
       "resultat": "3-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Jordan – Argentina",
       "resultat": "1-3",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 4,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "Algeria – Austria",
       "resultat": "3-3",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 6,
       "stage": "GROUP_STAGE"
     },
     {
       "kamp": "South Africa – Canada",
       "resultat": "0-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 1,
       "stage": "LAST_32"
     },
     {
       "kamp": "Brazil – Japan",
       "resultat": "2-1",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 3,
       "stage": "LAST_32"
     },
     {
       "kamp": "Germany – Paraguay",
       "resultat": "4-5",
-      "maal": 9,
+      "resultatET": "0-0",
+      "resultatPen": "3-4",
+      "maal": 16,
       "stage": "LAST_32"
     },
     {
       "kamp": "Netherlands – Morocco",
       "resultat": "3-4",
-      "maal": 7,
+      "resultatET": "0-0",
+      "resultatPen": "2-3",
+      "maal": 12,
       "stage": "LAST_32"
     },
     {
       "kamp": "Ivory Coast – Norway",
       "resultat": "1-2",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 3,
       "stage": "LAST_32"
     },
     {
       "kamp": "France – Sweden",
       "resultat": "3-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 3,
       "stage": "LAST_32"
     },
     {
       "kamp": "Mexico – Ecuador",
       "resultat": "2-0",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 2,
       "stage": "LAST_32"
     },
     {
       "kamp": "England – Congo DR",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_32"
     },
     {
       "kamp": "Belgium – Senegal",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_32"
     },
     {
       "kamp": "United States – Bosnia-Herzegovina",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_32"
     },
     {
       "kamp": "Spain – Austria",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_32"
     },
     {
       "kamp": "Portugal – Croatia",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_32"
     },
     {
       "kamp": "Switzerland – Algeria",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_32"
     },
     {
       "kamp": "Australia – Egypt",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_32"
     },
     {
       "kamp": "Argentina – Cape Verde Islands",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_32"
     },
     {
       "kamp": "Colombia – Ghana",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_32"
     },
     {
       "kamp": "Canada – Morocco",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_16"
     },
     {
       "kamp": "Paraguay – France",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_16"
     },
     {
       "kamp": "Brazil – Norway",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_16"
     },
     {
       "kamp": "None – None",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_16"
     },
     {
       "kamp": "None – None",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_16"
     },
     {
       "kamp": "None – None",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_16"
     },
     {
       "kamp": "None – None",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_16"
     },
     {
       "kamp": "None – None",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "LAST_16"
     },
     {
       "kamp": "None – None",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "QUARTER_FINALS"
     },
     {
       "kamp": "None – None",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "QUARTER_FINALS"
     },
     {
       "kamp": "None – None",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "QUARTER_FINALS"
     },
     {
       "kamp": "None – None",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "QUARTER_FINALS"
     },
     {
       "kamp": "None – None",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "SEMI_FINALS"
     },
     {
       "kamp": "None – None",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "SEMI_FINALS"
     },
     {
       "kamp": "None – None",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "THIRD_PLACE"
     },
     {
       "kamp": "None – None",
       "resultat": "",
+      "resultatET": null,
+      "resultatPen": null,
       "maal": 0,
       "stage": "FINAL"
     }
