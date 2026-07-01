@@ -235,8 +235,9 @@ function lavSlider(spillere, felt, facit, maxVisning) {
 // Et hold er ude hvis: 1) de har tabt en knockoutkamp, eller 2) alle knockout-runder er begyndt og holdet ikke er repræsenteret
 function beregnUdeHold(kampe) {
   const ude = new Set();
-  const knockoutKampe = kampe.filter(k => k.stage && k.stage !== 'GROUP_STAGE');
-  const gruppespilKampe = kampe.filter(k => k.stage === 'GROUP_STAGE' || !k.stage);
+  const erGruppespil = s => !s || s === 'GROUP_STAGE';
+  const knockoutKampe = kampe.filter(k => !erGruppespil(k.stage));
+  const gruppespilKampe = kampe.filter(k => erGruppespil(k.stage));
 
   // Alle hold der har spillet en knockoutkamp
   const iKnockout = new Set();
@@ -276,7 +277,7 @@ function beregnUdeHold(kampe) {
 // Runder identificeres ud fra antal kampe (16=Round of 32, 8=Round of 16, 4=Kvart, 2=Semi, 1=Finale)
 // så koden er robust uanset hvad API'et navngiver hver stage internt.
 function lavBracket(kampe) {
-  const knockoutKampe = kampe.filter(k => k.stage && k.stage !== 'GROUP_STAGE');
+  const knockoutKampe = kampe.filter(k => k.stage && k.stage !== 'GROUP_STAGE' && k.stage !== '');
   if (!knockoutKampe.length) return null;
 
   // Gruppér efter stage-værdi
@@ -287,6 +288,15 @@ function lavBracket(kampe) {
   });
 
   const RUNDE_NAVNE = { 16: '1/16-finale', 8: '1/8-finale', 4: 'Kvartfinale', 2: 'Semifinale', 1: 'Finale' };
+  // Mapning af kendte API stage-navne til dansk (football-data.org bruger LAST_32, LAST_16 osv.)
+  const STAGE_NAVNE = {
+    'LAST_32': '1/16-finale', 'ROUND_OF_32': '1/16-finale',
+    'LAST_16': '1/8-finale',  'ROUND_OF_16': '1/8-finale',
+    'QUARTER_FINALS': 'Kvartfinale',
+    'SEMI_FINALS': 'Semifinale',
+    'FINAL': 'Finale',
+    'THIRD_PLACE': '🥉 Bronzekamp',
+  };
 
   // Sortér runder efter faldende antal kampe (flest kampe = tidligst i turneringen)
   const runder = Object.entries(stages)
@@ -331,7 +341,7 @@ function lavBracketHtml(bracketData) {
 
   const kolonner = runder.map(r => `
     <div class="bracket-col">
-      <div class="bracket-col-title">${navnFor(r.antal)}</div>
+      <div class="bracket-col-title">${STAGE_NAVNE[r.stage] || navnFor(r.antal)}</div>
       <div class="bracket-col-matches">
         ${r.kampe.map(kampBoks).join('')}
       </div>
