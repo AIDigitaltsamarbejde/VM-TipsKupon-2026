@@ -179,91 +179,6 @@ const ENG_TIL_DAN = {
 const danNavn = navn => ENG_TIL_DAN[navn] || navn;
 
 // Beregner gruppetabeller fra kampresultater og afgør hvilke hold der er "ude"
-function beregnUdeHold(kampe) {
-  const tabel = {};
-  Object.keys(GRUPPER).forEach(land => {
-    tabel[land] = { land, gruppe: GRUPPER[land], point: 0, gscored: 0, gagainst: 0, spillet: 0 };
-  });
-
-  kampe.forEach(k => {
-    const m = k.kamp.split(' – ').map(s => s.trim());
-    if (m.length < 2) return;
-    const [hjemme, ude] = m.map(danNavn);
-    const res = (k.resultat || '').trim();
-    if (!res || res === 'AFVENTER' || !/^\d+-\d+$/.test(res)) return;
-    const [hg, ag] = res.split('-').map(Number);
-
-    if (tabel[hjemme]) {
-      tabel[hjemme].spillet++;
-      tabel[hjemme].gscored += hg;
-      tabel[hjemme].gagainst += ag;
-      tabel[hjemme].point += hg > ag ? 3 : hg === ag ? 1 : 0;
-    }
-    if (tabel[ude]) {
-      tabel[ude].spillet++;
-      tabel[ude].gscored += ag;
-      tabel[ude].gagainst += hg;
-      tabel[ude].point += ag > hg ? 3 : ag === hg ? 1 : 0;
-    }
-  });
-
-  // Gruppér hold efter gruppe
-  const grupper = {};
-  Object.values(tabel).forEach(t => {
-    if (!grupper[t.gruppe]) grupper[t.gruppe] = [];
-    grupper[t.gruppe].push(t);
-  });
-
-  const sorter = arr => [...arr].sort((a, b) =>
-    b.point - a.point || (b.gscored - b.gagainst) - (a.gscored - a.gagainst) || b.gscored - a.gscored);
-
-  const alleFaerdige = Object.values(grupper).every(g => g.every(t => t.spillet >= 3));
-
-  // Saml alle 3'ere fra færdige grupper til sammenligning
-  const faerdigeTreere = [];
-  Object.values(grupper).forEach(gruppe => {
-    if (!gruppe.every(t => t.spillet >= 3)) return; // kun færdige grupper
-    const sorted = sorter(gruppe);
-    if (sorted[2]) faerdigeTreere.push(sorted[2]);
-  });
-
-  // Sortér 3'erne: bedste øverst
-  faerdigeTreere.sort((a, b) =>
-    b.point - a.point || (b.gscored - b.gagainst) - (a.gscored - a.gagainst) || b.gscored - a.gscored);
-
-  const ude = new Set();
-
-  Object.values(grupper).forEach(gruppe => {
-    const erFaerdig = gruppe.every(t => t.spillet >= 3);
-    if (!erFaerdig) return; // gruppen er ikke færdig endnu
-
-    const sorted = sorter(gruppe);
-    const nr1 = sorted[0];
-    const nr2 = sorted[1];
-    const nr3 = sorted[2];
-    const nr4 = sorted[3];
-
-    // Nr. 4 er altid ude når gruppen er færdig
-    if (nr4) ude.add(nr4.land);
-
-    // Nr. 3: ude hvis alle 12 grupper er færdige og de ikke er blandt de 8 bedste 3'ere
-    // ELLER hvis de allerede har færre point end den 8. bedste 3'er (matematisk umuligt at komme videre)
-    if (nr3 && alleFaerdige) {
-      const bedste8 = faerdigeTreere.slice(0, 8).map(t => t.land);
-      if (!bedste8.includes(nr3.land)) ude.add(nr3.land);
-    } else if (nr3 && faerdigeTreere.length >= 8) {
-      // Selv mens ikke alle er færdige: hvis 3'eren allerede er dårligere end den nuværende 8. bedste, er den ude
-      const ottendeBedste = faerdigeTreere[7];
-      const dårligereEndOttende =
-        nr3.point < ottendeBedste.point ||
-        (nr3.point === ottendeBedste.point && (nr3.gscored - nr3.gagainst) < (ottendeBedste.gscored - ottendeBedste.gagainst));
-      if (dårligereEndOttende) ude.add(nr3.land);
-    }
-  });
-
-  return ude;
-}
-
 // Finder hvem der gættede tættest på et tal
 function taettestPaa(spillere, felt, facit) {
   let bedste = null, bedsteDiff = Infinity;
@@ -316,7 +231,48 @@ function lavSlider(spillere, felt, facit, maxVisning) {
   `;
 }
 
-// Bygger knockout-bracket struktur ud fra kampe der ikke er gruppespil.
+// Beregner hvilke hold der er ude baseret på knockout-kampe.
+// Et hold er ude hvis: 1) de har tabt en knockoutkamp, eller 2) alle knockout-runder er begyndt og holdet ikke er repræsenteret
+function beregnUdeHold(kampe) {
+  const ude = new Set();
+  const knockoutKampe = kampe.filter(k => k.stage && k.stage !== 'GROUP_STAGE');
+  const gruppespilKampe = kampe.filter(k => k.stage === 'GROUP_STAGE' || !k.stage);
+
+  // Alle hold der har spillet en knockoutkamp
+  const iKnockout = new Set();
+  knockoutKampe.forEach(k => {
+    const [hj, ud] = k.kamp.split(' – ').map(s => s.trim());
+    if (hj) iKnockout.add(hj);
+    if (ud) iKnockout.add(ud);
+  });
+
+  // Hold der har tabt en FÆRDIG knockoutkamp er ude
+  knockoutKampe.forEach(k => {
+    const res = (k.resultat || '').trim();
+    if (!res || res === 'AFVENTER' || !/^\d+-\d+$/.test(res)) return;
+    const [hj, ud] = k.kamp.split(' – ').map(s => s.trim());
+    const [hg, ag] = res.split('-').map(Number);
+    if (hg < ag) ude.add(hj);
+    if (ag < hg) ude.add(ud);
+  });
+
+  // Når knockout er gået i gang: hold der ikke er med i knockout er ude fra gruppespillet
+  if (iKnockout.size > 0) {
+    // Find alle hold der har spillet gruppespil
+    const gruppeHold = new Set();
+    gruppespilKampe.forEach(k => {
+      const [hj, ud] = k.kamp.split(' – ').map(s => s.trim());
+      if (hj) gruppeHold.add(hj);
+      if (ud) gruppeHold.add(ud);
+    });
+    // Hold i gruppespil men ikke i knockout = elimineret i gruppefasen
+    gruppeHold.forEach(hold => {
+      if (!iKnockout.has(hold)) ude.add(hold);
+    });
+  }
+
+  return ude;
+}
 // Runder identificeres ud fra antal kampe (16=Round of 32, 8=Round of 16, 4=Kvart, 2=Semi, 1=Finale)
 // så koden er robust uanset hvad API'et navngiver hver stage internt.
 function lavBracket(kampe) {
