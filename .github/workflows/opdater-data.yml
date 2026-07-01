@@ -98,6 +98,8 @@ jobs:
                   stage  = m.get('stage', '')
 
                   resultat = ''
+                  resultatET = None
+                  resultatPen = None
                   maal = 0
 
                   if status == 'FINISHED':
@@ -105,16 +107,34 @@ jobs:
                       ag = m['score']['fullTime']['away'] or 0
                       resultat = f'{hg}-{ag}'
                       maal = hg + ag
+
+                      # Forlænget spilletid
+                      et = m.get('score', {}).get('extraTime', {})
+                      et_h = et.get('home')
+                      et_a = et.get('away')
+                      if et_h is not None and et_a is not None:
+                          resultatET = f'{et_h}-{et_a}'
+
+                      # Straffesparkskonkurrence
+                      penalties = m.get('score', {}).get('penalties', {})
+                      pen_h = penalties.get('home')
+                      pen_a = penalties.get('away')
+                      if pen_h is not None and pen_a is not None:
+                          resultatPen = f'{pen_h}-{pen_a}'
+                          maal += pen_h + pen_a
+
                       total_maal += maal
 
                   kampe.append({
                       'kamp': f'{hjemme} – {ude}',
                       'resultat': resultat,
+                      'resultatET': resultatET,
+                      'resultatPen': resultatPen,
                       'maal': maal,
                       'stage': stage,
                   })
 
-              print(f"Total maal: {total_maal}")
+              print(f"Total maal (inkl. straffespark): {total_maal}")
           else:
               print(f"API fejl: {r.status_code} - {r.text[:200]}")
               kampe = excel_data.get('kampe', [])
