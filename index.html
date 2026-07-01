@@ -427,12 +427,21 @@ function renderDashboard(app, data) {
   const roedeKortFacit = data.roedeKort ?? 0;
 
   const udeHold = beregnUdeHold(kampe);
+
+  // Omvendt mapping: dansk -> engelsk (til at matche vmVinderGaet mod udeHold der bruger engelske navne fra API'et)
+  const DAN_TIL_ENG = {};
+  Object.entries(ENG_TIL_DAN).forEach(([eng, dan]) => { DAN_TIL_ENG[dan] = eng; });
+  const erUde = danNavn => {
+    // Tjek både dansk navn direkte og via engelsk oversættelse
+    return udeHold.has(danNavn) || udeHold.has(DAN_TIL_ENG[danNavn] || danNavn);
+  };
+
   const vmGaetTaeller = {};
   spillere.forEach(s => {
     if (s.vmVinderGaet) vmGaetTaeller[s.vmVinderGaet] = (vmGaetTaeller[s.vmVinderGaet] || 0) + 1;
   });
   const vmKandidater = Object.keys(vmGaetTaeller).sort((a, b) => {
-    const aUde = udeHold.has(a) ? 1 : 0, bUde = udeHold.has(b) ? 1 : 0;
+    const aUde = erUde(a) ? 1 : 0, bUde = erUde(b) ? 1 : 0;
     if (aUde !== bUde) return aUde - bUde;
     return vmGaetTaeller[b] - vmGaetTaeller[a];
   });
@@ -553,7 +562,7 @@ function renderDashboard(app, data) {
         </div>
         <div class="vm-winners-grid">
           ${vmKandidater.map(land => {
-            const ud = udeHold.has(land);
+            const ud = erUde(land);
             return `
             <div class="vm-card ${ud ? 'eliminated' : ''}">
               <div>
