@@ -327,16 +327,28 @@ function lavBracketHtml(bracketData) {
     if (done && /^\d+-\d+$/.test(m.resultat.trim())) {
       [hg, ag] = m.resultat.trim().split('-');
     }
+    const vandt_hj = done && Number(hg) > Number(ag);
+    const vandt_ud = done && Number(ag) > Number(hg);
+
+    // Ekstra info: forlænget spilletid og/eller straffespark
+    let ekstraLabel = '';
+    if (done && m.resultatPen) {
+      ekstraLabel = `<div style="font-size:9px;color:#aaa;padding:3px 9px;border-top:1px solid #f0f0f0">Straffe: ${m.resultatPen}</div>`;
+    } else if (done && m.resultatET) {
+      ekstraLabel = `<div style="font-size:9px;color:#aaa;padding:3px 9px;border-top:1px solid #f0f0f0">e.f.t.: ${m.resultatET}</div>`;
+    }
+
     return `
       <div class="bracket-match">
-        <div class="bracket-team ${done && hg > ag ? 'bracket-winner' : done && hg < ag ? 'bracket-loser' : ''}">
+        <div class="bracket-team ${vandt_hj ? 'bracket-winner' : done ? 'bracket-loser' : ''}">
           <span class="bracket-team-name">${hjemme || '?'}</span>
           <span class="bracket-score">${hg !== '' ? hg : ''}</span>
         </div>
-        <div class="bracket-team ${done && ag > hg ? 'bracket-winner' : done && ag < hg ? 'bracket-loser' : ''}">
+        <div class="bracket-team ${vandt_ud ? 'bracket-winner' : done ? 'bracket-loser' : ''}">
           <span class="bracket-team-name">${ude || '?'}</span>
           <span class="bracket-score">${ag !== '' ? ag : ''}</span>
         </div>
+        ${ekstraLabel}
       </div>`;
   };
 
@@ -392,9 +404,11 @@ function renderDashboard(app, data) {
     vmVinderGaet:  p.vmVinderGaet  ?? p.VMVinderGæt    ?? p.VMVinderGaet ?? '',
   });
   const normKamp = k => ({
-    kamp:     k.kamp     ?? k.Kamp     ?? '',
-    resultat: k.resultat ?? k.Resultat ?? '',
-    stage:    k.stage    ?? k.Stage    ?? '',
+    kamp:       k.kamp       ?? k.Kamp       ?? '',
+    resultat:   k.resultat   ?? k.Resultat   ?? '',
+    resultatET: k.resultatET ?? null,
+    resultatPen:k.resultatPen?? null,
+    stage:      k.stage      ?? k.Stage      ?? '',
   });
 
   const spillere = [...data.spillere].map(norm).sort((a, b) => b.point - a.point);
@@ -590,10 +604,13 @@ function renderDashboard(app, data) {
       <ul class="match-list">
         ${gruppespilKampe.map(m => {
           const done = m.resultat && m.resultat.trim() !== '' && m.resultat.trim() !== 'AFVENTER';
+          let visResultat = done ? m.resultat : 'Afventer';
+          if (done && m.resultatPen) visResultat += ` (str. ${m.resultatPen})`;
+          else if (done && m.resultatET) visResultat += ` (e.f.t.)`;
           return '<li class="match-item">' +
             '<span class="match-dot ' + (done?'done':'pending') + '"></span>' +
             '<span class="match-name">' + m.kamp + '</span>' +
-            '<span class="match-result ' + (done?'':'pending') + '">' + (done ? m.resultat : 'Afventer') + '</span>' +
+            '<span class="match-result ' + (done?'':'pending') + '">' + visResultat + '</span>' +
             '</li>';
         }).join('')}
       </ul>
