@@ -288,8 +288,7 @@ function lavBracket(kampe) {
   });
 
   const RUNDE_NAVNE = { 16: '1/16-finale', 8: '1/8-finale', 4: 'Kvartfinale', 2: 'Semifinale', 1: 'Finale' };
-  // Mapning af kendte API stage-navne til dansk (football-data.org bruger LAST_32, LAST_16 osv.)
-  const STAGE_NAVNE = {
+  const stageNavne = {
     'LAST_32': '1/16-finale', 'ROUND_OF_32': '1/16-finale',
     'LAST_16': '1/8-finale',  'ROUND_OF_16': '1/8-finale',
     'QUARTER_FINALS': 'Kvartfinale',
@@ -311,12 +310,12 @@ function lavBracket(kampe) {
     bronzeRunde = runder.splice(bronzeIdx, 1)[0];
   }
 
-  return { runder, bronzeRunde, navnFor: antal => RUNDE_NAVNE[antal] || `Runde (${antal} kampe)` };
+  return { runder, bronzeRunde, stageNavne, navnFor: antal => RUNDE_NAVNE[antal] || `Runde (${antal} kampe)` };
 }
 
 function lavBracketHtml(bracketData) {
   if (!bracketData) return '';
-  const { runder, bronzeRunde, navnFor } = bracketData;
+  const { runder, bronzeRunde, stageNavne, navnFor } = bracketData;
 
   const kampBoks = m => {
     const done = m.resultat && m.resultat.trim() !== '' && m.resultat.trim() !== 'AFVENTER';
@@ -341,7 +340,7 @@ function lavBracketHtml(bracketData) {
 
   const kolonner = runder.map(r => `
     <div class="bracket-col">
-      <div class="bracket-col-title">${STAGE_NAVNE[r.stage] || navnFor(r.antal)}</div>
+      <div class="bracket-col-title">${stageNavne[r.stage] || navnFor(r.antal)}</div>
       <div class="bracket-col-matches">
         ${r.kampe.map(kampBoks).join('')}
       </div>
