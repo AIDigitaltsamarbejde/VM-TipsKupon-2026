@@ -107,6 +107,7 @@ jobs:
                       ag = m['score']['fullTime']['away'] or 0
                       resultat = f'{hg}-{ag}'
                       maal = hg + ag
+                      total_maal += maal
 
                       # Forlænget spilletid
                       et = m.get('score', {}).get('extraTime', {})
@@ -115,15 +116,12 @@ jobs:
                       if et_h is not None and et_a is not None:
                           resultatET = f'{et_h}-{et_a}'
 
-                      # Straffesparkskonkurrence
+                      # Straffesparkskonkurrence (kun til visning — mål allerede inkluderet i fullTime)
                       penalties = m.get('score', {}).get('penalties', {})
                       pen_h = penalties.get('home')
                       pen_a = penalties.get('away')
                       if pen_h is not None and pen_a is not None:
                           resultatPen = f'{pen_h}-{pen_a}'
-                          maal += pen_h + pen_a
-
-                      total_maal += maal
 
                   kampe.append({
                       'kamp': f'{hjemme} – {ude}',
