@@ -1,7 +1,7 @@
 {
   "opdateret": "02. July 2026",
   "totalKampe": 104,
-  "totalMaal": 265,
+  "totalMaal": 253,
   "roedeKort": 12,
   "spillere": [
     {
@@ -834,7 +834,7 @@
       "resultat": "4-5",
       "resultatET": "0-0",
       "resultatPen": "3-4",
-      "maal": 16,
+      "maal": 9,
       "stage": "LAST_32"
     },
     {
@@ -842,7 +842,7 @@
       "resultat": "3-4",
       "resultatET": "0-0",
       "resultatPen": "2-3",
-      "maal": 12,
+      "maal": 7,
       "stage": "LAST_32"
     },
     {
