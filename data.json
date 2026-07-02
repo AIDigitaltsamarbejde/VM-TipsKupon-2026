@@ -1,7 +1,7 @@
 {
-  "opdateret": "01. July 2026",
+  "opdateret": "02. July 2026",
   "totalKampe": 104,
-  "totalMaal": 255,
+  "totalMaal": 265,
   "roedeKort": 10,
   "spillere": [
     {
@@ -871,26 +871,26 @@
     },
     {
       "kamp": "England – Congo DR",
-      "resultat": "",
+      "resultat": "2-1",
       "resultatET": null,
       "resultatPen": null,
-      "maal": 0,
+      "maal": 3,
       "stage": "LAST_32"
     },
     {
       "kamp": "Belgium – Senegal",
-      "resultat": "",
-      "resultatET": null,
+      "resultat": "3-2",
+      "resultatET": "1-0",
       "resultatPen": null,
-      "maal": 0,
+      "maal": 5,
       "stage": "LAST_32"
     },
     {
       "kamp": "United States – Bosnia-Herzegovina",
-      "resultat": "",
+      "resultat": "2-0",
       "resultatET": null,
       "resultatPen": null,
-      "maal": 0,
+      "maal": 2,
       "stage": "LAST_32"
     },
     {
