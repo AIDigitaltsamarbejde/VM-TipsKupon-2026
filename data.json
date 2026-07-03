@@ -1,7 +1,7 @@
 {
-  "opdateret": "02. July 2026",
+  "opdateret": "03. July 2026",
   "totalKampe": 104,
-  "totalMaal": 253,
+  "totalMaal": 261,
   "roedeKort": 12,
   "spillere": [
     {
@@ -895,26 +895,26 @@
     },
     {
       "kamp": "Spain – Austria",
-      "resultat": "",
+      "resultat": "3-0",
       "resultatET": null,
       "resultatPen": null,
-      "maal": 0,
+      "maal": 3,
       "stage": "LAST_32"
     },
     {
       "kamp": "Portugal – Croatia",
-      "resultat": "",
+      "resultat": "2-1",
       "resultatET": null,
       "resultatPen": null,
-      "maal": 0,
+      "maal": 3,
       "stage": "LAST_32"
     },
     {
       "kamp": "Switzerland – Algeria",
-      "resultat": "",
+      "resultat": "2-0",
       "resultatET": null,
       "resultatPen": null,
-      "maal": 0,
+      "maal": 2,
       "stage": "LAST_32"
     },
     {
