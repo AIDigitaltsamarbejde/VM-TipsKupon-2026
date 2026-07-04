@@ -1,7 +1,7 @@
 {
-  "opdateret": "03. July 2026",
+  "opdateret": "04. July 2026",
   "totalKampe": 104,
-  "totalMaal": 261,
+  "totalMaal": 275,
   "roedeKort": 12,
   "spillere": [
     {
@@ -919,26 +919,26 @@
     },
     {
       "kamp": "Australia – Egypt",
-      "resultat": "",
-      "resultatET": null,
-      "resultatPen": null,
-      "maal": 0,
+      "resultat": "3-5",
+      "resultatET": "0-0",
+      "resultatPen": "4-4",
+      "maal": 8,
       "stage": "LAST_32"
     },
     {
       "kamp": "Argentina – Cape Verde Islands",
-      "resultat": "",
-      "resultatET": null,
+      "resultat": "3-2",
+      "resultatET": "2-1",
       "resultatPen": null,
-      "maal": 0,
+      "maal": 5,
       "stage": "LAST_32"
     },
     {
       "kamp": "Colombia – Ghana",
-      "resultat": "",
+      "resultat": "1-0",
       "resultatET": null,
       "resultatPen": null,
-      "maal": 0,
+      "maal": 1,
       "stage": "LAST_32"
     },
     {
