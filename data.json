@@ -1,7 +1,7 @@
 {
   "opdateret": "05. July 2026",
   "totalKampe": 104,
-  "totalMaal": 278,
+  "totalMaal": 279,
   "roedeKort": 12,
   "spillere": [
     {
@@ -951,10 +951,10 @@
     },
     {
       "kamp": "Paraguay – France",
-      "resultat": "",
+      "resultat": "0-1",
       "resultatET": null,
       "resultatPen": null,
-      "maal": 0,
+      "maal": 1,
       "stage": "LAST_16"
     },
     {
@@ -1006,7 +1006,7 @@
       "stage": "LAST_16"
     },
     {
-      "kamp": "None – None",
+      "kamp": "France – Morocco",
       "resultat": "",
       "resultatET": null,
       "resultatPen": null,
