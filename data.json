@@ -1,7 +1,7 @@
 {
-  "opdateret": "06. July 2026",
+  "opdateret": "07. July 2026",
   "totalKampe": 104,
-  "totalMaal": 287,
+  "totalMaal": 293,
   "roedeKort": 12,
   "spillere": [
     {
@@ -975,18 +975,18 @@
     },
     {
       "kamp": "Portugal – Spain",
-      "resultat": "",
+      "resultat": "0-1",
       "resultatET": null,
       "resultatPen": null,
-      "maal": 0,
+      "maal": 1,
       "stage": "LAST_16"
     },
     {
       "kamp": "United States – Belgium",
-      "resultat": "",
+      "resultat": "1-4",
       "resultatET": null,
       "resultatPen": null,
-      "maal": 0,
+      "maal": 5,
       "stage": "LAST_16"
     },
     {
