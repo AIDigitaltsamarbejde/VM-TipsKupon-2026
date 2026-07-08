@@ -1,7 +1,7 @@
 {
-  "opdateret": "07. July 2026",
+  "opdateret": "08. July 2026",
   "totalKampe": 104,
-  "totalMaal": 293,
+  "totalMaal": 305,
   "roedeKort": 12,
   "spillere": [
     {
@@ -991,18 +991,18 @@
     },
     {
       "kamp": "Argentina – Egypt",
-      "resultat": "",
+      "resultat": "3-2",
       "resultatET": null,
       "resultatPen": null,
-      "maal": 0,
+      "maal": 5,
       "stage": "LAST_16"
     },
     {
       "kamp": "Switzerland – Colombia",
-      "resultat": "",
-      "resultatET": null,
-      "resultatPen": null,
-      "maal": 0,
+      "resultat": "4-3",
+      "resultatET": "0-0",
+      "resultatPen": "3-3",
+      "maal": 7,
       "stage": "LAST_16"
     },
     {
