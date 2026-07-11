@@ -1,7 +1,7 @@
 {
-  "opdateret": "10. July 2026",
+  "opdateret": "11. July 2026",
   "totalKampe": 104,
-  "totalMaal": 307,
+  "totalMaal": 310,
   "roedeKort": 12,
   "spillere": [
     {
@@ -1015,10 +1015,10 @@
     },
     {
       "kamp": "Spain – Belgium",
-      "resultat": "",
+      "resultat": "2-1",
       "resultatET": null,
       "resultatPen": null,
-      "maal": 0,
+      "maal": 3,
       "stage": "QUARTER_FINALS"
     },
     {
