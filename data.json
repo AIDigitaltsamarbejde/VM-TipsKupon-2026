@@ -1,7 +1,7 @@
 {
-  "opdateret": "11. July 2026",
+  "opdateret": "12. July 2026",
   "totalKampe": 104,
-  "totalMaal": 310,
+  "totalMaal": 312,
   "roedeKort": 12,
   "spillere": [
     {
@@ -967,10 +967,10 @@
     },
     {
       "kamp": "Mexico – England",
-      "resultat": "2-3",
+      "resultat": "",
       "resultatET": null,
       "resultatPen": null,
-      "maal": 5,
+      "maal": 0,
       "stage": "LAST_16"
     },
     {
@@ -1023,18 +1023,18 @@
     },
     {
       "kamp": "Norway – England",
-      "resultat": "",
-      "resultatET": null,
+      "resultat": "1-2",
+      "resultatET": "0-1",
       "resultatPen": null,
-      "maal": 0,
+      "maal": 3,
       "stage": "QUARTER_FINALS"
     },
     {
       "kamp": "Argentina – Switzerland",
-      "resultat": "",
-      "resultatET": null,
+      "resultat": "3-1",
+      "resultatET": "2-0",
       "resultatPen": null,
-      "maal": 0,
+      "maal": 4,
       "stage": "QUARTER_FINALS"
     },
     {
