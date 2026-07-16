@@ -1,7 +1,7 @@
 {
-  "opdateret": "15. July 2026",
+  "opdateret": "16. July 2026",
   "totalKampe": 104,
-  "totalMaal": 319,
+  "totalMaal": 322,
   "roedeKort": 12,
   "spillere": [
     {
@@ -1047,10 +1047,10 @@
     },
     {
       "kamp": "England – Argentina",
-      "resultat": "",
+      "resultat": "1-2",
       "resultatET": null,
       "resultatPen": null,
-      "maal": 0,
+      "maal": 3,
       "stage": "SEMI_FINALS"
     },
     {
